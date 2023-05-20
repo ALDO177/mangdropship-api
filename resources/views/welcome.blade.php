@@ -128,5 +128,13 @@
                 </div>
             </div>
         </div>
+        <script>
+            (async() =>{
+                const ft = await fetch('http://127.0.0.1:8000/api/test', {
+                    method: 'GET',
+                });
+                console.log(await ft.json())
+            })()
+        </script>
     </body>
 </html>

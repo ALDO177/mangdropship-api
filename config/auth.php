@@ -37,13 +37,17 @@ return [
 
     'guards' => [
         'web' => [
-            'driver' => 'session',
+            'driver'   => 'session',
             'provider' => 'users',
         ],
-        'api' => [
+        'admin' => [
             'driver'   => 'token',
             'provider' => 'users',
             'hash'     => false,
+        ],
+        'api-users' => [
+            'driver'   => 'jwt',
+            'provider' => 'users',
         ],
     ],
 
@@ -94,8 +98,8 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
-            'table' => 'password_resets',
-            'expire' => 60,
+            'table'    => 'password_resets',
+            'expire'   => 60,
             'throttle' => 60,
         ],
     ],

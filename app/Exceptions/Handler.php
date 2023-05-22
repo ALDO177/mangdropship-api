@@ -2,11 +2,16 @@
 
 namespace App\Exceptions;
 
+use App\Trait\Help\ResponseMessage;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
+    use ResponseMessage;
     /**
      * A list of exception types with their corresponding custom log levels.
      *
@@ -45,6 +50,11 @@ class Handler extends ExceptionHandler
     {
         $this->reportable(function (Throwable $e) {
             //
+        });
+        $this->renderable(function(RouteNotFoundException $error, Request $request){
+           if($request->is('api/v1/*')){
+            return response()->json($this->messageNotAuth(), 401);
+           }
         });
     }
 }

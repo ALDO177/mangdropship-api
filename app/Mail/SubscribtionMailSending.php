@@ -12,9 +12,10 @@ use Illuminate\Queue\SerializesModels;
 class SubscribtionMailSending extends Mailable
 {
     use Queueable, SerializesModels;
-    public function __construct()
+    public string $tokens;
+    public function __construct(string $tokens)
     {
-        //
+        $this->tokens = $tokens;
     }
 
     public function envelope()
@@ -28,7 +29,8 @@ class SubscribtionMailSending extends Mailable
     public function content()
     {
         return new Content(
-            view: 'SubscriptionEmailTemplate',
+            view: 'NoticeSubscribtions',
+            with: ['route' => route('verify.email', ['mang' => $this->tokens])]
         );
     }
 

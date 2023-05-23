@@ -6,6 +6,7 @@ use App\Jobs\JobEmailSubscription;
 use App\Models\User;
 use App\Trait\Help\ResponseMessage;
 use App\Trait\Help\withoutWreapArray;
+use App\VerifyTokens\VerifyTokensEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -20,7 +21,6 @@ class AuthServiceController{
     }
 
     public function serviceIndex(){
-        JobEmailSubscription::dispatch(auth('api-users')->user());
         return new SubscribtionResourcesResponse(auth('api-users')->user());
     }
 
@@ -66,6 +66,7 @@ class AuthServiceController{
                     ->setStatusCode(402);
 
         $createRegister = User::create($this->request->only(['name', 'email', 'password']));
+        new VerifyTokensEmail($createRegister);
         return SubscribtionResourcesResponse::make($createRegister)
                 ->response()
                 ->setStatusCode(201);

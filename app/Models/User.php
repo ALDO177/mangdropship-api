@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Models;
+
+use App\Trait\JwtActionTable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Notifications\Notifiable;
@@ -10,7 +12,10 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 
 class User extends AuthUser implements JWTSubject
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens,
+        HasFactory, 
+        Notifiable, 
+        JwtActionTable;
 
     protected $fillable = [
         'name',
@@ -32,17 +37,7 @@ class User extends AuthUser implements JWTSubject
         $this->attributes['password'] = Hash::make($password);
     }
 
-    // public function subscribe(){
-    //     return $this->hasMany(SubscribtionRoleUsers::class, 'id');
-    // }
-
-    public function getJWTIdentifier()
-    {
-        return $this->getKey();
-    }
-
-    public function getJWTCustomClaims()
-    {
-        return [];
+    public function tokensVerify(){
+        return $this->hasOne(TokensVerify::class, 'id_tokens_users', 'id');
     }
 }

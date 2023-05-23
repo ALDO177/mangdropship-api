@@ -18,13 +18,13 @@ class User extends Seeder
         ModelsUser::create([
             'name'     => 'Aldo Ratmawan',
             'email'    => 'aldo.ratmawan9999@gmail.com',
-            'password' =>  bcrypt('aldo12345')
+            'password' =>  'aldo12345'
         ]);
         
         ModelsUser::create([
             'name'     => 'Otong',
             'email'    => 'otong@gmail.com',
-            'password' =>  bcrypt('otong12345')
+            'password' =>  'aldo12345'
         ]);
     }
 }

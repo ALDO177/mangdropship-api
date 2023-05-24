@@ -40,4 +40,8 @@ class User extends AuthUser implements JWTSubject
     public function tokensVerify(){
         return $this->hasOne(TokensVerify::class, 'id_tokens_users', 'id');
     }
+
+    public function subscribtions(){
+        return $this->hasMany(Subscribtion::class, 'id_role_subs', 'id');
+    }
 }

@@ -7,16 +7,13 @@ use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    /**
-     * Seed the application's database.
-     *
-     * @return void
-     */
     public function run()
     {
-       return $this->call([
-        User::class,
-         //SubscribtionRoleUsersSeeder::class,
-       ]);
+       return $this->call(
+        [
+          User::class,
+          RoleSubscribtionSeeder::class,
+          SubscribtionSeeder::class
+        ]);
     }
 }

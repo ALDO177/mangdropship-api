@@ -130,8 +130,9 @@
         </div>
         <script>
             (async() =>{
-                const ft = await fetch('http://127.0.0.1:8000/api/test', {
-                    method: 'GET',
+                const ft = await fetch('http://127.0.0.1:8000/api/v1/auth/login', {
+                    method: 'POST',
+                    body: JSON.stringify({email: "aldo.ratmawan9999@gmail.com", password: btoa(encodeURIComponent('aldo12345'))})
                 });
                 console.log(await ft.json())
             })()

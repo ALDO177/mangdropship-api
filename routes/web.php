@@ -1,10 +1,12 @@
 <?php
 
 use App\Http\Controllers\Web\VerificationsEmail;
+use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('SubscriptionEmailTemplate');
+    Redis::command('set', ['aldo', 'aamskfkasnff']);
+    return true;
 });
 
 Route::controller(VerificationsEmail::class)->group(function(){

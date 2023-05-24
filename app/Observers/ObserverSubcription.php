@@ -3,6 +3,8 @@
 namespace App\Observers;
 
 use App\Jobs\JobEmailSubscription;
+use App\Models\RoleSubscribtion;
+use App\Models\Subscribtion;
 use App\Models\User;
 
 class ObserverSubcription

@@ -7,6 +7,8 @@ use App\Models\User;
 use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use App\Models\Subscribtion;
+use App\Models\RoleSubscribtion;
 
 class VerifyTokensEmail{
 
@@ -22,6 +24,10 @@ class VerifyTokensEmail{
        $tokensVerify->create_at       = (new DateTime('now'))->format('Y-m-d H:i:s');
        $tokensVerify->expired_at      = $this->expiredTokens();
        $tokensVerify->save();
+       Subscribtion::create([
+            'subscription_role_id' => RoleSubscribtion::where('role_type', 'AF')->first()->id,
+            'id_role_subs'         => $users->id,
+        ]);
     }
 
     public function generateTokens() : string{

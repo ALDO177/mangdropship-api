@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -13,8 +14,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('subscribe_role_users', function (Blueprint $table) {
+        Schema::create('role_subscribtions', function (Blueprint $table) {
             $table->id();
+            $table->uuid('role_uuid')->default(Str::orderedUuid());
+            $table->string('role_type', 255);
+            $table->boolean('status_payment');
             $table->timestamps();
         });
     }
@@ -26,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subscribe_role_users');
+        Schema::dropIfExists('role_subscribtions');
     }
 };

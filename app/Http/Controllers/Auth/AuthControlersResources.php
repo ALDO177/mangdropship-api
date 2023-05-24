@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Service\AuthServiceController;
+use App\Service\ServiceSubscribtionInfo;
 use Illuminate\Http\Request;
 
 class AuthControlersResources extends Controller
 {
-    public function __construct(protected AuthServiceController $service)
+    public function __construct(protected ServiceSubscribtionInfo $info)
     {
         $this->middleware(['auth:api-users', 'token_verified']);
     }
 
     public function index()
     {
-        return $this->service->serviceIndex();
+        return $this->info->show();
     }
 
     public function store(Request $request)

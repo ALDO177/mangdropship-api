@@ -9,11 +9,6 @@ use Illuminate\Database\Seeder;
 
 class SubscribtionSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
        Subscribtion::create([
@@ -22,8 +17,8 @@ class SubscribtionSeeder extends Seeder
        ]);
        
        Subscribtion::create([
-        'subscription_role_id' => 1,
-        'id_role_subs' => 2,
+          'subscription_role_id' => 1,
+          'id_role_subs'         => 2,
        ]);
     }
 }

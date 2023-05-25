@@ -12,7 +12,7 @@ trait UuidSetGlobal
         parent::boot();
         static::creating(function ($model) {
             try {
-                $model->id = Generator::uuid4()->toString();
+                $model->uuid = Generator::uuid4()->toString();
             } catch (Exception $e) {
                 abort(500, $e->getMessage());
             }

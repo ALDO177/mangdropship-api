@@ -16,18 +16,24 @@ class VerifyTokensEmail{
 
     public function __construct(User $users)
     {
-       $this->tokens = Str::upper(Str::random(25));
-       $tokensVerify = new TokensVerify();
+        $this->tokens = Str::upper(Str::random(25));
+        $this->start($users);
+    }
+
+    protected function start(User $users){
+       $tokensVerify = new TokensVerify;
        $tokensVerify->tokens_type     = $this->tokens;
        $tokensVerify->tokens_id       = $users->id;
        $tokensVerify->id_tokens_users = $users->id;
        $tokensVerify->create_at       = (new DateTime('now'))->format('Y-m-d H:i:s');
        $tokensVerify->expired_at      = $this->expiredTokens();
-       $tokensVerify->save();
-       Subscribtion::create([
-            'subscription_role_id' => RoleSubscribtion::where('role_type', 'AF')->first()->id,
-            'id_role_subs'         => $users->id,
-        ]);
+       
+       if($tokensVerify->save()){
+            Subscribtion::create([
+                'subscription_role_id' => RoleSubscribtion::where('role_type', 'AF')->first()->id,
+                'id_role_subs'         => $users->id,
+            ]);
+       }
     }
 
     public function generateTokens() : string{

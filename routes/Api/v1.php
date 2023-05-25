@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\Auth\AuthControlersResources;
 use App\Http\Controllers\Auth\GuestAuthentication;
-use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function(){

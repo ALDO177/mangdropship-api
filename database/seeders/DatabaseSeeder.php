@@ -13,7 +13,9 @@ class DatabaseSeeder extends Seeder
         [
           User::class,
           RoleSubscribtionSeeder::class,
-          SubscribtionSeeder::class
+          SubscribtionSeeder::class,
+          PaidNoticeMangAccountSeeder::class,
+          PaidCategoryNoticeSeeder::class
         ]);
     }
 }

@@ -12,6 +12,9 @@ Route::prefix('v1')->group(function(){
             Route::get('logout', 'logout')->middleware(['auth:api-users', 'token_verified'])->name('mang.logout');
         });
     });
+    Route::prefix('paid-account')->group(function(){
+
+    });
     
     Route::apiResources([
         'subscribtion' => AuthControlersResources::class,

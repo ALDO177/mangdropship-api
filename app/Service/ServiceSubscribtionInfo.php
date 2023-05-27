@@ -2,7 +2,7 @@
 
 namespace App\Service{
 
-    use App\Http\Resources\ResourceApiArray;
+    use App\Http\Resources\ResourceResponseMangInfoAccount;
     use Illuminate\Http\Request;
 
     class ServiceSubscribtionInfo{
@@ -13,8 +13,10 @@ namespace App\Service{
             $usersInfo = auth()
                 ->user()
                 ->{'with'}(['subscribtions' => ['roleSubscribtions']])
-                ->where('id', auth()->user()->id)->first();
-            return ResourceApiArray::make($usersInfo);
+                ->where('id', auth()->user()->id)
+                ->first();
+
+            return ResourceResponseMangInfoAccount::make($usersInfo);
         }
     }
 }

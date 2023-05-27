@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\AuthControlersResources;
 use App\Http\Controllers\Auth\GuestAuthentication;
+use App\Http\Controllers\Paid\PaidAccountControllers;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->group(function(){
@@ -12,8 +13,12 @@ Route::prefix('v1')->group(function(){
             Route::get('logout', 'logout')->middleware(['auth:api-users', 'token_verified'])->name('mang.logout');
         });
     });
-    Route::prefix('paid-account')->group(function(){
 
+    Route::prefix('paid-mang-account')->group(function(){
+        Route::controller(PaidAccountControllers::class)->group(function(){
+            Route::get('list', 'List')->whereIn('sort', ['asc', 'desc'])->where(['sort' => '[a-z]+']);
+            Route::get('find', 'Find');
+        });
     });
     
     Route::apiResources([

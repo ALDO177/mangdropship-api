@@ -2,7 +2,6 @@
 
 namespace App\Service;
 use App\Http\Resources\SubscribtionResourcesResponse;
-use App\Jobs\JobEmailSubscription;
 use App\Models\User;
 use App\Trait\Help\ResponseMessage;
 use App\Trait\Help\withoutWreapArray;

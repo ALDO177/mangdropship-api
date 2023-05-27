@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ResourceApiArray extends JsonResource
+class ResourceResponseMangInfoAccount extends JsonResource
 {
     public function toArray($request)
     {
@@ -14,9 +14,7 @@ class ResourceApiArray extends JsonResource
             'email'                   => $this->email,
             'account_type_subs'       => $this->subscribtions,
             'offers_account'          => $this->when($this->offerKonditions($this->subscribtions), [
-                'upgrade'   => [
-                    'price' => 20000
-                ]
+                'upgrade'   => [ 'price' => 20000 ]
             ])
         ];
     }

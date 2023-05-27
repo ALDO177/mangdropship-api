@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+use App\Models\DiscountPaid;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -15,7 +17,8 @@ class DatabaseSeeder extends Seeder
           RoleSubscribtionSeeder::class,
           SubscribtionSeeder::class,
           PaidNoticeMangAccountSeeder::class,
-          PaidCategoryNoticeSeeder::class
+          PaidCategoryNoticeSeeder::class,
+          DiscountPaidSeeder::class,
         ]);
     }
 }

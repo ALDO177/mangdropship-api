@@ -4,11 +4,9 @@ namespace App\Trait\Table{
 
     use Illuminate\Support\Facades\Hash;
     use App\Models as DataModels;
-    use Illuminate\Database\Eloquent\Prunable;
 
     trait useTableUsers{
 
-        use Prunable;
 
         public function setPasswordAttribute($password) : void{
             $this->attributes['password'] = Hash::make($password);

@@ -10,11 +10,13 @@ class GuestAuthentication extends Controller
 {
     public function __construct(protected AuthServiceController $authService)
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware(['guest', 'api-mang-access'], ['except' => 'logout']);
     }
 
-    public function Login(){
-        return $this->authService->serviceLogin();
+    public function Login(Request $request){
+        if($request->routeIs('mang.login')){
+            return $this->authService->serviceLogin();
+        }
     }
 
     public function Register(){

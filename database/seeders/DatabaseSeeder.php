@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
           PaidNoticeMangAccountSeeder::class,
           PaidCategoryNoticeSeeder::class,
           DiscountPaidSeeder::class,
+          MangdropshipAccessApiSeeder::class
         ]);
     }
 }

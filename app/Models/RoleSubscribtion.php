@@ -23,4 +23,11 @@ class RoleSubscribtion extends Model
             return $value > 0 ? 'PAID' : 'FREE';
         });
     }
+
+    public static function checkRoleType(string $id) : bool{
+        if(is_null(static::where('role_type', $id)->first())){
+            return false;
+        }
+        return true;
+    }
 }

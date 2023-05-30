@@ -3,15 +3,18 @@
 namespace App\Observers;
 
 use App\Jobs\JobEmailSubscription;
-use App\Models\RoleSubscribtion;
-use App\Models\Subscribtion;
 use App\Models\User;
+use App\VerifyTokens\VerifyTokensEmail;
+use Illuminate\Support\Facades\Bus;
 
 class ObserverSubcription
 {
     public function created(User $user)
     {
-        JobEmailSubscription::dispatch($user);
+        Bus::chain([
+            new VerifyTokensEmail($user),
+            JobEmailSubscription::dispatch($user)
+        ]);
     }
 
     public function updated(User $user)

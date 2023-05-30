@@ -5,7 +5,6 @@ use App\Http\Resources\SubscribtionResourcesResponse;
 use App\Models\User;
 use App\Trait\Help\ResponseMessage;
 use App\Trait\Help\withoutWreapArray;
-use App\VerifyTokens\VerifyTokensEmail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -53,9 +52,9 @@ class AuthServiceController{
     public function serviceRegister(){
 
         $credentials = Validator::make($this->request->all(), [
-            'name'              => ['max:20', 'min:3', 'required', 'unique:users,name'],
-            'email'             => ['email', 'unique:users,email', 'required'],
-            'password'          => ['required', 'confirmed', 'min:6', 'string',
+            'name'          => ['max:20', 'min:3', 'required', 'unique:users,name'],
+            'email'         => ['email', 'unique:users,email', 'required'],
+            'password'      => ['required', 'confirmed', 'min:6', 'string',
                                     'regex:/[a-z]/','regex:/[A-Z]/','regex:/[0-9]/',
                                     'regex:/[@$!%*#?&]/',]]);
         if($credentials->fails()) 
@@ -65,7 +64,6 @@ class AuthServiceController{
                     ->setStatusCode(402);
 
         $createRegister = User::create($this->request->only(['name', 'email', 'password']));
-        new VerifyTokensEmail($createRegister);
         return SubscribtionResourcesResponse::make($createRegister)
                 ->response()
                 ->setStatusCode(201);

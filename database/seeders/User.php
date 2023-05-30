@@ -20,11 +20,5 @@ class User extends Seeder
             'email'    => 'aldo.ratmawan9999@gmail.com',
             'password' =>  'aldo12345'
         ]);
-        
-        ModelsUser::create([
-            'name'     => 'Otong',
-            'email'    => 'otong@gmail.com',
-            'password' =>  'aldo12345'
-        ]);
     }
 }

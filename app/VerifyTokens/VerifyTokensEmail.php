@@ -29,10 +29,12 @@ class VerifyTokensEmail{
        $tokensVerify->expired_at      = $this->expiredTokens();
        
        if($tokensVerify->save()){
-            Subscribtion::create([
-                'subscription_role_id' => RoleSubscribtion::where('role_type', 'AF')->first()->id,
-                'id_role_subs'         => $users->id,
-            ]);
+            if(RoleSubscribtion::checkRoleType('AF')){
+                Subscribtion::create([
+                    'subscription_role_id' => RoleSubscribtion::where('role_type', 'AF')->first()->id,
+                    'id_role_subs'         => $users->id,
+                ]);
+            }
        }
     }
 

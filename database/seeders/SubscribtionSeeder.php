@@ -15,10 +15,5 @@ class SubscribtionSeeder extends Seeder
         'subscription_role_id' => 1,
         'id_role_subs' => 1,
        ]);
-       
-       Subscribtion::create([
-          'subscription_role_id' => 1,
-          'id_role_subs'         => 2,
-       ]);
     }
 }

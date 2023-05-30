@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Providers;
-
-use App\Http\Resources\ResourcesResponseSubscribtions;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\ServiceProvider;
 

@@ -10,7 +10,8 @@ namespace App\Service{
         public function __construct(protected Request $request){}
 
         public function show(){
-            $usersInfo = auth()
+            $usersInfo = 
+            auth()
                 ->user()
                 ->{'with'}(['subscribtions' => ['roleSubscribtions']])
                 ->where('id', auth()->user()->id)

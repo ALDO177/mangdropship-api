@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Prunable;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class DiscountPaid extends Model
 {
@@ -19,11 +20,6 @@ class DiscountPaid extends Model
         'expire_at_disc',
         'offers_id'
     ];
-
-    // protected $casts = [
-    //     'expire_at_disc' => 'datetime:l, d-M-y H:i:s T',
-    //     'create_at_disc' => 'datetime:l, d-M-y H:i:s T'
-    // ];
 
     public function prunable()
     {

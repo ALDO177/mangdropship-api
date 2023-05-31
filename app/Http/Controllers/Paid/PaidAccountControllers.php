@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 
 class PaidAccountControllers extends Controller
 {
-    public function __construct(protected MangAccountService $accountService){ }
+    public function __construct(protected MangAccountService $accountService){
+        $this->middleware(['api-mang-access']);
+     }
     
     public function List(){
         return $this->accountService->serviceListPaid();

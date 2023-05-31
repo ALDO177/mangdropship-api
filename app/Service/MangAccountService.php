@@ -2,6 +2,7 @@
 
 namespace App\Service{
 
+    use App\Http\Resources\ApiResponseJson;
     use App\Http\Resources\ResourceResponseMangAccount;
     use App\Models\paidNoticeMangAccount;
     use Illuminate\Http\Request;
@@ -13,9 +14,7 @@ namespace App\Service{
             protected paidNoticeMangAccount $notice){}
 
         public function serviceListPaid(){
-            return ResourceResponseMangAccount::make(
-                $this->notice::getListPaid($this->request)
-            );
+            return ApiResponseJson::make($this->notice::getListPaid($this->request));
         }
     }
 }

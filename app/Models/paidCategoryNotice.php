@@ -10,7 +10,7 @@ class paidCategoryNotice extends Model
 {
     use HasFactory, useTablePaidCategory;
     public $incrementing = false;
-    public $timestamps = false;
+    public $timestamps   = false;
 
     protected $fillable = [
         'data',

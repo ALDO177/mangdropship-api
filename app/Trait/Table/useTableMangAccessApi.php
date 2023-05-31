@@ -15,12 +15,12 @@ namespace App\Trait\Table{
                 $model->access_tokens = bin2hex($bytes);
             });
         }
+        
         public static function AccessTokensApiMang(string $tokens) : bool{
 
             $accessTokens = static::where('access_tokens', $tokens)->first();
             if(!is_null($accessTokens) && !is_null($accessTokens->verified_at)) return true;
             return false;
         }
-
     }
 }

@@ -9,7 +9,7 @@ class ResourceResponseMangInfoAccount extends JsonResource
     public function toArray($request)
     {
         return[
-            'kode'                    => 201,
+            'code'                    => 201,
             'name'                    => $this->name,
             'email'                   => $this->email,
             'account_type_subs'       => $this->subscribtions,

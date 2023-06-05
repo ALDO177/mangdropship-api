@@ -11,11 +11,11 @@ Route::prefix('v1')->group(function(){
             Route::match(['post', 'put'], 'login', 'Login')
             ->name('mang.login');
             Route::match(['post', 'put'], 'register', 'Register')->name('mang.register');
-            Route::get('logout', 'logout')
-            ->middleware(['auth:api-users', 'token_verified'])
-            ->name('mang.logout');
+            Route::post('reset-password', 'ResetPassword')
+                ->name('mang.reset.password');
+            Route::get('logout', 'logout')->middleware(['auth:api-users', 'token_verified'])->name('mang.logout');
         });
-    });
+    })->name('mang.auth.point');
 
     Route::prefix('paid-mang-account')->group(function(){
         Route::controller(PaidAccountControllers::class)->group(function(){

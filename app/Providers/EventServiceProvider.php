@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Events\EventPasswordReset;
+use App\Listeners\ListenerNotificationPassword;
 use App\Models\User;
 use App\Observers\ObserverSubcription;
 use Illuminate\Auth\Events\Registered;
@@ -15,6 +17,9 @@ class EventServiceProvider extends ServiceProvider
         Registered::class => [
             SendEmailVerificationNotification::class,
         ],
+        EventPasswordReset::class => [
+            ListenerNotificationPassword::class
+        ]
     ];
 
     protected $observers = [

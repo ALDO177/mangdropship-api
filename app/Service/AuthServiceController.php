@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Service;
+
+use App\Http\Requests\RequestAuthentication;
+use App\Http\Resources\ApiResponseJson;
 use App\Http\Resources\SubscribtionResourcesResponse;
+use App\Models\PasswordAuthentications;
 use App\Models\User;
 use App\Trait\Help\ResponseMessage;
 use App\Trait\Help\withoutWreapArray;
@@ -44,6 +48,19 @@ class AuthServiceController{
         return SubscribtionResourcesResponse::make($this->AccAuthentication($tokens));
     }
 
+    public function serviceResetPassword(){
+       $creadentials = Validator::make($this->request->all(), ['email' => ['required', 'email']]);
+       if($creadentials->fails()) 
+            return ApiResponseJson::make($this->wreap($creadentials->messages()
+                ->toArray()))
+                ->response()
+                ->setStatusCode(403);
+
+        $konditions = PasswordAuthentications::CreateResetPassword('reset', $this->request->email);
+        if($konditions) return \response()->json(['message' => 'success']);
+        return response()->json(['messages' => 'error'], 404);
+    }
+
     public function serviceLogout(){
         auth()->logout();
         return SubscribtionResourcesResponse::make(['code' => 200, 'message' => 'logout success']);
@@ -64,8 +81,8 @@ class AuthServiceController{
                     ->setStatusCode(402);
 
         $createRegister = User::create($this->request->only(['name', 'email', 'password']));
-        return SubscribtionResourcesResponse::make($createRegister)
-                ->response()
-                ->setStatusCode(201);
+            return SubscribtionResourcesResponse::make($createRegister)
+                    ->response()
+                    ->setStatusCode(201);
     }
 }

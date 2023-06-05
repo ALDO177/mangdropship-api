@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Listeners\ListenerNotificationPassword;
 use App\Service\AuthServiceController;
 use Illuminate\Http\Request;
 
@@ -14,9 +15,14 @@ class GuestAuthentication extends Controller
     }
 
     public function Login(Request $request){
+        
         if($request->routeIs('mang.login')){
             return $this->authService->serviceLogin();
         }
+    }
+
+    public function ResetPassword(){
+        return $this->authService->serviceResetPassword();
     }
 
     public function Register(){

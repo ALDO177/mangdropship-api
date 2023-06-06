@@ -2,11 +2,11 @@
 
 namespace App\Listeners;
 
-use App\Events\EventPasswordReset;
+use App\Events\EventAuthentication;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 
-class ListenerNotificationPassword
+class ListenerAuthentication
 {
     /**
      * Create the event listener.
@@ -18,14 +18,8 @@ class ListenerNotificationPassword
         //
     }
 
-    /**
-     * Handle the event.
-     *
-     * @param  \App\Events\EventPasswordReset  $event
-     * @return void
-     */
-    public function handle(EventPasswordReset $event)
+    public function handle(EventAuthentication $event)
     {
-        //
+         $event->passwordAuthentications->status = 'asnfuihasuf';
     }
 }

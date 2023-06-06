@@ -10,10 +10,12 @@ return new class extends Migration
     {
         Schema::create('password_authentications', function (Blueprint $table) {
             $table->uuid('uuid');
+            $table->bigInteger('id_verify');
             $table->string('email');
             $table->primary('uuid');
             $table->string('token');
             $table->enum('type', ['reset', 'forgot']);
+            $table->string('status')->nullable();
             $table->timestamp('start_at');
             $table->timestamp('end_at');
         });

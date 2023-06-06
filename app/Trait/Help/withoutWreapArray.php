@@ -11,6 +11,6 @@ trait withoutWreapArray{
         foreach($data as $key => $value){
             $array[$key] = Arr::first($value);
         }
-        return $array;
+        return['error_validations' =>  $array];
     }
 }

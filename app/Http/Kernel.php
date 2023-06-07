@@ -50,7 +50,7 @@ class Kernel extends HttpKernel
     /**
      * The application's route middleware.
      *
-     * These middleware may be assigned to groups or used individually.
+     * These middleware may be assigned to groups or used individually. LocalizationSetMiddleware
      *
      * @var array<string, class-string|string>
      */
@@ -69,5 +69,6 @@ class Kernel extends HttpKernel
         'handle_verify_email' => \App\Http\Middleware\HandleVerifyEmail::class,
         'api-mang-access' => \App\Http\Middleware\TokensAccessApi::class,
         'api-handle-end-point' => \App\Http\Middleware\ApiHandleEndPoint::class,
+        'localization'         => \App\Http\Middleware\LocalizationSetMiddleware::class
     ];
 }

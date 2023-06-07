@@ -19,7 +19,7 @@ namespace App\Trait\Table {
                 $model->token = md5($randomByte);
                 $model->uuid  = Uuid::uuid4()->toString();
                 $model->start_at = static::SettingDated('now');
-                $model->end_at   = static::SettingDated('now +120 minutes');
+                $model->end_at   = static::SettingDated('now +1 minutes');
             });
         }
 

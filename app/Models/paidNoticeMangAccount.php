@@ -10,11 +10,4 @@ class paidNoticeMangAccount extends Model
 {
     use HasFactory, useTablePaidAccount;
     public $timestamps   = false;
-
-    protected static function booted()
-    {
-        static::retrieved(function(Model $model){
-            $model->id === 5 ? 100 : $model->id;
-        });
-    }
 }

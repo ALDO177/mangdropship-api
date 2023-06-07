@@ -14,7 +14,6 @@ use Illuminate\Support\Facades\Validator;
 class AuthServiceController
 {
     use withoutWreapArray, ResponseMessage;
-
     public function __construct(protected Request $request){}
 
     public function serviceIndex()
@@ -30,39 +29,45 @@ class AuthServiceController
         ]);
 
         if ($credentials->fails())
-            $responses = $this->messageNotAuth(400, 'error-validations', $credentials->messages()->toArray());
-            return response()->json($responses);
+            $responses = $this->messageNotAuth(
+                400,
+                __('messages.messages_errors', ['type' => 'Login']),
+                $credentials->messages()->toArray()
+            ); return response()->json($responses);
 
-        // Authorization Validation
         if (!$tokens = auth('api-users')->attempt($this->request->only(['email', 'password']))) {
-            return SubscribtionResourcesResponse::make($this->AccAuthentication($tokens))
+            return SubscribtionResourcesResponse::make(
+                $this->AccAuthentication($tokens, __('messages.messages_success', ['name' => 'Login'])))
                 ->response()
                 ->setStatusCode(201);
         }
-        return SubscribtionResourcesResponse::make($this->AccAuthentication($tokens));
+        return SubscribtionResourcesResponse::make(['error' => true])->response()->setStatusCode('400');
     }
 
     public function serviceResetPassword()
     {
         $creadentials = Validator::make($this->request->all(), ['email' => ['required', 'email']]);
         if ($creadentials->fails())
-                return ApiResponseJson::make($this->wreap($creadentials->messages()
+            return ApiResponseJson::make($this->wreap($creadentials->messages()
                 ->toArray()))
                 ->response()
                 ->setStatusCode(403);
 
-        if(PasswordAuthentications::DuplicatedResetPassword($this->request->email)){
+        if (PasswordAuthentications::DuplicatedResetPassword($this->request->email)) {
             return SubscribtionResourcesResponse::make(
-                ['code' => 201, 'error' => false, 'messagesd' => 'Account Password Reset Success']
+                $this->messagesSuccess(__('messages.messages_success', ['name' => 'Reset Password']))
             );
         }
 
         $konditions = PasswordAuthentications::CreateResetPassword('reset', $this->request->email);
-        if ($konditions) return SubscribtionResourcesResponse::make(
-            ['code' => 201, 'error' => false, 'messages' => 'Account Password Reset Success']);
+        if ($konditions)
+            return SubscribtionResourcesResponse::make(
+                $this->messagesSuccess(__('messages.messages_success', ['name' => 'Update Reset Password']))
+            );
 
         return SubscribtionResourcesResponse::make(
-            $this->messageAuth(400, 'Reset password error', fn() => ['url' => env('APP_SERVER_APPLICATION')]))
+            $this->messageAuth(400, 'Reset password error',
+            fn () => ['url' => env('APP_SERVER_APPLICATION')]))
             ->response()->setStatusCode(400);
     }
 
@@ -70,10 +75,7 @@ class AuthServiceController
     {
         auth()->logout();
         return SubscribtionResourcesResponse::make(
-            [
-                'code'    => 200,
-                'message' => 'logout success'
-            ]
+            $this->messagesSuccess(__('messages.messages_success', ['name' => 'Logout']))
         );
     }
 
@@ -82,21 +84,23 @@ class AuthServiceController
         $credentials = Validator::make($this->request->all(), [
             'name'          => ['max:20', 'min:3', 'required', 'unique:users,name'],
             'email'         => ['email', 'unique:users,email', 'required'],
-            'password'      => [
-                'required', 'confirmed', 'min:6', 'string',
+            'password'      => ['required', 'confirmed', 'min:6', 'string',
                 'regex:/[a-z]/', 'regex:/[A-Z]/', 'regex:/[0-9]/',
                 'regex:/[@$!%*#?&]/',
             ]
         ]);
+
         if ($credentials->fails())
             return SubscribtionResourcesResponse::make(
-                $this->messageNotAuth(400, 'error-validations', $credentials->messages()->toArray()))
+                $this->messageNotAuth(400, __('messages.messages_errors', ['type' => 'Register']), 
+                $credentials->messages()->toArray()))
                 ->response()
                 ->setStatusCode(400);
-
+                
         User::create($this->request->only(['name', 'email', 'password']));
-            return SubscribtionResourcesResponse::make($this->messageAuth(201, 'Ok', fn() => ['url' => env('APP_SERVER_APPLICATION')]))
-                ->response()
-                ->setStatusCode(201);
+        return SubscribtionResourcesResponse::make($this->messageAuth(201, 'Ok', 
+               fn () => ['url' => env('APP_SERVER_APPLICATION')]))
+               ->response()
+               ->setStatusCode(201);
     }
 }

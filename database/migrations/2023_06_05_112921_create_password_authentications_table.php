@@ -9,6 +9,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('password_authentications', function (Blueprint $table) {
+            $table->softDeletes();
             $table->uuid('uuid');
             $table->bigInteger('id_verify');
             $table->string('email');
@@ -18,6 +19,7 @@ return new class extends Migration
             $table->string('status')->nullable();
             $table->timestamp('start_at');
             $table->timestamp('end_at');
+            $table->timestamps();
         });
     }
 

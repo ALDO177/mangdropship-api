@@ -1,16 +1,16 @@
 <?php
 
 namespace App\Models;
-
-use App\Interface\Auth\interfaceAuthentication;
 use App\Trait\Table\useTableResetPassword;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\MassPrunable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class PasswordAuthentications extends Model
 {
-    public $timestamps = false;
-    use HasFactory, useTableResetPassword;
+    use HasFactory, useTableResetPassword, MassPrunable, SoftDeletes;
 
     protected $fillable = [
         'id_verify',
@@ -23,7 +23,17 @@ class PasswordAuthentications extends Model
     ];
 
     protected $casts = [
-        'start_at' => 'datetime: Y-m-s H:i:s',
-        'end_at'   => 'datetime: Y-m-s H:i:s',
+        'start_at' => 'datetime: Y-m-d H:i:s',
+        'end_at'   => 'datetime: Y-m-d H:i:s',
     ];
+
+    public function prunable() : Builder
+    {
+       return static::where('end_at', '<', now()->subMinute());
+    }
+
+    protected function pruning() : void{
+        //.....
+    }
+
 }

@@ -6,12 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Listeners\ListenerNotificationPassword;
 use App\Service\AuthServiceController;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class GuestAuthentication extends Controller
 {
     public function __construct(protected AuthServiceController $authService)
     {
-        $this->middleware(['guest', 'api-mang-access'], ['except' => 'logout']);
+        $this->middleware(['guest', 'api-mang-access', 'localization'], ['except' => 'logout']);
     }
 
     public function Login(Request $request){

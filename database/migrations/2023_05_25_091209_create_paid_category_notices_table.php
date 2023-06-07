@@ -17,15 +17,10 @@ return new class extends Migration
             $table->id();
             $table->foreignId('paid_category')->constrained('paid_notice_mang_accounts');
             $table->bigInteger('paid_price');
-            $table->json('data');
+            $table->text('data');
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('paid_category_notices');

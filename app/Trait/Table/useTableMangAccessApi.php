@@ -1,8 +1,7 @@
 <?php
 
 namespace App\Trait\Table{
-
-    use Generator;
+    
     use Ramsey\Uuid\Uuid;
 
     trait useTableMangAccessApi{
@@ -12,7 +11,7 @@ namespace App\Trait\Table{
             static::creating(function($model){
                 $bytes = random_bytes(20);
                 $model->uuid = Uuid::uuid4();
-                $model->access_tokens = bin2hex($bytes);
+                $model->access_tokens = '2e308c31c60fdd04788465b3e241a513ab1061bf';
             });
         }
         

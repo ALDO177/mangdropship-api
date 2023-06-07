@@ -17,9 +17,4 @@ class paidCategoryNotice extends Model
         'paid_price',
         'paid_category'
     ];
-
-    protected $casts = [
-        'data' => 'array'
-    ];
-
 }

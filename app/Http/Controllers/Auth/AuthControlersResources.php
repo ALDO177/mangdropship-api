@@ -10,7 +10,7 @@ class AuthControlersResources extends Controller
 {
     public function __construct(protected ServiceSubscribtionInfo $info)
     {
-        $this->middleware(['auth:api-users', 'token_verified']);
+        $this->middleware(['auth:api-users', 'token_verified', 'localization']);
     }
 
     public function index()

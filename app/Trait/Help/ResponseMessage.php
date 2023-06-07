@@ -16,11 +16,27 @@ trait ResponseMessage{
         return array_merge_recursive($globalsResponse, $this->wreap($arrays));
     }
 
-    public function AccAuthentication(string $tokens){
+    public function messagesError(?string $messages, int $code = 400){
+        return [
+            'code'      => $code,
+            'error'     => $code >= 400 ? true : false,
+            'message'   => $messages,
+        ];
+    }
+
+    public function AccAuthentication(?string $tokens, string $messages ){
         return [
             'code'     => 201,
-            'message'  => 'Ok',
+            'message'  => $messages,
             'tokens'   => $tokens,
+        ];
+    }
+
+    public function messagesSuccess(?string $messages, int $code = 201){
+        return [
+            'code'      => $code,
+            'error'     => $code >= 400 ? true : false,
+            'message'   => $messages,
         ];
     }
 

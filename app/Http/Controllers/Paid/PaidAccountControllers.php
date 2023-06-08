@@ -8,7 +8,7 @@ use App\Service\MangAccountService;
 class PaidAccountControllers extends Controller
 {
     public function __construct(protected MangAccountService $accountService){
-        $this->middleware(['api-mang-access', 'localization']);
+        $this->middleware(['api-seller-access']);
      }
     
     public function List(){

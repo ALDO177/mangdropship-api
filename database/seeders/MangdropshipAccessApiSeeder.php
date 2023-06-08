@@ -17,8 +17,16 @@ class MangdropshipAccessApiSeeder extends Seeder
     {
         
         MangdropshipAccessApi::create([
-            'name'          => 'Mngdropshi.Id',
+            'name'          => 'Mngdropship.Id',
             'email'         => 'mangdropship@gmail.com',
+            'for'           => 'seller',
+            'verified_at'   => now()->format('Y-m-d H:i:s')
+        ]);
+
+        MangdropshipAccessApi::create([
+            'name'          => 'Mngdropship.Mangseller',
+            'email'         => 'mangdropshipSeller@gmail.com',
+            'for'           => 'mangseller',
             'verified_at'   => now()->format('Y-m-d H:i:s')
         ]);
     }

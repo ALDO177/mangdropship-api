@@ -23,6 +23,7 @@ class Kernel extends HttpKernel
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \Fruitcake\Cors\HandleCors::class,
+        // \App\Http\Middleware\TokensAccessApi::class,
     ];
 
     /**
@@ -67,8 +68,10 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
         'token_verified' => \App\Http\Middleware\VerifiedEmail::class,
         'handle_verify_email' => \App\Http\Middleware\HandleVerifyEmail::class,
-        'api-mang-access' => \App\Http\Middleware\TokensAccessApi::class,
+        'api-seller-access' => \App\Http\Middleware\TokensAccessApi::class,
+        'api-mang-seller-access' => \App\Http\Middleware\Mangseller\AccessXapi::class,
         'api-handle-end-point' => \App\Http\Middleware\ApiHandleEndPoint::class,
-        'localization'         => \App\Http\Middleware\LocalizationSetMiddleware::class
+        'localization'         => \App\Http\Middleware\LocalizationSetMiddleware::class,
+        'asign.guard'          => \App\Http\Middleware\AsignGuard::class,
     ];
 }

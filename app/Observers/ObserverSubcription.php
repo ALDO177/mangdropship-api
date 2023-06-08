@@ -11,10 +11,10 @@ class ObserverSubcription
 {
     public function created(User $user)
     {
-        Bus::chain([
-            new VerifyTokensEmail($user),
-            JobEmailSubscription::dispatch($user)
-        ]);
+        // Bus::chain([
+        //     new VerifyTokensEmail($user),
+        //     JobEmailSubscription::dispatch($user)
+        // ]);
     }
 
     public function updated(User $user)

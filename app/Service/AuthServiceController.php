@@ -29,16 +29,16 @@ class AuthServiceController
         ]);
 
         if ($credentials->fails())
-            $responses = $this->messageNotAuth(400,
+            $response = $this->messageNotAuth(400,
                 __('messages.messages_errors', ['type' => 'Login']),
                 $credentials->messages()->toArray()
             ); 
              
-            return response()->json($responses);
+            return response()->json([$response]);
 
         if (!$tokens = auth('api-users')->attempt($this->request->only(['email', 'password']))) {
             return SubscribtionResourcesResponse::make(
-                $this->AccAuthentication($tokens, __('messages.messages_success', ['name' => 'Login'])))
+                $this->AccAuthentication($tokens, __('messages.messages_success', ['name' => 'Login Users'])))
                 ->response()
                 ->setStatusCode(201);
         }

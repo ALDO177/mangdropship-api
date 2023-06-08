@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard'     => 'web',
         'passwords' => 'users',
     ],
 
@@ -40,11 +40,12 @@ return [
             'driver'   => 'session',
             'provider' => 'users',
         ],
-        'admin' => [
-            'driver'   => 'token',
-            'provider' => 'users',
-            'hash'     => false,
+
+        'admins' => [
+            'driver'   => 'jwt',
+            'provider' => 'admins',
         ],
+
         'api-users' => [
             'driver'   => 'jwt',
             'provider' => 'users',
@@ -71,13 +72,13 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model'  => App\Models\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        
+        'admins' => [
+            'driver' => 'eloquent',
+            'model'  => App\Models\MangSeller\Admin::class,
+        ]
     ],
 
     /*
@@ -98,6 +99,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table'    => 'password_resets',
+            'expire'   => 60,
+            'throttle' => 60,
+        ],
+        'admins' => [
+            'provider' => 'admins',
             'table'    => 'password_resets',
             'expire'   => 60,
             'throttle' => 60,

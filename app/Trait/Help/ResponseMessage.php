@@ -24,7 +24,7 @@ trait ResponseMessage{
         ];
     }
 
-    public function AccAuthentication(?string $tokens, string $messages ){
+    public function AccAuthentication($tokens, string $messages ){
         return [
             'code'     => 201,
             'message'  => $messages,

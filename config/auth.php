@@ -18,23 +18,6 @@ return [
         'passwords' => 'users',
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Authentication Guards
-    |--------------------------------------------------------------------------
-    |
-    | Next, you may define every authentication guard for your application.
-    | Of course, a great default configuration has been defined for you
-    | here which uses session storage and the Eloquent user provider.
-    |
-    | All authentication drivers have a user provider. This defines how the
-    | users are actually retrieved out of your database or other storage
-    | mechanisms used by this application to persist your user's data.
-    |
-    | Supported: "session"
-    |
-    */
-
     'guards' => [
         'web' => [
             'driver'   => 'session',
@@ -50,6 +33,11 @@ return [
             'driver'   => 'jwt',
             'provider' => 'users',
         ],
+        
+        'mang-sellers' =>[
+            'driver'   => 'jwt',
+            'provider' => 'mang-sellers',
+        ]
     ],
 
     /*
@@ -70,15 +58,20 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'users' => [  // Dropshiper or Afiliate
             'driver' => 'eloquent',
             'model'  => App\Models\User::class,
         ],
-        
+
         'admins' => [
             'driver' => 'eloquent',
             'model'  => App\Models\MangSeller\Admin::class,
-        ]
+        ],
+
+        'mang-sellers' => [
+            'driver' => 'eloquent',
+            'model'  => App\Models\MangSellerModels\MangSellers::class,
+        ],
     ],
 
     /*
@@ -109,6 +102,13 @@ return [
             'expire'   => 60,
             'throttle' => 60,
         ],
+
+        'mang-sellers' =>[
+            'provider' => 'mang-sellers',
+            'table'    => 'password_resets',
+            'expire'   => 60,
+            'throttle' => 60,
+        ]
     ],
 
     /*

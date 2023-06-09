@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('access_tokens', 255);
-            $table->enum('for', ['seller', 'mangseller']);
+            $table->enum('for', ['mangseller', 'admins', 'dropship']);
             $table->timestamp('verified_at')->nullable();
             $table->timestamps();
         });

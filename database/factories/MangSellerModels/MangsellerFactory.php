@@ -1,20 +1,14 @@
 <?php
 
-namespace Database\Factories\MangSeller;
-
+namespace Database\Factories\MangSellerModels;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MangSeller\Admin>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\MangSellerModels\Mangseller>
  */
-class AdminFactory extends Factory
+class MangsellerFactory extends Factory
 {
-    /**
-     * Define the model's default state.
-     *
-     * @return array<string, mixed>
-     */
     public function definition()
     {
         return [
@@ -26,11 +20,6 @@ class AdminFactory extends Factory
         ];
     }
 
-    /**
-     * Indicate that the model's email address should be unverified.
-     *
-     * @return static
-     */
     public function unverified()
     {
         return $this->state(fn (array $attributes) => [

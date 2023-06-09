@@ -33,7 +33,7 @@ class PasswordAuthentications extends Model
     }
 
     protected function pruning() : void{
-        //.....
+        //..... mysql
     }
 
 }

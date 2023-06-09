@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Mangseller\AuthMangseller;
-use Illuminate\Http\Request;
+use App\Http\Controllers\Mangseller\MangsellerAccess;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('mang-seller')->group(function(){
@@ -11,7 +11,7 @@ Route::prefix('mang-seller')->group(function(){
         });
     });
 
-    Route::get('test-santum', function(Request $request){
-        return $request->user();
-    })->middleware(['auth:sanctum']);
+    Route::controller(MangsellerAccess::class)->group(function(){
+        Route::get('info', 'info');
+    });
 });

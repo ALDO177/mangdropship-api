@@ -16,7 +16,6 @@ namespace App\Trait\Table{
         }
         
         public static function AccessTokensApiMang(string $tokens) : bool{
-
             $accessTokens = static::where('access_tokens', $tokens)->first();
             if(!is_null($accessTokens) && !is_null($accessTokens->verified_at) 
                 && $accessTokens->for === 'seller') return true;

@@ -17,16 +17,23 @@ class MangdropshipAccessApiSeeder extends Seeder
     {
         
         MangdropshipAccessApi::create([
-            'name'          => 'Mngdropship.Id',
+            'name'          => 'Mangdropship.Id',
             'email'         => 'mangdropship@gmail.com',
-            'for'           => 'seller',
+            'for'           => 'dropship',
             'verified_at'   => now()->format('Y-m-d H:i:s')
         ]);
 
         MangdropshipAccessApi::create([
-            'name'          => 'Mngdropship.Mangseller',
+            'name'          => 'Mangdropship.Mangseller',
             'email'         => 'mangdropshipSeller@gmail.com',
             'for'           => 'mangseller',
+            'verified_at'   => now()->format('Y-m-d H:i:s')
+        ]);
+
+        MangdropshipAccessApi::create([
+            'name'          => 'Mangdropship.Admin',
+            'email'         => 'mangdropshipAdmin@gmail.com',
+            'for'           => 'admins',
             'verified_at'   => now()->format('Y-m-d H:i:s')
         ]);
     }

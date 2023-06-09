@@ -1,21 +1,22 @@
 <?php
 
-namespace App\Models\MangSeller;
+namespace App\Models\MangSellerModels;
 
 use App\Trait\JwtActionTable;
 use App\Trait\Table\Mangseller\useTableMangSeller;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Admins;
+use Illuminate\Foundation\Auth\User as Authenticable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Hash;
+use Laravel\Sanctum\HasApiTokens;
 use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class Admin extends Admins implements JWTSubject
+class MangSellers extends Authenticable implements JWTSubject
 {
-    use HasFactory, 
+    use HasApiTokens,
+        HasFactory, 
         Notifiable, 
-        JwtActionTable, 
-        useTableMangSeller;
+        useTableMangSeller,
+        JwtActionTable;
 
     protected $fillable = [
         'name',
@@ -29,11 +30,7 @@ class Admin extends Admins implements JWTSubject
     ];
 
     protected $casts = [
-        'id'    => 'string',
+        'id'                => 'string',
         'email_verified_at' => 'datetime',
     ];
-
-    public function setPasswordAttribute($password) : void{
-        $this->attributes['password'] = Hash::make($password);
-    }
 }

@@ -14,29 +14,15 @@ use Throwable;
 class Handler extends ExceptionHandler
 {
     use ResponseMessage;
-    /**
-     * A list of exception types with their corresponding custom log levels.
-     *
-     * @var array<class-string<\Throwable>, \Psr\Log\LogLevel::*>
-     */
+
     protected $levels = [
         //
     ];
 
-    /**
-     * A list of the exception types that are not reported.
-     *
-     * @var array<int, class-string<\Throwable>>
-     */
     protected $dontReport = [
         //
     ];
 
-    /**
-     * A list of the inputs that are never flashed to the session on validation exceptions.
-     *
-     * @var array<int, string>
-     */
     protected $dontFlash = [
         'current_password',
         'password',
@@ -46,9 +32,10 @@ class Handler extends ExceptionHandler
     public function register()
     {
         $this->reportable(function (Throwable $e) {});
+
         $this->renderable(function(RouteNotFoundException $error, Request $request){
            if($request->is('api/v1/*')){
-            return response()->json($this->messageNotAuth(), 401);
+            return response()->json($this->messageNotAuth(401, 'Route Not Found', ['error' => true]), 401);
            }
         });
         
@@ -57,6 +44,19 @@ class Handler extends ExceptionHandler
                 return response()->json(['users' => $request->user(), 'message' => $error->getMessage()], 401);
             }else{
                 abort(403, $error->getMessage());
+            }
+         });
+
+         $this->renderable(function(ErrorException $error, Request $request){
+            if($request->is('api/mang-seller/*')){
+                return response()->json(['users' => $request->user(), 'message' => $error->getMessage()], 400);
+            }else{
+                return response()->json(
+                    $this->messagesError(
+                        __('messages.error_exception',
+                        ['name' => env('APP_URL') . '/api/mang-seller/*'])),
+                        400
+                );
             }
          });
 

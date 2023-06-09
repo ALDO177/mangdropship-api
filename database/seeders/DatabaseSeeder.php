@@ -1,10 +1,6 @@
 <?php
 
 namespace Database\Seeders;
-
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
-use App\Models\DiscountPaid;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,8 +9,8 @@ class DatabaseSeeder extends Seeder
     {
        return $this->call(
         [
-          AdminSeeder::class,
           User::class,
+          MangsellerSeeder::class,
           RoleSubscribtionSeeder::class,
           SubscribtionSeeder::class,
           PaidNoticeMangAccountSeeder::class,

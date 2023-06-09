@@ -20,7 +20,7 @@ class AccessXapi
                 }
             }
         }
-
+        
         return response()
              ->json($this->messagesError(
              __('messages.messages_errors', ['type' => 'Token Mangseller'])),

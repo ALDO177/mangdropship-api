@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Models\SocialMedia;
+namespace App\Models\Admin;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class TypeLoginAuth extends Model
+class AdminMangdropship extends Model
 {
     use HasFactory;
 }

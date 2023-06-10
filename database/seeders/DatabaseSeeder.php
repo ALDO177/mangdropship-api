@@ -10,6 +10,7 @@ class DatabaseSeeder extends Seeder
        return $this->call(
         [
           User::class,
+          AdminMangdropshipSeeder::class,
           MangsellerSeeder::class,
           RoleSubscribtionSeeder::class,
           SubscribtionSeeder::class,

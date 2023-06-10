@@ -28,5 +28,12 @@ namespace App\Trait\Table{
                 && $accessTokens->for === 'mangseller') return true;
             return false;
         }
+
+        public static function AccessTokenApiMangAdmin(string $tokens){
+            $accessTokens = static::where('access_tokens', $tokens)->first();
+            if(!is_null($accessTokens) && !is_null($accessTokens->verified_at) 
+                && $accessTokens->for === 'admins') return true;
+            return false;
+        }
     }
 }

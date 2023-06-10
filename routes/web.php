@@ -5,8 +5,7 @@ use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    Redis::command('set', ['aldo', 'aamskfkasnff']);
-    return true;
+    return view('NoticeSubscribtions', ['route' => 'akdioanicnaic']);
 });
 
 Route::controller(VerificationsEmail::class)->group(function(){

@@ -70,6 +70,7 @@ class Kernel extends HttpKernel
         'handle_verify_email' => \App\Http\Middleware\HandleVerifyEmail::class,
         'api-seller-access' => \App\Http\Middleware\TokensAccessApi::class,
         'api-mang-seller-access' => \App\Http\Middleware\Mangseller\AccessXapi::class,
+        'api-mang-admin-access' => \App\Http\Middleware\MangAdmin\MangAdminAcceesApi::class,
         'api-handle-end-point' => \App\Http\Middleware\ApiHandleEndPoint::class,
         'localization'         => \App\Http\Middleware\LocalizationSetMiddleware::class,
         'asign.guard'          => \App\Http\Middleware\AsignGuard::class,

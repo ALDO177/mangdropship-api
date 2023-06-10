@@ -19,7 +19,7 @@ namespace App\Trait\Table{
         public function subscribtions(){
             return $this->hasMany(DataModels\Subscribtion::class, 'id_role_subs', 'id');
         }
-
+        
         public static function findEmail(string $email){
             return static::where('email', $email)->first();
         }

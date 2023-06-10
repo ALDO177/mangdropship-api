@@ -8,6 +8,7 @@ namespace App\Service\MangSellerServices{
     use App\Trait\Help\withoutWreapArray;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Auth;
+    use Illuminate\Support\Facades\Hash;
     use Illuminate\Support\Facades\Validator;
 
     class AuthMangsellerService{
@@ -30,20 +31,25 @@ namespace App\Service\MangSellerServices{
             
             if(Auth::guard('mang-sellers')){
                  $users  = MangSellers::findWithEmail($this->request->email);
-                 if(!is_null($users)){
-                    $tokens = auth('mang-sellers')->{'setTTL'}(intval(env('MANG_SELLER_EXPIRED_TOKEN')))
-                              ->login($users);
-                    return SubscribtionResourcesResponse::make(
-                        $this->AccAuthentication($tokens, __('messages.messages_success',
-                        ['name' => 'Login Mangseller']))
-                    );
+                 if(! $users || ! Hash::check($this->request->password, $users->password)){
+                    return response()->json(
+                    $this->messagesError(__('messages.messages_errors', 
+                    ['type' => __('messages.wrong_email_pass')])));
                  }
             }
 
-            return response()->json(
-                $this->messagesError(__('messages.messages_errors', 
-                   ['type' => __('messages.wrong_email_pass')]))
+            $tokens = auth('mang-sellers')
+                ->{'setTTL'}(intval(env('MANG_SELLER_EXPIRED_TOKEN')))
+                ->login($users);
+
+            return SubscribtionResourcesResponse::make(
+                $this->AccAuthentication($tokens, __('messages.messages_success',
+                ['name' => 'Login Mangseller']))
             );
+        }
+
+        public function serviceRegister(){
+
         }
     }
 }

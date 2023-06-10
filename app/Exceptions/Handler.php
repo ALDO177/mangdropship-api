@@ -54,8 +54,7 @@ class Handler extends ExceptionHandler
                 return response()->json(
                     $this->messagesError(
                         __('messages.error_exception',
-                        ['name' => env('APP_URL') . '/api/mang-seller/*'])),
-                        400
+                        ['name' => env('APP_URL') . '/api/mang-seller/*'])), 401
                 );
             }
          });

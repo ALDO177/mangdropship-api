@@ -13,6 +13,7 @@ class SubscribtionMailSending extends Mailable
 {
     use Queueable, SerializesModels;
     public string $tokens;
+    
     public function __construct(string $tokens)
     {
         $this->tokens = $tokens;

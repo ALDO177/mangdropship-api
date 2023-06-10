@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Email Verification</title>
-    <link rel="stylesheet" href="https://mangdropship-v2.oss-ap-southeast-5.aliyuncs.com/storage/mang-style.min.css">
-</head>
-<body class="bg-light">
-    <div class="d-flex justify-content-center mt-4 align-items-center" style="height: 90vh;">
+
+@extends('Main')
+
+@section('bodys')
+      <div class="d-flex justify-content-center mt-4 align-items-center" style="height: 90vh;">
         <div class="card border-0 shadow-lg" style="width: 25rem;">
             <img src="https://mangdropship-v2.oss-ap-southeast-5.aliyuncs.com/storage/undraw_secure_login_pdn4.svg" class="card-img-top" alt="...">
             <div class="card-body text-center p-4">
@@ -24,5 +18,4 @@
              <a href="{{ $route }}" class="text-decoration-none btn btn-info text-white">Verify Your Account</a>
         </div>
     </div>
-</body>
-</html>
+@endsection

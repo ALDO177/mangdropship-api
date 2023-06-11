@@ -36,4 +36,10 @@ class PasswordAuthentications extends Model
         //..... mysql
     }
 
+    public function vivotTest() : void{
+         $this->retrieved(function(Model $model){
+             $model->email = strtoupper($model->email);
+         });
+    }
+
 }

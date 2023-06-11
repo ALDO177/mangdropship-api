@@ -2,8 +2,9 @@
 
 namespace App\Trait\Table {
 
-    use App\Models\Seller\SelersHistoryAuth;
-    use App\Models\User;
+    use App\Jobs\JobEmailMangAdmin;
+    use App\Models\Admin\AdminMangdropship;
+    use App\Models\MangSellerModels\MangSellers;
     use DateTime;
     use Illuminate\Database\Eloquent\Model;
     use Ramsey\Uuid\Uuid;
@@ -23,19 +24,6 @@ namespace App\Trait\Table {
             });
         }
 
-        protected static function booted(): void
-        {
-            static::created(function (Model $model) {
-                $model->makeHidden(['uuid']);
-                SelersHistoryAuth::create([
-                    'type'          => $model->type,
-                    'data'          => $model->toArray(),
-                    'user_id'       => $model->id_verify,
-                    'info_messages' => message_activation_created,
-                ]);
-            });
-        }
-
         protected static function SettingDated(string $options = 'now')
         {
             $createdAt = new DateTime($options);
@@ -46,28 +34,50 @@ namespace App\Trait\Table {
             return static::where('uuid', $uuid)->first();
         }
 
-        public static function DuplicatedResetPassword(string $email): bool
+        public static function DuplicatedResetPassword(string $email, string $status): bool
         {
-            $duplicated = static::where('email', $email)->where('type', 'reset')->first();
+            $duplicated = static::where('email', $email)
+                          ->where('type', 'reset')
+                          ->where('status', $status)
+                          ->first();
+
             if (!is_null($duplicated)) {
                 static::where('email', $email)->update(
-                    ['token'   => md5(random_bytes(16)), 
-                    'start_at' => static::SettingDated('now'),
-                    'end_at'   => static::SettingDated('now +120 minutes')]
+                    ['token'    => md5(random_bytes(16)), 
+                     'start_at' => static::SettingDated('now'),
+                     'end_at'   => static::SettingDated('now +120 minutes')]
                 );
+                dispatch(new JobEmailMangAdmin($duplicated));
                 return true;
             }
             return false;
         }
                 
-        public static function CreateResetPassword(string $type, string $email): bool
+        public static function CreateResetPassword(string $type, string $email, string $status): bool
         {
-            $emailAuth  = User::findEmail($email);
-            if ($emailAuth) {
-                $created = static::create(['type' => $type, 'email' => $email, 'id_verify' => $emailAuth->id]);
-                if ($created) return true;
+            switch($status){
+                case 'admins':
+                    $users = AdminMangdropship::findWithEmail($email);
+                    return static::ModelControlAuth($users, $type, $email, $status);
+                    break;
+
+                case 'mangseller':
+                    $users = MangSellers::findWithEmail($email);
+                    return static::ModelControlAuth($users, $type, $email, $status);
+                    break;
+                default:
+                    return false;
+                    break;
             }
-            return false;
+        }
+
+        protected static function ModelControlAuth(Model $models, string $type, string $email, string $status) : bool{
+
+            $created = static::create(
+                ['type'     => $type, 'email'        => $email, 
+                'id_verify' => $models->id, 'status' => $status]
+            );
+            if($created) return true; return false;
         }
     }
 }

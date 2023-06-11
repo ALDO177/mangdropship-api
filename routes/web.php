@@ -1,7 +1,12 @@
 <?php
 
+use App\Events\EventResetPassword;
 use App\Http\Controllers\Web\VerificationsEmail;
-use Illuminate\Support\Facades\Redis;
+use App\Jobs\JobEmailMangAdmin;
+use App\Mail\MailForgotPassword;
+use App\Models\Admin\AdminMangdropship;
+use App\Models\PasswordAuthentications;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,6 +15,14 @@ Route::get('/', function () {
 
 Route::get('/reset-password', function(){
     return view('ResetPassword');
+});
+
+Route::get('send-email', function(){
+    $users = PasswordAuthentications::where('email', 'mangdropship123@gmail.com')->first();
+    EventResetPassword::dispatch($users);
+    
+    return $users;
+
 });
 
 Route::controller(VerificationsEmail::class)->group(function(){

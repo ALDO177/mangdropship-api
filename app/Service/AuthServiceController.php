@@ -23,8 +23,8 @@ class AuthServiceController
     public function serviceLogin()
     {
         $credentials = Validator::make($this->request->all(), [
-            'email'       => ['required', 'email', 'exists:users,email'],
-            'password'    => ['required']
+            'email'      => ['required', 'email', 'exists:users,email'],
+            'password'   => ['required']
         ]);
 
         if ($credentials->fails())
@@ -32,14 +32,13 @@ class AuthServiceController
                 __('messages.messages_errors', ['type' => 'Login']),
                 $credentials->messages()->toArray()
             ); 
-
             return response()->json([$response]);
 
         if (!$tokens = auth('api-users')->attempt($this->request->only(['email', 'password']))) {
             return SubscribtionResourcesResponse::make(
-                $this->AccAuthentication($tokens, __('messages.messages_success', ['name' => 'Login Users'])))
-                ->response()
-                ->setStatusCode(201);
+                   $this->AccAuthentication($tokens, __('messages.messages_success', ['name' => 'Login Users'])))
+                   ->response()
+                   ->setStatusCode(201);
         }
         return SubscribtionResourcesResponse::make(['error' => true])
             ->response()

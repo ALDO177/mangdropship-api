@@ -4,6 +4,7 @@ namespace App\Service\ServiceMangAdmin{
 
     use App\Http\Resources\SubscribtionResourcesResponse;
     use App\Models\Admin\AdminMangdropship;
+    use App\Models\PasswordAuthentications;
     use App\Trait\Help\ResponseMessage;
     use App\Trait\Help\withoutWreapArray;
     use Illuminate\Http\Request;
@@ -79,12 +80,31 @@ namespace App\Service\ServiceMangAdmin{
             $credentials = Validator::make($this->request->all(), [
                 'email' => ['required', 'exists:admin_mangdropships,email']
             ]);
-            
+
             if($credentials->fails()){
                 return SubscribtionResourcesResponse::make(
-                    $this->messageNotAuth(400, 'Reset Password', $credentials->messages()->toArray())
-                )->response()->setStatusCode(400);
+                    $this->messageNotAuth(400, 'Bad Request', $credentials->messages()->toArray()));
             }
+
+            if (PasswordAuthentications::DuplicatedResetPassword($this->request->email, 'admins')) {
+                return SubscribtionResourcesResponse::make(
+                    $this->messagesSuccess(__('messages.messages_success', ['name' => 'Reset Password']))
+                );
+            }
+            $konditions = PasswordAuthentications::CreateResetPassword('reset', $this->request->email, 'admins');
+
+            if ($konditions)
+                return SubscribtionResourcesResponse::make(
+                $this->messagesSuccess(__('messages.messages_success', ['name' => 'Update Reset Password'])));
+    
+            return SubscribtionResourcesResponse::make(
+                $this->messageAuth(400, 'Reset password error',
+                fn () => ['url' => env('APP_SERVER_APPLICATION')]))
+                ->response()->setStatusCode(400);
+        }
+
+        public function serviceConfirmResetPassword(string $tokens){
+
         }
 
         public function logout(){

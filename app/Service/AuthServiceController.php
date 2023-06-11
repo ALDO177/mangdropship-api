@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Service;
-
 use App\Http\Resources\ApiResponseJson;
 use App\Http\Resources\SubscribtionResourcesResponse;
 use App\Models\PasswordAuthentications;
@@ -29,11 +28,12 @@ class AuthServiceController
         ]);
 
         if ($credentials->fails())
-            $response = $this->messageNotAuth(
-                400,
+            $response = $this->messageNotAuth(400,
                 __('messages.messages_errors', ['type' => 'Login']),
                 $credentials->messages()->toArray()
-            ); return response()->json([$response]);
+            ); 
+
+            return response()->json([$response]);
 
         if (!$tokens = auth('api-users')->attempt($this->request->only(['email', 'password']))) {
             return SubscribtionResourcesResponse::make(
@@ -41,7 +41,9 @@ class AuthServiceController
                 ->response()
                 ->setStatusCode(201);
         }
-        return SubscribtionResourcesResponse::make(['error' => true])->response()->setStatusCode('400');
+        return SubscribtionResourcesResponse::make(['error' => true])
+            ->response()
+            ->setStatusCode('400');
     }
 
     public function serviceResetPassword()

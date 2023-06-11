@@ -19,5 +19,4 @@ Route::prefix('mang-admin')->group(function(){
     Route::controller(MangAdminAccessController::class)->group(function(){
         Route::get('info', 'info');
     });
-
 });

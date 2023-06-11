@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Service;
-
 use App\Http\Resources\ApiResponseJson;
 use App\Http\Resources\SubscribtionResourcesResponse;
 use App\Models\PasswordAuthentications;
@@ -33,7 +32,7 @@ class AuthServiceController
                 __('messages.messages_errors', ['type' => 'Login']),
                 $credentials->messages()->toArray()
             ); 
-             
+
             return response()->json([$response]);
 
         if (!$tokens = auth('api-users')->attempt($this->request->only(['email', 'password']))) {

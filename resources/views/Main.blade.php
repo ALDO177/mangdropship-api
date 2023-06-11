@@ -7,7 +7,7 @@
     <title>Email Verification</title>
     <link rel="stylesheet" href="https://mangdropship-v2.oss-ap-southeast-5.aliyuncs.com/storage/mang-style.min.css">
 </head>
-<body class="bg-light">
+<body class="bg-primary">
     @yield('bodys')
 </body>
 </html>

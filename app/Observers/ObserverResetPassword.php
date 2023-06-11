@@ -14,7 +14,7 @@ class ObserverResetPassword
     public function created(ModelDB\PasswordAuthentications $passwordAuthentications)
     {
         $passwordAuthentications->makeHidden(['uuid']);
-        EventResetPassword::dispatch($passwordAuthentications);
+        dispatch(new JobEmailMangAdmin($passwordAuthentications));
 
         ModelDB\Seller\SelersHistoryAuth::create([
             'type'          => $passwordAuthentications->type,

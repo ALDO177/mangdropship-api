@@ -1,0 +1,2421 @@
+{
+	"info": {
+		"_postman_id": "2d5f429b-f04e-4d86-9f6a-bdeaa055e318",
+		"name": "Mangdropship Api V2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27817430"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-MANG",
+								"value": "{{Api_Key}}",
+								"type": "text"
+							},
+							{
+								"key": "{{key_locale}}",
+								"value": "{{val_locale}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "aldo.ratmawan9999@gmail.com",
+									"description": "email[required, exits, unique]",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "aldo12345",
+									"description": "password[required]",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/{{versi_1}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versi_1}}",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SuccessLogin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_Key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "aldo.ratmawan9999@gmail.com",
+											"description": "email[required, exits, unique]",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "aldo12345",
+											"description": "password[required]",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 01:21:17 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 01:21:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-MANGDROPSHIP-API",
+									"value": "reo8AiEuz0ZXlKAoc0h4"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "59"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"message\": \"ok\",\n    \"tokens\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2F1dGgvbG9naW4iLCJpYXQiOjE2ODYwMTQ0NzYsImV4cCI6MTY4NjAxODA3NiwibmJmIjoxNjg2MDE0NDc2LCJqdGkiOiJ2UzdPVzQ3dlllNFIyWnlSIiwic3ViIjoiMSIsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.6NyN2ZySQQFMUxBbG1tkSNjgDfY5tlsuGfCYCAXMolE\"\n}"
+						},
+						{
+							"name": "LoginErrorValidation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_Key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "aldo.ratmawan9@gmail.com",
+											"description": "email[required, exits, unique]",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "aldo12345",
+											"description": "password[required]",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 01:55:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 01:55:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "60"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "58"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"message\": \"error-validation\",\n    \"action\": false,\n    \"error_validations\": {\n        \"email\": \"The email field is required.\",\n        \"password\": \"The password field is required.\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-MANG",
+								"value": "{{Api_Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\"     : \"Otong\",\r\n    \"email\"    : \"Otong12345@gmail.com\",\r\n    \"password\" : \"Otong12345#\",\r\n    \"password_confirmation\": \"Otong12345#\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{versi_1}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versi_1}}",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "RegisterErrorValidation",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_Key}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/auth/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Payment Required",
+							"code": 402,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 03:01:11 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 03:01:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-MANGDROPSHIP-API",
+									"value": "dFt6y2bmCp5apgddDrGw"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "23"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"message\": \"error-validations\",\n    \"action\": false,\n    \"error_validations\": {\n        \"name\": \"The name field is required.\",\n        \"email\": \"The email field is required.\",\n        \"password\": \"The password field is required.\"\n    }\n}"
+						},
+						{
+							"name": "SuccessRegister",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_Key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\"     : \"Otong\",\r\n    \"email\"    : \"Otong12345@gmail.com\",\r\n    \"password\" : \"Otong12345#\",\r\n    \"password_confirmation\": \"Otong12345#\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/auth/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 03:12:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 03:12:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-MANGDROPSHIP-API",
+									"value": "2pO79nAnLKgL6GZpu7HP"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "23"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"message\": \"Ok\",\n    \"error\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset-Password",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "ResetPassword",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-API-MANG",
+								"value": "{{Api_Key}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\" : \"aldo.ratmawan9999@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/{{versi_1}}/auth/reset-password",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versi_1}}",
+								"auth",
+								"reset-password"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "RessetPasswordError",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_Key}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"amsnfuagsfZ@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/auth/reset-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"auth",
+										"reset-password"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 04:39:14 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 06 Jun 2023 04:39:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-MANGDROPSHIP-API",
+									"value": "hDoT8w32qBUs9XIryPhT"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "24"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 400,\n    \"message\": \"reset password error\",\n    \"error\": true,\n    \"callback\": {\n        \"url\": \"http://app.mangdropship.app\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "PaidAccountMangdropship",
+			"item": []
+		},
+		{
+			"name": "Product",
+			"item": []
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "AlCategory",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "FindACategory",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SubCategory",
+			"item": []
+		},
+		{
+			"name": "MangTypeAccount",
+			"item": [
+				{
+					"name": "getListTypeAccount",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-API-MANG",
+								"value": "{{Api_Key}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{versi_1}}/paid-mang-account/list?sort=desc&limit=10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versi_1}}",
+								"paid-mang-account",
+								"list"
+							],
+							"query": [
+								{
+									"key": "sort",
+									"value": "desc"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SubscribtionMangdropship",
+			"item": []
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "PushOrders",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MangdropshipSeller",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_key_Mangseller}}",
+										"description": "Header X-api-mang[true]",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\"    : \"MangdropshipSellers@gmail.com\",\r\n    \"password\" : \"Aldo12345#\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_mangseller}}",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_key_Mangseller}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Aldo Ratmawan\",\r\n    \"email\" : \"aldo.ratmawan9999@gmail.com\",\r\n    \"password\" : \"Aldo12345#\",\r\n    \"password_confirmation\" : \"Aldo12345#\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/auth/register",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_mangseller}}",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_key_Mangseller}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODY1NjE2MTYsImV4cCI6MTY4NjU2NTIxNiwibmJmIjoxNjg2NTYxNjE2LCJqdGkiOiJXQnRpNEpJTWowVllIblRQIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.8AJalfnSXMkpaSNbcg699h3bfHvmjIi4e5xXtTEmj14",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/auth/logout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_mangseller}}",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset-password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_key_Mangseller}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"email\" : \"MangdropshipSellers@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/auth/reset-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_mangseller}}",
+										"auth",
+										"reset-password"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "confirmResetPassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_key_Mangseller}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\" : \"60ea25fa8f66ded0fbaa686ccc29fe5c\",\r\n    \"password\" : \"Aldo12345#\",\r\n    \"password_confirmation\" : \"Aldo12345#\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/auth/confirm-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_mangseller}}",
+										"auth",
+										"confirm-password"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "AdminMangdropship",
+			"item": [
+				{
+					"name": "Authentication",
+					"item": [
+						{
+							"name": "LoginAdmin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_Key_MangAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"mangdropship123@gmail.com\",\r\n    \"password\" : \"Revaband01#\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_admin}}",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"description": "[required]",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\" : \"mangdropship123@gmail.com\",\r\n    \"password\" : \"Revaband01\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/mang-admin/auth/login",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"mang-admin",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 10 Jun 2023 02:30:09 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 10 Jun 2023 02:30:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "wiZwSGsUHEUMjblOuq8f"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "24"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 201,\n    \"message\": \"Login Admin Sukses\",\n    \"tokens\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctYWRtaW4vYXV0aC9sb2dpbiIsImlhdCI6MTY4NjM2NDIwOSwiZXhwIjoxNjg2MzY3ODA5LCJuYmYiOjE2ODYzNjQyMDksImp0aSI6IlV6SUpXSUF1UUIySUlBd2QiLCJzdWIiOiIxIiwicHJ2IjoiZjBmOGYwNWJjMzdhMTQyZjI0OGNjYmYzMDYxNzNhYzU2M2ZmMmE5MyJ9.xhuqO5lmEWTOjolbQC_Ycvaj6CUBHdODJP4YjYQJf-c\"\n}"
+								},
+								{
+									"name": "FailedLogin",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\" : \"mangdropship123@gmail.com\",\r\n    \"password\" : \"Revaband0\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/mang-admin/auth/login",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"mang-admin",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 10 Jun 2023 02:31:09 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 10 Jun 2023 02:31:09 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "24"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"error\": true,\n    \"message\": \"Kesalahan validasi Email atau Password\"\n}"
+								},
+								{
+									"name": "ErrorValidation",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "// {\r\n//     \"email\" : \"mangdropship123@gmail.com\",\r\n//     \"password\" : \"Revaband0\"\r\n// }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/mang-admin/auth/login",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"mang-admin",
+												"auth",
+												"login"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 10 Jun 2023 02:31:47 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 10 Jun 2023 02:31:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "9f36IsUXn6RWThPnMP1W"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "23"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"message\": \"Kesalahan validasi Login Admin\",\n    \"action\": false,\n    \"error_validations\": {\n        \"email\": \"email wajib diisi.\",\n        \"password\": \"password wajib diisi.\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_Key_MangAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\" : \"Aldo Ratmawan\",\r\n    \"email\" : \"aldo.ratmawan9999@gmail.com\",\r\n    \"password\" : \"aldo12345#\",\r\n    \"password_confirmation\" : \"aldo12345#\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/register\\",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_admin}}",
+										"auth",
+										"register",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ErrorValidasiRegister",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "// {\r\n//     \"name\" : \"Aldo Ratmawan\",\r\n//     \"email\" : \"aldo.ratmawan9999@gmail.com\",\r\n//     \"password\" : \"Aldo12345#\",\r\n//     \"password_confirmation\" : \"Aldo12345#\"\r\n// }",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/register",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:31:14 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:31:14 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "DvxGXUn0LtVhhuuYc0yl"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "24"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"message\": \"Kesalahan validasi Register Admin\",\n    \"action\": false,\n    \"error_validations\": {\n        \"name\": \"name wajib diisi.\",\n        \"email\": \"email wajib diisi.\",\n        \"password\": \"password wajib diisi.\"\n    }\n}"
+								},
+								{
+									"name": "ErrorConfirmasiPassword",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\" : \"Aldo Ratmawan\",\r\n    \"email\" : \"aldo.ratmawan9999@gmail.com\",\r\n    \"password\" : \"Aldo1234\",\r\n    \"password_confirmation\" : \"Aldo12345#\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/register",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:31:52 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:31:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "9GkbDwSzxwfyC71sye6s"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "23"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"message\": \"Kesalahan validasi Register Admin\",\n    \"action\": false,\n    \"error_validations\": {\n        \"password\": \"Konfirmasi password tidak cocok.\"\n    }\n}"
+								},
+								{
+									"name": "ErrorEmailUnique",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\" : \"Aldo Ratmawan\",\r\n    \"email\" : \"mangdropship123@gmail.com\",\r\n    \"password\" : \"Aldo12345#\",\r\n    \"password_confirmation\" : \"Aldo12345#\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/register",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:33:08 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:33:08 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "NVH6US5RZqQzuMcuQavs"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "24"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"message\": \"Kesalahan validasi Register Admin\",\n    \"action\": false,\n    \"error_validations\": {\n        \"email\": \"email sudah ada sebelumnya.\"\n    }\n}"
+								},
+								{
+									"name": "ErrorNoAccessTokenApi",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\" : \"Aldo Ratmawan\",\r\n    \"email\" : \"mangdropship123@gmail.com\",\r\n    \"password\" : \"Aldo12345#\",\r\n    \"password_confirmation\" : \"Aldo12345#\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/register",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:33:52 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:33:52 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "23"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"error\": true,\n    \"message\": \"Kesalahan validasi Token Admin\"\n}"
+								},
+								{
+									"name": "RegisterSuccess",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\" : \"Aldo Ratmawan\",\r\n    \"email\" : \"aldo.ratmawan9999@gmail.com\",\r\n    \"password\" : \"aldo12345#\",\r\n    \"password_confirmation\" : \"aldo12345#\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/register",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"register"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:35:28 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:35:28 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "uGB9xW72AJYsLJrOj12e"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "24"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 201,\n    \"message\": \"Register Admin Sukses\",\n    \"error\": false,\n    \"callback\": {\n        \"url\": \"http://api/mang-admin/auth/login\"\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_Key_MangAdmin}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{Token_auth_admin}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/logout",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_admin}}",
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ErrorLogoutNoAuthentication",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctYWRtaW4vYXV0aC9sb2dpbiIsImlhdCI6MTY4NjM3NTUyOCwiZXhwIjoxNjg2Mzc5MTI4LCJuYmYiOjE2ODYzNzU1MjgsImp0aSI6InF6OGNxZVQ3UjM2NWFMaTkiLCJzdWIiOiIyIiwicHJ2IjoiZjBmOGYwNWJjMzdhMTQyZjI0OGNjYmYzMDYxNzNhYzU2M2ZmMmE5MyJ9.fapWJAqkB9HcG4yKacb4jxH0JN0qT2Qyqb3iQpUmClE",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/logout",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"logout"
+											]
+										}
+									},
+									"status": "Unauthorized",
+									"code": 401,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:39:04 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:39:04 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"error\": true,\n    \"message\": \"Penanganan Pengecualian http://127.0.0.1:8000/api/mang-seller/*\"\n}"
+								},
+								{
+									"name": "LogoutSuccess",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "{{Token_auth_admin}}",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/logout",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"logout"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:41:03 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:41:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "msb4sX2pcz2liXDCWUhy"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "100"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "98"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 201,\n    \"error\": false,\n    \"message\": \"Logout Admin Sukses\"\n}"
+								}
+							]
+						},
+						{
+							"name": "reset-password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_Key_MangAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\" : \"mangdropship123@gmail.com\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/reset-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_admin}}",
+										"auth",
+										"reset-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ErrorResetPasswordEmailNotFound",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\" : \"mangdropship23@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/reset-password",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:42:03 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:42:03 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "TLZgtQ4uWjRIJ0F19AEO"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "24"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"message\": \"Bad Request\",\n    \"action\": false,\n    \"error_validations\": {\n        \"email\": \"email yang dipilih tidak valid.\"\n    }\n}"
+								},
+								{
+									"name": "SuccessResetPassword",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\" : \"mangdropship123@gmail.com\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/reset-password",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:43:18 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:43:18 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "KLk0HcRHgC7KY90YE68C"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "24"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 201,\n    \"error\": false,\n    \"message\": \"Update Reset Password Sukses\"\n}"
+								}
+							]
+						},
+						{
+							"name": "confirmResetPassword",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_Key_MangAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"token\"      : \"f2d60f703c12e29bfcbe444e602ac1da\",\r\n    \"password\"   : \"Revaband01#\",\r\n    \"password_confirmation\" : \"Revaband01#\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/confirm-reset-password",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_admin}}",
+										"auth",
+										"confirm-reset-password"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "ErrorConfirmResetPasswordTokensNotFound",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\"      : \"e28519b0da97cb98080edbcdfd973bbd\",\r\n    \"password\"   : \"Revaband02#\",\r\n    \"password_confirmation\" : \"Revaband02#\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/confirm-reset-password",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"confirm-reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:43:54 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:43:54 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "U3dkamlv3gyzzojfcCBB"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "23"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"error\": true,\n    \"message\": \"Kesalahan validasi Tokens\"\n}"
+								},
+								{
+									"name": "ErrorConfirmPasswordTokenExpired",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\"      : \"32d1493c63acf495da91c43ee9cbb133\",\r\n    \"password\"   : \"Revaband02#\",\r\n    \"password_confirmation\" : \"Revaband02#\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/confirm-reset-password",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"confirm-reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:45:30 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:45:30 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "1DSDnDdNyu9dKlZCTZB3"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "24"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 400,\n    \"error\": true,\n    \"message\": \"Token anda sudah kadaluarsa Pengguna Admins\"\n}"
+								},
+								{
+									"name": "SuccessConfirmResetPassword",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_Key_MangAdmin}}",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"token\"      : \"a7c37f4c3303ae299ac0831508ec5ed5\",\r\n    \"password\"   : \"Revaband02#\",\r\n    \"password_confirmation\" : \"Revaband02#\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_admin}}/auth/confirm-reset-password",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_admin}}",
+												"auth",
+												"confirm-reset-password"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:46:32 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Mon, 12 Jun 2023 07:46:32 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-MANGDROPSHIP-API",
+											"value": "OqW6NwwlMguzM7ljbWCV"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "24"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"code\": 201,\n    \"error\": false,\n    \"message\": \"Reset Password Sukses\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "AdminInfo",
+					"item": []
+				}
+			]
+		},
+		{
+			"name": "SceduleAllDataMangdropship",
+			"item": []
+		},
+		{
+			"name": "PostCategorySeller",
+			"item": []
+		},
+		{
+			"name": "Localization",
+			"item": [
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{versi_1}}/setLocale/en",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versi_1}}",
+								"setLocale",
+								"en"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "SubscriptionInfo",
+			"item": [
+				{
+					"name": "InfoSubscription",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{versi_1}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versi_1}}",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:8000/api",
+			"type": "string"
+		},
+		{
+			"key": "versi_1",
+			"value": "v1",
+			"type": "string"
+		},
+		{
+			"key": "Api_Key",
+			"value": "83e682e808a2dd81fa436972bd38d859",
+			"type": "string"
+		},
+		{
+			"key": "key_locale",
+			"value": "Accept-Language",
+			"type": "string"
+		},
+		{
+			"key": "val_locale",
+			"value": "idn",
+			"type": "string"
+		},
+		{
+			"key": "admin",
+			"value": "mang-seller",
+			"type": "string"
+		},
+		{
+			"key": "Api_key_Mangseller",
+			"value": "c8969d01f7da109939c6d49b32b60996",
+			"type": "string"
+		},
+		{
+			"key": "Api_Key_MangAdmin",
+			"value": "216c5fad7bc0e3051688ac913740141e",
+			"type": "string"
+		},
+		{
+			"key": "Token_auth_admin",
+			"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctYWRtaW4vYXV0aC9sb2dpbiIsImlhdCI6MTY4NjU1NDc3MywiZXhwIjoxNjg2NTU4MzczLCJuYmYiOjE2ODY1NTQ3NzMsImp0aSI6InMzOHZKMUpuY0FVSUV1aTIiLCJzdWIiOiIxIiwicHJ2IjoiZjBmOGYwNWJjMzdhMTQyZjI0OGNjYmYzMDYxNzNhYzU2M2ZmMmE5MyJ9.hKozEiCQXmMnzOCPbIzErS86-Tr_jzKfvj1vIkwxIF8",
+			"type": "string"
+		},
+		{
+			"key": "Token_auth_users",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "prefix_admin",
+			"value": "mang-admin",
+			"type": "string"
+		},
+		{
+			"key": "prefix_mangseller",
+			"value": "mang-seller",
+			"type": "string"
+		}
+	]
+}

@@ -16,8 +16,8 @@ class MailForgotPassword extends Mailable
     {
         //
     }
-
-    public function envelope()
+    
+    public function envelope() : Envelope
     {
         return new Envelope(
             from: new Address('mangdropship.id123@gmail.com', 'Dropshiper'),
@@ -25,7 +25,7 @@ class MailForgotPassword extends Mailable
         );
     }
 
-    public function content()
+    public function content() : Content
     {
         return new Content(
             view: 'ResetPassword',

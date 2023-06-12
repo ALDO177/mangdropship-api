@@ -10,5 +10,5 @@ return [
     'info_reset_pwd'   => 'Mangdropship Atur ulang kata sandi',
     'text_info_reset_pass' => 'Kami mendengar bahwa Anda kehilangan kata sandi Mangdropship Anda. Maaf soal itu!
     Tapi jangan khawatir! Anda dapat menggunakan tombol berikut untuk mengatur ulang kata sandi Anda:',
-    'warning_rest_pass' => 'Perhatikan jika anda tidak menggunakan tautan ini dalam waktu 2 jam maka tautan ini akan kadaluarsa'
+    'warning_reset_pass' => 'Perhatikan jika anda tidak menggunakan tautan ini dalam waktu 2 jam maka tautan ini akan kadaluarsa'
 ];

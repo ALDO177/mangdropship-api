@@ -14,10 +14,11 @@ namespace App\Service\ServiceMangAdmin{
     class AuthServiceMangAdmin{
 
         use withoutWreapArray, ResponseMessage;
+
         public function __construct(protected Request $request){}
 
         public function login(){
-
+            
             $credentials = Validator::make($this->request->all(), [
                 'email'     => ['required', 'email'],
                 'password'  => ['required']
@@ -103,8 +104,44 @@ namespace App\Service\ServiceMangAdmin{
                 ->response()->setStatusCode(400);
         }
 
-        public function serviceConfirmResetPassword(string $tokens){
+        public function serviceConfirmResetPassword(){
 
+            $credentials  = Validator::make($this->request->all(), [
+                'token'         => ['required'],
+                'password'      => ['required', 'confirmed', 'min:6', 'string',
+                    'regex:/[a-z]/', 'regex:/[A-Z]/', 'regex:/[0-9]/',
+                    'regex:/[@$!%*#?&]/']]);
+            
+            if($credentials->fails())
+                return SubscribtionResourcesResponse::make(
+                    $this->messageNotAuth(400,
+                    __('messages.messages_errors', ['type' => 'Reset Password']), 
+                    $credentials->messages()->toArray())
+                );
+
+            $checkTokens = PasswordAuthentications::where('token', $this->request->token)
+                          ->where('status', 'admins')
+                          ->first();
+
+            if(!is_null($checkTokens)){
+                $tokens = PasswordAuthentications::CheckTokenAndExpiredToken($this->request->token);
+                if(!is_null($tokens)){
+                    return SubscribtionResourcesResponse::make(
+                        $this->messagesError(__('messages.token_expired', ['type' => 'Pengguna ' . ucfirst($tokens->status)]))
+                    );
+                }
+
+                if(AdminMangdropship::updatePasswordAdmin($checkTokens->email, Hash::make($this->request->password))){
+                    PasswordAuthentications::deleteTokens($checkTokens->uuid);
+                    return SubscribtionResourcesResponse::make(
+                        $this->messagesSuccess(__('messages.messages_success', ['name' => 'Reset Password']))
+                    );
+                }
+            }
+
+            return SubscribtionResourcesResponse::make(
+                $this->messagesError(__('messages.messages_errors', ['type' => 'Tokens']))
+            );
         }
 
         public function logout(){

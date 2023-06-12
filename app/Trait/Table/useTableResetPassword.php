@@ -2,13 +2,15 @@
 
 namespace App\Trait\Table {
 
-    use App\Jobs\JobEmailMangAdmin;
     use App\Models\Admin\AdminMangdropship;
     use App\Models\MangSellerModels\MangSellers;
     use DateTime;
+    use Illuminate\Contracts\Database\Eloquent\Builder;
     use Illuminate\Database\Eloquent\Model;
     use Ramsey\Uuid\Uuid;
-    const message_activation_created = "User Aktivasi Melakukan Reset Password";
+    const EXPIRED    = 'exp';
+    const NEXPIRED   = 'nexp';
+    const UNDIFINED  = 'undifined';
 
     trait useTableResetPassword
     {
@@ -47,7 +49,6 @@ namespace App\Trait\Table {
                      'start_at' => static::SettingDated('now'),
                      'end_at'   => static::SettingDated('now +120 minutes')]
                 );
-                dispatch(new JobEmailMangAdmin($duplicated));
                 return true;
             }
             return false;
@@ -60,7 +61,6 @@ namespace App\Trait\Table {
                     $users = AdminMangdropship::findWithEmail($email);
                     return static::ModelControlAuth($users, $type, $email, $status);
                     break;
-
                 case 'mangseller':
                     $users = MangSellers::findWithEmail($email);
                     return static::ModelControlAuth($users, $type, $email, $status);
@@ -72,12 +72,25 @@ namespace App\Trait\Table {
         }
 
         protected static function ModelControlAuth(Model $models, string $type, string $email, string $status) : bool{
-
             $created = static::create(
                 ['type'     => $type, 'email'        => $email, 
                 'id_verify' => $models->id, 'status' => $status]
             );
             if($created) return true; return false;
+        }
+
+        protected static function expiredToken(string $tokens){
+           return static::where('token', $tokens)->where(function($query){
+                $query->where('submited_at', null)->where('end_at', '<', now()->format('Y-m-d H:i:s'));
+            })->first();
+        }   
+
+        public static function CheckTokenAndExpiredToken(string $tokens){
+            return static::expiredToken($tokens);
+        }
+        
+        public static function deleteTokens($uuid){
+            static::where('uuid', $uuid)->delete();
         }
     }
 }

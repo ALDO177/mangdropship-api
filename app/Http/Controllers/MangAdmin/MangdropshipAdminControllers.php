@@ -27,6 +27,11 @@ class MangdropshipAdminControllers extends Controller
         return $this->serviceAdmin->resetPassword();
     }
 
+    public function confirmResetPassword(){
+        
+        return $this->serviceAdmin->serviceConfirmResetPassword();
+    }
+
     public function logout(){
 
         return $this->serviceAdmin->logout();

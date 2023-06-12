@@ -15,6 +15,7 @@ return new class extends Migration
             $table->string('email');
             $table->primary('uuid');
             $table->string('token');
+            $table->timestamp('submited_at')->nullable();
             $table->enum('type', ['reset', 'forgot']);
             $table->enum('status', ['admins', 'mangseller', 'dropship']);
             $table->timestamp('start_at');

@@ -12,6 +12,7 @@ use Illuminate\Queue\SerializesModels;
 class MailForgotPassword extends Mailable
 {
     use Queueable, SerializesModels;
+    
     public function __construct(public string $tokens)
     {
         //

@@ -20,5 +20,11 @@ class MangsellerSeeder extends Seeder
             'email'    => 'MangdropshipSellers@gmail.com',
             'password' =>  'Mang12345'
         ]);
+        
+        MangSellers::create([
+            'name'     => 'Mangdropship Account',
+            'email'    => 'MangdropshipAccount@gmail.com',
+            'password' =>  'Mang12345'
+        ]);
     }
 }

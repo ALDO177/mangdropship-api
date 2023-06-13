@@ -12,10 +12,20 @@ trait UuidSetGlobal
         parent::boot();
         static::creating(function ($model) {
             try {
-                $model->uuid = Generator::uuid4()->toString();
+                $model->id = Generator::uuid4()->toString();
             } catch (Exception $e) {
                 abort(500, $e->getMessage());
             }
         });
+    }
+
+    public function initializeIsIdentifiedByUuid()
+    {
+        $this->keyType = 'string';
+    }
+
+    protected function getUuidColumn(): string
+    {
+        return property_exists($this, 'uuid') ? $this->uuid: 'id';
     }
 }

@@ -836,6 +836,23 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "test",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/test",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"test"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},

@@ -677,7 +677,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\"    : \"MangdropshipSellers@gmail.com\",\r\n    \"password\" : \"Aldo12345#\"\r\n}",
+									"raw": "{\r\n    \"email\"    : \"MangdropshipSellers@gmail.com\",\r\n    \"password\" : \"Mang12345\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -746,7 +746,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODY1NjE2MTYsImV4cCI6MTY4NjU2NTIxNiwibmJmIjoxNjg2NTYxNjE2LCJqdGkiOiJXQnRpNEpJTWowVllIblRQIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.8AJalfnSXMkpaSNbcg699h3bfHvmjIi4e5xXtTEmj14",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODY3MzI2NDUsImV4cCI6MTY4NjczNjI0NSwibmJmIjoxNjg2NzMyNjQ1LCJqdGkiOiJFZnhYVktUZXhxWWZMbDlPIiwic3ViIjoiMyIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.SkxnVk_S9eYAYoSidVAklwZLnrYAccF7t0L7Mne-Swg",
 										"type": "text"
 									}
 								],
@@ -838,21 +838,45 @@
 					]
 				},
 				{
-					"name": "test",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "{{url}}/test",
-							"host": [
-								"{{url}}"
-							],
-							"path": [
-								"test"
-							]
+					"name": "Suplier",
+					"item": [
+						{
+							"name": "getSuplierAccess",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "{{Api_key_Mangseller}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODY3MzMyMzgsImV4cCI6MTY4NjczNjgzOCwibmJmIjoxNjg2NzMzMjM4LCJqdGkiOiJiblIzWVdUZ2RiVkpGUFgyIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.HewOZ5D9oa_3wx0SnZmkI0s7InSpDebSxYcwIOcH2FY",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/info",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_mangseller}}",
+										"info"
+									]
+								}
+							},
+							"response": []
 						}
-					},
-					"response": []
+					]
 				}
 			]
 		},

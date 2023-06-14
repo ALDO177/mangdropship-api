@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\MangSellerModels\MangSellers;
+use App\Models\MangSellerModels\Store;
 use App\Models\Produk;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -16,7 +17,7 @@ class SupllierFactory extends Factory
     {
         return [
             'id_sellers' => $this->faker->randomElement(MangSellers::all())['id'],
-            'id_product' => $this->faker->randomElement(Produk::all())['id']
+            'id_store'   => $this->faker->randomElement(Store::all())['id']
         ];
     }
 }

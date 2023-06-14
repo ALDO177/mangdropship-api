@@ -21,9 +21,11 @@ class DatabaseSeeder extends Seeder
           CategorysSeeder::class,
           SubCategorysSeeder::class,
           ProdukSeeder::class,
+          StoreSeeder::class,
           SupllierSeeder::class,
           ProductCategorysSeeder::class,
-          GalleriesProductSeeder::class
+          GalleriesProductSeeder::class,
+          SuplierProduksSeeder::class,
         ]);
     }
 }

@@ -14,7 +14,7 @@ class Supllier extends Model
 {
     use HasFactory, UuidSetGlobal;
     public $timestamps = false;
-    public $keyType = 'string';
+    public $keyType    = 'string';
 
     protected $fillable =
     [

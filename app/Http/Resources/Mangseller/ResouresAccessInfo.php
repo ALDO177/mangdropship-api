@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources;
+namespace App\Http\Resources\Mangseller;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ResorcesResponseMangAccess extends JsonResource
+class ResouresAccessInfo extends JsonResource
 {
     public function toArray($request)
     {
@@ -12,7 +12,7 @@ class ResorcesResponseMangAccess extends JsonResource
             'name'           => $this->name,
             'email'          => $this->email,
             'tokens_verfied' => $this->tokens_verified,
-            'supliers'       => $this->when(is_null($this->resource->supliers), null, $this->supliers->store),
+            'supliers'       => $this->when(is_null($this->resource->supliers), null, ResouresStoreInformation::make($this->supliers)),
             'messages'       => $this->when(is_null($this->supliers), __('messages.messages_supliers'))
         ];
     }

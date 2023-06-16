@@ -16,4 +16,8 @@ class MangsellerAccess extends Controller
     public function info(ServiceMangAccess $acces){
         return $acces->accessInfo();
     }
+
+    public function infoStore(ServiceMangAccess $acces){
+        return $acces->infoStore();
+    }
 }

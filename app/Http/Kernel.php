@@ -74,5 +74,6 @@ class Kernel extends HttpKernel
         'api-handle-end-point' => \App\Http\Middleware\ApiHandleEndPoint::class,
         'localization'         => \App\Http\Middleware\LocalizationSetMiddleware::class,
         'asign.guard'          => \App\Http\Middleware\AsignGuard::class,
+        'suplier'             => \App\Http\Middleware\Mangseller\HandleSuplier::class
     ];
 }

@@ -17,4 +17,12 @@ class StoreStatus extends Model
         'actived_at_start',
         'actived_at_end'
     ];
+
+    public static function findOrUpdate(bool $options = true, string $id, array $attr){
+        if($options){
+            $find = static::where('id', $id)->first();
+            return $find;
+        }
+        return static::where('id', $id)->update($attr);
+    }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Mangseller\AuthMangseller;
 use App\Http\Controllers\Mangseller\MangsellerAccess;
+use App\Http\Controllers\Mangseller\SuplierStatusController;
 use App\Http\Controllers\Mangseller\SuplierStoreControllers;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +21,10 @@ Route::prefix('mang-seller')->group(function(){
         Route::get('info', 'info');
     });
     
-    Route::apiResources([
-        'store' => SuplierStoreControllers::class
-    ]);
+   Route::prefix('find')->group(function(){
+        Route::apiResources([
+            'store'    => SuplierStoreControllers::class,
+            'status'   => SuplierStatusController::class,
+        ]);
+   });
 });

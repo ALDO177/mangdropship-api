@@ -3,13 +3,19 @@
 namespace App\Http\Controllers\Mangseller;
 
 use App\Http\Controllers\Controller;
+use App\Service\MangSellerServices\ServiceMangAccess;
 use Illuminate\Http\Request;
 
 class SuplierStoreControllers extends Controller
 {
+
+    public function __construct(protected ServiceMangAccess $service)
+    {
+        $this->middleware(['auth:mang-sellers', 'api-mang-seller-access', 'localization']);
+    }
     public function index()
     {
-        return ['name' => 'Hello World'];
+        return $this->service->infoStore();
     }
 
     public function store(Request $request)
@@ -28,13 +34,7 @@ class SuplierStoreControllers extends Controller
     {
         //
     }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         //

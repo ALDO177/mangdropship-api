@@ -38,4 +38,8 @@ class MangSellers extends Authenticable implements JWTSubject
     public function supliers() : HasOne{
         return $this->hasOne(Supllier::class, 'id_sellers', 'id');
     }
+
+    public static function findUuid(string $uuid){
+        return static::where('id', $uuid)->first();
+    }
 }

@@ -1,6 +1,7 @@
 <?php
 
 namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -28,9 +29,11 @@ class DatabaseSeeder extends Seeder
             SuplierProduksSeeder::class,
             StoreStatusSeeder::class,
             StoreAccountSeeder::class,
+            AccountBankSeeder::class,
             StorePaymentBankSeeder::class,
             StoreShipingExpeditionSeeder::class,
-            StoreInformationSeeder::class
+            StoreInformationSeeder::class,
+            SuplierAccountBankSeeder::class
         ]);
     }
 }

@@ -11,7 +11,7 @@ namespace App\Trait\Table\Mangseller\Store{
             return $this->hasOne(StoreInformation::class, 'id_store', 'id');
         }
 
-        public function status() : HasOne{
+        public function status() : HasOne{ 
             return $this->hasOne(StoreInformation::class, 'id_status', 'id');
         }
     }

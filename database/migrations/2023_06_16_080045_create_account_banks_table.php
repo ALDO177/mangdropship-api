@@ -6,17 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+
     public function up()
     {
-        Schema::create('store_payment_banks', function (Blueprint $table) {
+        Schema::create('account_banks', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('altern_code');
+            $table->string('type_bank', 255);
+            $table->string('thumbnail');
+            $table->string('code_access', 255);
+            $table->json('more')->nullable();
             $table->timestamps();
         });
     }
-
+    
     public function down()
     {
-        Schema::dropIfExists('store_payment_banks');
+        Schema::dropIfExists('account_banks');
     }
 };

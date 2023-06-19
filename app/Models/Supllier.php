@@ -31,14 +31,23 @@ class Supllier extends Model
         return $this->hasMany(suplierProduks::class, 'id_suplier', 'id');
     }
 
-    public static function infoStore(string $id){
+    public function infoStore(string $id){
         return static::with(['store'])->where('id_sellers', $id)->first();
     }
 
-    public static function findInfo(string $id){
+    public function findInfo(string $id){
         return static::with(['store' => ['storeInformation' => ['status']]])
             ->where('id_sellers', $id)
             ->first()
             ->store;
+    }
+
+    public function infoBankAccount(int $id){
+        return static::with(['store' => ['storeInformation' => ['storePayment' => ['accounts' => ['bankAccount']]]]])
+            ->where('id_sellers', $id)
+            ->first()
+            ->store
+            ->storeInformation
+            ->storePayment;
     }
 }

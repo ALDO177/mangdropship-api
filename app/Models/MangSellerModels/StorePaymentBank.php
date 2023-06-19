@@ -5,17 +5,18 @@ namespace App\Models\MangSellerModels;
 use App\Trait\UUID\UuidSetGlobal;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class StorePaymentBank extends Model
 {
     use HasFactory, UuidSetGlobal;
-    public $timestamps = false;
-    public $keyType    = 'string';
-    
-    protected $fillable =[
-        'thumbnail',
-        'account_name',
-        'account_number',
-        'code_access'
+    public $keyType = 'string';
+
+    protected $fillable = [
+        'altern_code',
     ];
+
+    public function accounts() : HasMany{
+        return $this->hasMany(SuplierAccountBank::class, 'id_store_account_bank', 'id');
+    }
 }

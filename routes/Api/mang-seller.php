@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Mangseller\AuthMangseller;
+use App\Http\Controllers\Mangseller\ControllersMangsellerAccountBank;
 use App\Http\Controllers\Mangseller\MangsellerAccess;
 use App\Http\Controllers\Mangseller\MangsellerSettingController;
 use Illuminate\Support\Facades\Route;
@@ -29,4 +30,8 @@ Route::prefix('mang-seller')->group(function(){
             Route::match(['put', 'patch', 'post'], 'store',  'updateStore');
         });
     });
+
+    Route::apiResources([
+        'bank' => ControllersMangsellerAccountBank::class
+    ]);
 });

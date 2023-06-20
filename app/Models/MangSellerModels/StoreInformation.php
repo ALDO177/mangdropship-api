@@ -15,7 +15,6 @@ class StoreInformation extends Model
         'id_store',
         'id_status',
         'id_store_account',
-        'id_store_payment',
         'id_store_expedition'
     ];
 
@@ -25,10 +24,6 @@ class StoreInformation extends Model
 
     public function account() : HasOne{
         return $this->hasOne(StoreAccount::class, 'id', 'id_store_account');
-    }
-
-    public function storePayment() : HasOne{
-        return $this->hasOne(StorePaymentBank::class, 'id', 'id_store_payment');
     }
 
     public function storeExpedition() : HasOne{

@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\MangSellerModels\SuplierAccountBank;
+use App\Models\SuplierAccountBank;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 

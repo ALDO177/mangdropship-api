@@ -30,10 +30,9 @@ class DatabaseSeeder extends Seeder
             StoreStatusSeeder::class,
             StoreAccountSeeder::class,
             AccountBankSeeder::class,
-            StorePaymentBankSeeder::class,
             StoreShipingExpeditionSeeder::class,
             StoreInformationSeeder::class,
-            SuplierAccountBankSeeder::class
+            SuplierAccountBankSeeder::class,
         ]);
     }
 }

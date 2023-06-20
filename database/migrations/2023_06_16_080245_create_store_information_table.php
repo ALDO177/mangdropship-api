@@ -13,7 +13,6 @@ return new class extends Migration
             $table->foreignUuid('id_store')->constrained('stores');
             $table->foreignUuid('id_status')->constrained('store_statuses');
             $table->foreignUuid('id_store_account')->constrained('store_accounts');
-            $table->foreignUuid('id_store_payment')->constrained('store_payment_banks');
             $table->foreignUuid('id_store_expedition')->constrained('store_shiping_expeditions');
             $table->timestamps();
         });

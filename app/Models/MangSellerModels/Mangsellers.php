@@ -33,7 +33,7 @@ class MangSellers extends Authenticable implements JWTSubject
 
     protected $casts = [
         'email_verified_at' => 'datetime',
-    ];
+];
 
     public function supliers() : HasOne{
         return $this->hasOne(Supllier::class, 'id_sellers', 'id');

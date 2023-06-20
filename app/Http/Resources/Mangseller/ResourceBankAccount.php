@@ -6,14 +6,13 @@ use Illuminate\Http\Resources\Json\JsonResource;
 
 class ResourceBankAccount extends JsonResource
 {
-    /**
-     * Transform the resource into an array.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
-     */
     public function toArray($request)
     {
-        return parent::toArray($request);
+        return[
+            'name'         => $this->user->name,
+            'email'        => $this->user->email,
+            'tokens'       => $this->user->tokens_verified,
+            'bank_account' => $this->bankAccount
+        ];
     }
 }

@@ -6,14 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('suplier_account_banks', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
             $table->string('account_name');
             $table->string('account_number');
-            $table->foreignUuid('id_store_account_bank')->constrained('store_payment_banks');
-            $table->foreignUuid('id_account_bank')->constrained('account_banks');
+            $table->foreignUuid('id_supliers')->constrained('suplliers')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignUuid('id_account_bank')->constrained('account_banks')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

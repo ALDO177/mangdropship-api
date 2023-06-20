@@ -28,8 +28,8 @@ namespace App\Service\MangSellerServices{
         
         public function accessInfo(){
             $accessinfo = auth('mang-sellers')->user()
-            ->{'with'}(['supliers' => ['store' => ['storeInformation' =>
-             ['status', 'account', 'storePayment', 'storeExpedition']]]])->where('id', auth()->user()->id)->first();
+            ->{'with'}(['supliers' => ['bankAccount' => ['bankInfo'],'store' => ['storeInformation' =>
+             ['status', 'account', 'storeExpedition']]]])->where('id', auth()->user()->id)->first();
              return ResouresAccessInfo::make($accessinfo);
         }
 
@@ -56,7 +56,7 @@ namespace App\Service\MangSellerServices{
             $suplierStore  = $this->suplier->infoStore($this->request->user()->id);
             $path = $this->LengthSlashPath(intval(env('LENGTH_SLASH')), $suplierStore->store->path_store);
             Storage::disk(env('DISK_KEY_IMG'))->delete(env('DISK_KEY_IMG') . '/' . $path);
-
+            
             $putFileImage  = Storage::disk(env('DISK_KEY_IMG'))->put(env('DISK_KEY_IMG'), $this->request->file('path_store'));
             $fileName = explode('/', $putFileImage)[1];
             $suplierStore->store->name_store   = $this->request->name_store;
@@ -78,8 +78,7 @@ namespace App\Service\MangSellerServices{
         }
 
         public function serviceBankInfoAccount(){
-            $bankAccount = $this->suplier->infoBankAccount($this->request->user()->id);
-            return ResourceBankAccount::make($bankAccount);
+             //
         }
 
         public function serviceUpdateExpedition(){

@@ -677,7 +677,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\"    : \"aldo.ratmawan9999@gmail.com\",\r\n    \"password\" : \"Aldo12345#\"\r\n}",
+									"raw": "{\r\n    \"email\"    : \"MangdropshipAccount@gmail.com\",\r\n    \"password\" : \"Mang12345\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -841,94 +841,445 @@
 					"name": "Suplier",
 					"item": [
 						{
-							"name": "getSuplierInfoDetails",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-API-MANG",
-										"value": "{{Api_key_Mangseller}}",
-										"type": "text"
-									},
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODY5MDMwMjksImV4cCI6MTY4NjkwNjYyOSwibmJmIjoxNjg2OTAzMDI5LCJqdGkiOiJrTEZ4U1laUlFuc0tpRzIwIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.IKrNHM4DA-MaIHLzSer2hOm0yrj9oJgXE6AP1PBCKKI",
-										"type": "text"
-									},
-									{
-										"key": "Accept-Language",
-										"value": "",
-										"type": "text",
-										"disabled": true
-									}
-								],
-								"url": {
-									"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/info",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"{{versi_1}}",
-										"{{prefix_mangseller}}",
-										"info"
+							"name": "Setting",
+							"item": [
+								{
+									"name": "AccountBank",
+									"item": [
+										{
+											"name": "getAllAccountBank",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-MANG",
+														"value": "{{Api_key_Mangseller}}",
+														"type": "text"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNTIzNDQsImV4cCI6MTY4NzI1NTk0NCwibmJmIjoxNjg3MjUyMzQ0LCJqdGkiOiJNSEZHVVE4UExvOTM1VXVwIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.FfdxN6xbZt1lrYkhLUywpVdua2lFjhC1peKk11LB4LA",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/bank",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"{{versi_1}}",
+														"{{prefix_mangseller}}",
+														"bank"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "getShowIdBankAccount",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-MANG",
+														"value": "{{Api_key_Mangseller}}",
+														"type": "text"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNDc4MTEsImV4cCI6MTY4NzI1MTQxMSwibmJmIjoxNjg3MjQ3ODExLCJqdGkiOiJKTTg5MWtoSWJ1VFdScjNiIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.TKu3Vd7ksspyavthOcCOjFV2HGfiKHoyF2koN2YJvbw",
+														"type": "text"
+													},
+													{
+														"key": "Accept-Language",
+														"value": "en",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"url": {
+													"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/bank/947b5788-6c27-4be4-a7df-df493fe3841b",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"{{versi_1}}",
+														"{{prefix_mangseller}}",
+														"bank",
+														"947b5788-6c27-4be4-a7df-df493fe3841b"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "UpdateAccountBank",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "X-API-MANG",
+														"value": "{{Api_key_Mangseller}}",
+														"type": "text"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNDc4MTEsImV4cCI6MTY4NzI1MTQxMSwibmJmIjoxNjg3MjQ3ODExLCJqdGkiOiJKTTg5MWtoSWJ1VFdScjNiIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.TKu3Vd7ksspyavthOcCOjFV2HGfiKHoyF2koN2YJvbw",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"account_name\" : \"Otong Rekening\",\r\n    \"account_number\" : \"1295-125-0-1571028-5\",\r\n    \"id_account_bank\" : \"2fce5ea5-a923-4cfd-bba5-b7a8ed021077\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/bank/947b5788-6c27-4be4-a7df-df493fe3841b",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"{{versi_1}}",
+														"{{prefix_mangseller}}",
+														"bank",
+														"947b5788-6c27-4be4-a7df-df493fe3841b"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "deleteAccountBank",
+											"request": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "X-API-MANG",
+														"value": "{{Api_key_Mangseller}}",
+														"type": "text"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNTIzNDQsImV4cCI6MTY4NzI1NTk0NCwibmJmIjoxNjg3MjUyMzQ0LCJqdGkiOiJNSEZHVVE4UExvOTM1VXVwIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.FfdxN6xbZt1lrYkhLUywpVdua2lFjhC1peKk11LB4LA",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/bank/4598568a-d361-4070-a614-fe8dfea9b960",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"{{versi_1}}",
+														"{{prefix_mangseller}}",
+														"bank",
+														"4598568a-d361-4070-a614-fe8dfea9b960"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "StoreAccountBank",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-MANG",
+														"value": "{{Api_key_Mangseller}}",
+														"type": "text"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNTIzNDQsImV4cCI6MTY4NzI1NTk0NCwibmJmIjoxNjg3MjUyMzQ0LCJqdGkiOiJNSEZHVVE4UExvOTM1VXVwIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.FfdxN6xbZt1lrYkhLUywpVdua2lFjhC1peKk11LB4LA",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"account_name\"   : \"Budi Anduk\",\r\n    \"account_number\" : \"128058018-1295901285\",\r\n    \"id_account_bank\" : \"5c9012b5-f938-42e9-9398-15a0478cf548\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/bank/947b5788-6c27-4be4-a7df-df493fe3841",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"{{versi_1}}",
+														"{{prefix_mangseller}}",
+														"bank",
+														"947b5788-6c27-4be4-a7df-df493fe3841"
+													]
+												}
+											},
+											"response": []
+										}
 									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "suplierInfoStore",
-							"request": {
-								"method": "GET",
-								"header": [
-									{
-										"key": "X-API-MANG",
-										"value": "{{Api_key_Mangseller}}",
-										"type": "text"
+								},
+								{
+									"name": "getSuplierInfoDetails",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
 									},
-									{
-										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODY5MDMwMjksImV4cCI6MTY4NjkwNjYyOSwibmJmIjoxNjg2OTAzMDI5LCJqdGkiOiJrTEZ4U1laUlFuc0tpRzIwIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.IKrNHM4DA-MaIHLzSer2hOm0yrj9oJgXE6AP1PBCKKI",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/store",
-									"host": [
-										"{{url}}"
-									],
-									"path": [
-										"{{versi_1}}",
-										"{{prefix_mangseller}}",
-										"store"
-									]
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNTIzNDQsImV4cCI6MTY4NzI1NTk0NCwibmJmIjoxNjg3MjUyMzQ0LCJqdGkiOiJNSEZHVVE4UExvOTM1VXVwIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.FfdxN6xbZt1lrYkhLUywpVdua2lFjhC1peKk11LB4LA",
+												"type": "text"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/info",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"info"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getSuplierInfoStore",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyMzYyNDQsImV4cCI6MTY4NzIzOTg0NCwibmJmIjoxNjg3MjM2MjQ0LCJqdGkiOiJJbGQ0cDE2RUNQc0F1QXZzIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.KHmRMw1u5le8dximGyersCVoMcox0ea3cDIML3yXMd4",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/find/store",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"find",
+												"store"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getSuplierInfoStatus",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyMzIyMDQsImV4cCI6MTY4NzIzNTgwNCwibmJmIjoxNjg3MjMyMjA0LCJqdGkiOiJ3M0dYaVd2aGdvMEtBOGU4Iiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.EsXi6A2n3-O1pzhtjTnrMl8jPovWmc12Zf76HacmXEY",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/find/status",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"find",
+												"status"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getStoreExpedition",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								},
+								{
+									"name": "UpdateSupliersStatus",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNDAxMzQsImV4cCI6MTY4NzI0MzczNCwibmJmIjoxNjg3MjQwMTM0LCJqdGkiOiJGSVU5TmFjT0lCS3FQM0FpIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.AB84vwMJj3sA8xLabZqodwgxkz18iKXtaQQ6aV2oufw",
+												"type": "text"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"status\" : \"close\",\r\n    \"actived_at_start\" : \"2023-06-17 17:50:55\",\r\n    \"actived_at_end\" : \"2023-06-17 17:50:55\",\r\n    \"id\"  : \"9763be27-266d-4721-8d78-809c27ee2b70\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/find/status/9763be27-266d-4721-8d78-809c27ee2b70",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"find",
+												"status",
+												"9763be27-266d-4721-8d78-809c27ee2b70"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "UpdateSupliersStore",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcxNDc3MzgsImV4cCI6MTY4NzE1MTMzOCwibmJmIjoxNjg3MTQ3NzM4LCJqdGkiOiJOcEJBSmR1ZkpUaHJHd2F3Iiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.DhEQYqhwmUqaVQHKDYklhESwOZh9qo_mJ2JvQoTvtas",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name_store",
+													"value": "dropshiper mangdropship sejahtera",
+													"type": "text"
+												},
+												{
+													"key": "slugh_store",
+													"value": "asfasfsa asfaf",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "path_store",
+													"type": "file",
+													"src": "/C:/Users/MANGDROPSHIP/Pictures/2.PNG"
+												},
+												{
+													"key": "store_status",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/find/store",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"find",
+												"store"
+											]
+										}
+									},
+									"response": []
 								}
-							},
-							"response": []
+							]
 						},
 						{
-							"name": "suplierInfoStatus",
-							"request": {
-								"method": "GET",
-								"header": []
-							},
-							"response": []
+							"name": "Wallets",
+							"item": []
 						},
 						{
-							"name": "suplierInfoAccountBank",
-							"request": {
-								"method": "GET",
-								"header": []
-							},
-							"response": []
+							"name": "Produk",
+							"item": []
 						},
 						{
-							"name": "StoreExpedition",
-							"request": {
-								"method": "GET",
-								"header": []
-							},
-							"response": []
+							"name": "Followers",
+							"item": []
+						},
+						{
+							"name": "Cupons",
+							"item": []
+						},
+						{
+							"name": "Orders",
+							"item": []
+						},
+						{
+							"name": "Withdrawal",
+							"item": []
+						},
+						{
+							"name": "Subscribtion",
+							"item": []
+						},
+						{
+							"name": "Video",
+							"item": []
+						},
+						{
+							"name": "Award",
+							"item": []
 						}
 					]
 				}
@@ -2429,6 +2780,14 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"event": [

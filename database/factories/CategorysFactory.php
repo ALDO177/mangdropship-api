@@ -12,8 +12,11 @@ class CategorysFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->paragraph(2),
-            'slugh' => $this->faker->words(5, true),
+            'category_name' => $this->faker->words('8', true),
+            'category_description' => $this->faker->text(random_int(50, 200)),
+            'icon'          => $this->faker->randomLetter(),
+            'image_path'    => $this->faker->imageUrl(400, 400),
+            'active'        => $this->faker->boolean(),
         ]; 
     }
 }

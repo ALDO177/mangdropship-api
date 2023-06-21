@@ -15,9 +15,11 @@ return new class extends Migration
     {
         Schema::create('sub_categorys', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->string('title_sub', 255);
-            $table->text('slugh_sub');
-            $table->foreignId('category_id')->nullable()->constrained('categorys');
+            $table->foreignId('id_category')->constrained('categorys');
+            $table->string('sub_category_name', 255);
+            $table->string('slugh_sub_category_name', 255);
+            $table->text('icons')->nullable();
+            $table->string('path')->nullable();
             $table->timestamps();
         });
     }

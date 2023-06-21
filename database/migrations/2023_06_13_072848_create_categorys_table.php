@@ -6,17 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('categorys', function (Blueprint $table) {
             $table->id();
-            $table->string('title', 255);
-            $table->text('slugh');
+            $table->string('category_name');
+            $table->text('category_description');
+            $table->string('category_slugh');
+            $table->text('icon');
+            $table->text('image_path');
+            $table->boolean('active');
             $table->timestamps();
         });
     }

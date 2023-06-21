@@ -40,7 +40,7 @@ namespace App\Service\MangSellerServices{
                 );
             }
 
-            $tokens = auth('mang-sellers')->login($users);
+            $tokens = auth('mang-sellers')->{'setTTL'}(intval(env('MANG_SELLER_EXPIRED_TOKEN')))->login($users);
             return SubscribtionResourcesResponse::make($this->AccAuthentication($tokens, 
                 __('messages.messages_success', ['name' => 'Login Mangseller']))
             )->response()->setStatusCode(201);
@@ -53,8 +53,7 @@ namespace App\Service\MangSellerServices{
                 'email'         => ['email', 'unique:mang_sellers,email', 'required'],
                 'password'      => ['required', 'confirmed', 'min:6', 'string',
                     'regex:/[a-z]/', 'regex:/[A-Z]/', 'regex:/[0-9]/',
-                    'regex:/[@$!%*#?&]/',
-                ]
+                    'regex:/[@$!%*#?&]/']
             ]);
     
             if ($credentials->fails())

@@ -3,7 +3,6 @@
 namespace App\Jobs;
 
 use App\Mail\MailForgotPassword;
-use App\Models\Admin\AdminMangdropship;
 use App\Models\PasswordAuthentications;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -15,12 +14,16 @@ use Illuminate\Support\Facades\Mail;
 class JobEmailMangAdmin implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    
-    public function __construct(){}
+    public string $email;
+    public string $tokens;
 
-    public function handle()
+    public function __construct(PasswordAuthentications $passwordAuthentications){
+        $this->email  = $passwordAuthentications->email;
+        $this->tokens = $passwordAuthentications->token;
+    }
+    
+    public function handle(): void
     {
-        $users = AdminMangdropship::findWithEmail('mangdropship123@gmail.com');
-        Mail::to($users)->send(new MailForgotPassword('asdfmikamsfn asnfinfaifn'));
+        Mail::to($this->email)->send(new MailForgotPassword($this->tokens));
     }
 }

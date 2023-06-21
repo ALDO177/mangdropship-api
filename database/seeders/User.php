@@ -15,10 +15,12 @@ class User extends Seeder
      */
     public function run()
     {
-        ModelsUser::create([
-            'name'     => 'Aldo Ratmawan',
-            'email'    => 'aldo.ratmawan9999@gmail.com',
-            'password' =>  'aldo12345'
-        ]);
+        ModelsUser::withoutEvents(function(){
+            ModelsUser::create([
+                'name'      =>  'Aldo Ratmawan',
+                'email'     =>  'aldo.ratmawan9999@gmail.com',
+                'password'  =>  'aldo12345'
+            ]);
+        });
     }
 }

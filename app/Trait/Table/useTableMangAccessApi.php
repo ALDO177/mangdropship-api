@@ -9,9 +9,7 @@ namespace App\Trait\Table{
         protected static function boot() : void{
             parent::boot();
             static::creating(function($model){
-                $bytes                = random_bytes(20);
                 $model->uuid          = Uuid::uuid4();
-                $model->access_tokens = md5($bytes);
             });
         }
         

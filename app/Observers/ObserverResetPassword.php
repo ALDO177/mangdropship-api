@@ -1,11 +1,8 @@
 <?php
 
 namespace App\Observers;
-
-use App\Events\EventResetPassword;
 use App\Jobs\JobEmailMangAdmin;
 use App\Models as ModelDB;
-use Illuminate\Support\Facades\Bus;
 
 const message_activation_created = "User Aktivasi Melakukan Reset Password";
 
@@ -14,8 +11,8 @@ class ObserverResetPassword
     public function created(ModelDB\PasswordAuthentications $passwordAuthentications)
     {
         $passwordAuthentications->makeHidden(['uuid']);
-        dispatch(new JobEmailMangAdmin($passwordAuthentications));
-
+        dispatch(new JobEmailMangAdmin($passwordAuthentications))->afterCommit();
+        
         ModelDB\Seller\SelersHistoryAuth::create([
             'type'          => $passwordAuthentications->type,
             'data'          => $passwordAuthentications->toArray(),
@@ -27,7 +24,7 @@ class ObserverResetPassword
     public function updated(ModelDB\PasswordAuthentications $passwordAuthentications)
     {
         $passwordAuthentications->makeHidden(['uuid']);
-        EventResetPassword::dispatch($passwordAuthentications);
+        dispatch(new JobEmailMangAdmin($passwordAuthentications))->afterCommit();
     }
 
     public function deleted(ModelDB\PasswordAuthentications $passwordAuthentications)

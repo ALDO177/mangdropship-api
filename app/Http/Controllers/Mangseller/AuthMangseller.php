@@ -8,10 +8,27 @@ use App\Service\MangSellerServices\AuthMangsellerService;
 class AuthMangseller extends Controller
 {
     public function __construct(protected AuthMangsellerService $services){
-        $this->middleware([ 'guest', 'api-mang-seller-access', 'localization']);
+        $this->middleware(['api-mang-seller-access', 'localization']);
+        $this->middleware(['guest'])->except('logout');
     }
 
     public function login(){
-        return $this->services->serviceLogin();
+        return $this->services->login();
+    }
+
+    public function register(){
+        return $this->services->register();
+    }
+
+    public function resetPassword(){
+        return $this->services->resetPassword();
+    }
+
+    public function confirmPassword(){
+        return $this->services->serviceConfirmResetPassword();
+    }
+
+    public function logout(){
+        return $this->services->logout();
     }
 }

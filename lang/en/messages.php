@@ -10,5 +10,6 @@ return [
     'info_reset_pwd'   => 'Mangdropship Reset Password',
     'text_info_reset_pass' => 'We heard that you lost your Mangdropship password. Sorry about that!
     But don’t worry! You can use the following button to reset your password:',
-    'warning_reset_pass' => 'Please note if you do not use this link within 2 hours it will expire'
+    'warning_reset_pass' => 'Please note if you do not use this link within 2 hours it will expire',
+    'token_expired'    => 'Your token has expired :type'
 ];

@@ -12,6 +12,7 @@ Route::prefix('mang-admin')->group(function(){
             Route::post('register', 'register');
             Route::get('logout', 'logout')->middleware(['auth:admins']);
             Route::post('reset-password', 'resetPassword');
+            Route::post('confirm-reset-password', 'confirmResetPassword');
             Route::post('forget-password', 'forgetPassword');
         });
     });

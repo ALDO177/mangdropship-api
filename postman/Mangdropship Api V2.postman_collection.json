@@ -573,18 +573,196 @@
 			"name": "Category",
 			"item": [
 				{
-					"name": "AlCategory",
+					"name": "groupCategory",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [
+							{
+								"key": "X-API-MANG",
+								"value": "ASFASFS",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-category",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versi_1}}",
+								"{{prefix_dropshiper}}",
+								"slugh-category"
+							]
+						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "NoParamGr",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "ASFASFS",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/category",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_dropshiper}}",
+										"category"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Jun 2023 09:00:48 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Jun 2023 09:00:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "20"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 7,\n        \"code_access\": \"4f4d547a303e403fa7017b24adede2bd\",\n        \"publish\": \"actived\",\n        \"cateagable\": {\n            \"id\": 7,\n            \"category_name\": \"quae provident iure ratione facilis sint sapiente minima\",\n            \"category_description\": \"Facere asperiores magni et in repellat in nam. Dignissimos rerum a qui. Cum aspernatur ut eos quaerat. Eos qui mollitia similique et.\",\n            \"category_slugh\": \"quae-provident-iure-ratione-facilis-sint-sapiente-minima\",\n            \"icon\": \"n\",\n            \"image_path\": \"https://via.placeholder.com/400x400.png/003399?text=aperiam\",\n            \"active\": false,\n            \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n            \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n        }\n    },\n    {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 10,\n        \"code_access\": \"83975715b3ab0698332be28efdbb4d1d\",\n        \"publish\": \"no_actived\",\n        \"cateagable\": {\n            \"id\": 10,\n            \"category_name\": \"consequatur qui voluptas amet quis dolorum nemo optio\",\n            \"category_description\": \"Inventore aliquid eum dolores sit ut quo. Eum odit accusamus culpa consequatur alias. Et qui quis earum velit ratione.\",\n            \"category_slugh\": \"consequatur-qui-voluptas-amet-quis-dolorum-nemo-optio\",\n            \"icon\": \"q\",\n            \"image_path\": \"https://via.placeholder.com/400x400.png/00ccee?text=aut\",\n            \"active\": true,\n            \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n            \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n        }\n    },\n    {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 1,\n        \"code_access\": \"a36644c1696d260eafead018788a67b1\",\n        \"publish\": \"no_actived\",\n        \"cateagable\": {\n            \"id\": 1,\n            \"category_name\": \"qui ipsa qui qui eius vitae voluptatem deleniti\",\n            \"category_description\": \"Vel nemo est sunt corporis enim eius ut. Maxime temporibus non sed explicabo iste. Deserunt nobis ipsam ducimus officia quisquam odio. Quo cumque qui perferendis laudantium.\",\n            \"category_slugh\": \"qui-ipsa-qui-qui-eius-vitae-voluptatem-deleniti\",\n            \"icon\": \"o\",\n            \"image_path\": \"https://via.placeholder.com/400x400.png/00ff99?text=sapiente\",\n            \"active\": false,\n            \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n            \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n        }\n    },\n    {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 6,\n        \"code_access\": \"5e136594f885f0f159b85654510694aa\",\n        \"publish\": \"no_actived\",\n        \"cateagable\": {\n            \"id\": 6,\n            \"category_name\": \"hic non quod dolorem nihil earum dolor ipsum\",\n            \"category_description\": \"Dolores occaecati debitis harum architecto qui mollitia.\",\n            \"category_slugh\": \"hic-non-quod-dolorem-nihil-earum-dolor-ipsum\",\n            \"icon\": \"s\",\n            \"image_path\": \"https://via.placeholder.com/400x400.png/00aaaa?text=voluptatem\",\n            \"active\": true,\n            \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n            \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n        }\n    },\n    {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 4,\n        \"code_access\": \"189bc3ae66fbf0bf1233c01afa3326b6\",\n        \"publish\": \"no_actived\",\n        \"cateagable\": {\n            \"id\": 4,\n            \"category_name\": \"enim blanditiis et eligendi nihil corrupti porro distinctio\",\n            \"category_description\": \"Aliquid corporis et quae alias. Et non rem odit nostrum. Sed qui provident ut incidunt occaecati laudantium dolorem deserunt. Occaecati id eius facere vel sit consequatur.\",\n            \"category_slugh\": \"enim-blanditiis-et-eligendi-nihil-corrupti-porro-distinctio\",\n            \"icon\": \"z\",\n            \"image_path\": \"https://via.placeholder.com/400x400.png/004433?text=in\",\n            \"active\": false,\n            \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n            \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n        }\n    }\n]"
+						},
+						{
+							"name": "WithParamsGrTrue",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "X-API-MANG",
+										"value": "ASFASFS",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/category?gr=true",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_dropshiper}}",
+										"category"
+									],
+									"query": [
+										{
+											"key": "gr",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Jun 2023 09:01:40 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 21 Jun 2023 09:01:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "24"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"actived\": [\n        {\n            \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n            \"tags_category_id\": 7,\n            \"code_access\": \"4f4d547a303e403fa7017b24adede2bd\",\n            \"publish\": \"actived\",\n            \"cateagable\": {\n                \"id\": 7,\n                \"category_name\": \"quae provident iure ratione facilis sint sapiente minima\",\n                \"category_description\": \"Facere asperiores magni et in repellat in nam. Dignissimos rerum a qui. Cum aspernatur ut eos quaerat. Eos qui mollitia similique et.\",\n                \"category_slugh\": \"quae-provident-iure-ratione-facilis-sint-sapiente-minima\",\n                \"icon\": \"n\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/003399?text=aperiam\",\n                \"active\": false,\n                \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n                \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n            }\n        }\n    ],\n    \"no_actived\": [\n        {\n            \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n            \"tags_category_id\": 10,\n            \"code_access\": \"83975715b3ab0698332be28efdbb4d1d\",\n            \"publish\": \"no_actived\",\n            \"cateagable\": {\n                \"id\": 10,\n                \"category_name\": \"consequatur qui voluptas amet quis dolorum nemo optio\",\n                \"category_description\": \"Inventore aliquid eum dolores sit ut quo. Eum odit accusamus culpa consequatur alias. Et qui quis earum velit ratione.\",\n                \"category_slugh\": \"consequatur-qui-voluptas-amet-quis-dolorum-nemo-optio\",\n                \"icon\": \"q\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00ccee?text=aut\",\n                \"active\": true,\n                \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n                \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n            }\n        },\n        {\n            \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n            \"tags_category_id\": 1,\n            \"code_access\": \"a36644c1696d260eafead018788a67b1\",\n            \"publish\": \"no_actived\",\n            \"cateagable\": {\n                \"id\": 1,\n                \"category_name\": \"qui ipsa qui qui eius vitae voluptatem deleniti\",\n                \"category_description\": \"Vel nemo est sunt corporis enim eius ut. Maxime temporibus non sed explicabo iste. Deserunt nobis ipsam ducimus officia quisquam odio. Quo cumque qui perferendis laudantium.\",\n                \"category_slugh\": \"qui-ipsa-qui-qui-eius-vitae-voluptatem-deleniti\",\n                \"icon\": \"o\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00ff99?text=sapiente\",\n                \"active\": false,\n                \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n                \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n            }\n        },\n        {\n            \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n            \"tags_category_id\": 6,\n            \"code_access\": \"5e136594f885f0f159b85654510694aa\",\n            \"publish\": \"no_actived\",\n            \"cateagable\": {\n                \"id\": 6,\n                \"category_name\": \"hic non quod dolorem nihil earum dolor ipsum\",\n                \"category_description\": \"Dolores occaecati debitis harum architecto qui mollitia.\",\n                \"category_slugh\": \"hic-non-quod-dolorem-nihil-earum-dolor-ipsum\",\n                \"icon\": \"s\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00aaaa?text=voluptatem\",\n                \"active\": true,\n                \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n                \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n            }\n        },\n        {\n            \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n            \"tags_category_id\": 4,\n            \"code_access\": \"189bc3ae66fbf0bf1233c01afa3326b6\",\n            \"publish\": \"no_actived\",\n            \"cateagable\": {\n                \"id\": 4,\n                \"category_name\": \"enim blanditiis et eligendi nihil corrupti porro distinctio\",\n                \"category_description\": \"Aliquid corporis et quae alias. Et non rem odit nostrum. Sed qui provident ut incidunt occaecati laudantium dolorem deserunt. Occaecati id eius facere vel sit consequatur.\",\n                \"category_slugh\": \"enim-blanditiis-et-eligendi-nihil-corrupti-porro-distinctio\",\n                \"icon\": \"z\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/004433?text=in\",\n                \"active\": false,\n                \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n                \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n            }\n        }\n    ]\n}"
+						}
+					]
 				},
 				{
-					"name": "FindACategory",
+					"name": "getPublishcategory",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-category/actived",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versi_1}}",
+								"{{prefix_dropshiper}}",
+								"slugh-category",
+								"actived"
+							]
+						}
 					},
 					"response": []
 				}
@@ -677,7 +855,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\"    : \"MangdropshipSellers@gmail.com\",\r\n    \"password\" : \"Aldo12345#\"\r\n}",
+									"raw": "{\r\n    \"email\"    : \"MangdropshipAccount@gmail.com\",\r\n    \"password\" : \"Mang12345\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -746,7 +924,7 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODY1NjE2MTYsImV4cCI6MTY4NjU2NTIxNiwibmJmIjoxNjg2NTYxNjE2LCJqdGkiOiJXQnRpNEpJTWowVllIblRQIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.8AJalfnSXMkpaSNbcg699h3bfHvmjIi4e5xXtTEmj14",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODY3MzI2NDUsImV4cCI6MTY4NjczNjI0NSwibmJmIjoxNjg2NzMyNjQ1LCJqdGkiOiJFZnhYVktUZXhxWWZMbDlPIiwic3ViIjoiMyIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.SkxnVk_S9eYAYoSidVAklwZLnrYAccF7t0L7Mne-Swg",
 										"type": "text"
 									}
 								],
@@ -834,6 +1012,452 @@
 								}
 							},
 							"response": []
+						}
+					]
+				},
+				{
+					"name": "Suplier",
+					"item": [
+						{
+							"name": "Setting",
+							"item": [
+								{
+									"name": "AccountBank",
+									"item": [
+										{
+											"name": "getAllAccountBank",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-MANG",
+														"value": "{{Api_key_Mangseller}}",
+														"type": "text"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODczMDc1NjIsImV4cCI6MTY4NzM5Mzk2MiwibmJmIjoxNjg3MzA3NTYyLCJqdGkiOiJwZWpaZXFXMDhrUHM3aElEIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.ATT8P98bmkAS8z5qK4LEpPTf41EFb051DuT2aQyhZVI",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/bank",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"{{versi_1}}",
+														"{{prefix_mangseller}}",
+														"bank"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "getShowIdBankAccount",
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "X-API-MANG",
+														"value": "{{Api_key_Mangseller}}",
+														"type": "text"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNDc4MTEsImV4cCI6MTY4NzI1MTQxMSwibmJmIjoxNjg3MjQ3ODExLCJqdGkiOiJKTTg5MWtoSWJ1VFdScjNiIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.TKu3Vd7ksspyavthOcCOjFV2HGfiKHoyF2koN2YJvbw",
+														"type": "text"
+													},
+													{
+														"key": "Accept-Language",
+														"value": "en",
+														"type": "text",
+														"disabled": true
+													}
+												],
+												"url": {
+													"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/bank/947b5788-6c27-4be4-a7df-df493fe3841b",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"{{versi_1}}",
+														"{{prefix_mangseller}}",
+														"bank",
+														"947b5788-6c27-4be4-a7df-df493fe3841b"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "UpdateAccountBank",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "X-API-MANG",
+														"value": "{{Api_key_Mangseller}}",
+														"type": "text"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNDc4MTEsImV4cCI6MTY4NzI1MTQxMSwibmJmIjoxNjg3MjQ3ODExLCJqdGkiOiJKTTg5MWtoSWJ1VFdScjNiIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.TKu3Vd7ksspyavthOcCOjFV2HGfiKHoyF2koN2YJvbw",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"account_name\" : \"Otong Rekening\",\r\n    \"account_number\" : \"1295-125-0-1571028-5\",\r\n    \"id_account_bank\" : \"2fce5ea5-a923-4cfd-bba5-b7a8ed021077\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/bank/947b5788-6c27-4be4-a7df-df493fe3841b",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"{{versi_1}}",
+														"{{prefix_mangseller}}",
+														"bank",
+														"947b5788-6c27-4be4-a7df-df493fe3841b"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "deleteAccountBank",
+											"request": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "X-API-MANG",
+														"value": "{{Api_key_Mangseller}}",
+														"type": "text"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODczMDc1NjIsImV4cCI6MTY4NzM5Mzk2MiwibmJmIjoxNjg3MzA3NTYyLCJqdGkiOiJwZWpaZXFXMDhrUHM3aElEIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.ATT8P98bmkAS8z5qK4LEpPTf41EFb051DuT2aQyhZVI",
+														"type": "text"
+													}
+												],
+												"url": {
+													"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/bank/a5e7a645-5d1c-4533-bca6-3a1b472d5aa8",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"{{versi_1}}",
+														"{{prefix_mangseller}}",
+														"bank",
+														"a5e7a645-5d1c-4533-bca6-3a1b472d5aa8"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "StoreAccountBank",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "X-API-MANG",
+														"value": "{{Api_key_Mangseller}}",
+														"type": "text"
+													},
+													{
+														"key": "Authorization",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNTIzNDQsImV4cCI6MTY4NzI1NTk0NCwibmJmIjoxNjg3MjUyMzQ0LCJqdGkiOiJNSEZHVVE4UExvOTM1VXVwIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.FfdxN6xbZt1lrYkhLUywpVdua2lFjhC1peKk11LB4LA",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"account_name\"   : \"Budi Anduk\",\r\n    \"account_number\" : \"128058018-1295901285\",\r\n    \"id_account_bank\" : \"5c9012b5-f938-42e9-9398-15a0478cf548\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/bank/947b5788-6c27-4be4-a7df-df493fe3841",
+													"host": [
+														"{{url}}"
+													],
+													"path": [
+														"{{versi_1}}",
+														"{{prefix_mangseller}}",
+														"bank",
+														"947b5788-6c27-4be4-a7df-df493fe3841"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "getSuplierInfoDetails",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODczMDc1NjIsImV4cCI6MTY4NzM5Mzk2MiwibmJmIjoxNjg3MzA3NTYyLCJqdGkiOiJwZWpaZXFXMDhrUHM3aElEIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.ATT8P98bmkAS8z5qK4LEpPTf41EFb051DuT2aQyhZVI",
+												"type": "text"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/info",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"info"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getSuplierInfoStore",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyMzYyNDQsImV4cCI6MTY4NzIzOTg0NCwibmJmIjoxNjg3MjM2MjQ0LCJqdGkiOiJJbGQ0cDE2RUNQc0F1QXZzIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.KHmRMw1u5le8dximGyersCVoMcox0ea3cDIML3yXMd4",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/find/store",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"find",
+												"store"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getSuplierInfoStatus",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyMzYyNDQsImV4cCI6MTY4NzIzOTg0NCwibmJmIjoxNjg3MjM2MjQ0LCJqdGkiOiJJbGQ0cDE2RUNQc0F1QXZzIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.KHmRMw1u5le8dximGyersCVoMcox0ea3cDIML3yXMd4",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/find/status",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"find",
+												"status"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getStoreExpedition",
+									"request": {
+										"method": "GET",
+										"header": []
+									},
+									"response": []
+								},
+								{
+									"name": "UpdateSupliersStatus",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcyNDAxMzQsImV4cCI6MTY4NzI0MzczNCwibmJmIjoxNjg3MjQwMTM0LCJqdGkiOiJGSVU5TmFjT0lCS3FQM0FpIiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.AB84vwMJj3sA8xLabZqodwgxkz18iKXtaQQ6aV2oufw",
+												"type": "text"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"status\" : \"close\",\r\n    \"actived_at_start\" : \"2023-06-17 17:50:55\",\r\n    \"actived_at_end\" : \"2023-06-17 17:50:55\",\r\n    \"id\"  : \"9763be27-266d-4721-8d78-809c27ee2b70\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/find/status/9763be27-266d-4721-8d78-809c27ee2b70",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"find",
+												"status",
+												"9763be27-266d-4721-8d78-809c27ee2b70"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "UpdateSupliersStore",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODcxNDc3MzgsImV4cCI6MTY4NzE1MTMzOCwibmJmIjoxNjg3MTQ3NzM4LCJqdGkiOiJOcEJBSmR1ZkpUaHJHd2F3Iiwic3ViIjoiMSIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.DhEQYqhwmUqaVQHKDYklhESwOZh9qo_mJ2JvQoTvtas",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "name_store",
+													"value": "dropshiper mangdropship sejahtera",
+													"type": "text"
+												},
+												{
+													"key": "slugh_store",
+													"value": "asfasfsa asfaf",
+													"type": "text",
+													"disabled": true
+												},
+												{
+													"key": "path_store",
+													"type": "file",
+													"src": "/C:/Users/MANGDROPSHIP/Pictures/2.PNG"
+												},
+												{
+													"key": "store_status",
+													"value": "1",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/find/store",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"find",
+												"store"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Wallets",
+							"item": []
+						},
+						{
+							"name": "Produk",
+							"item": []
+						},
+						{
+							"name": "Followers",
+							"item": []
+						},
+						{
+							"name": "Cupons",
+							"item": []
+						},
+						{
+							"name": "Orders",
+							"item": []
+						},
+						{
+							"name": "Withdrawal",
+							"item": []
+						},
+						{
+							"name": "Subscribtion",
+							"item": []
+						},
+						{
+							"name": "Video",
+							"item": []
+						},
+						{
+							"name": "Award",
+							"item": []
 						}
 					]
 				}
@@ -2334,6 +2958,14 @@
 					"response": []
 				}
 			]
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	],
 	"event": [
@@ -2415,6 +3047,11 @@
 		{
 			"key": "prefix_mangseller",
 			"value": "mang-seller",
+			"type": "string"
+		},
+		{
+			"key": "prefix_dropshiper",
+			"value": "dropshiper",
 			"type": "string"
 		}
 	]

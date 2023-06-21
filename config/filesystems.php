@@ -44,12 +44,20 @@ return [
             'throw'  => false,
         ],
 
-        'mang-img' =>[
-            'driver' => 'local',
-            'root'   => storage_path('app/public'),
-            'url'    => env('APP_URL').'/storage/mang-img',
-            'visibility' => 'public',
-            'throw'  => false,
+        env('DISK_KEY_IMG') =>[
+            'driver'        => 'local',
+            'root'          => storage_path('app/public'),
+            'url'           => env('APP_URL').'/storage/mang-img',
+            'visibility'    => 'public',
+            'throw'         => false,
+        ],
+
+        env('DISK_KEY_VIDEOS') =>[
+            'driver'           => 'local',
+            'root'             => storage_path('app/public'),
+            'url'              => env('APP_URL').'/storage/mang-video',
+            'visibility'       => 'public',
+            'throw'            => false,
         ],
 
         's3' => [

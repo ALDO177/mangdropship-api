@@ -182,6 +182,8 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Tymon\JWTAuth\Providers\LaravelServiceProvider::class,
+        \Buglinjo\LaravelWebp\WebpServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
         
 
         /*
@@ -211,7 +213,8 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-        // 'ExampleClass' => App\Example\ExampleClass::class,
+        'Webp' => \Buglinjo\LaravelWebp\Facades\Webp::class,
+        'Image' => Intervention\Image\Facades\Image::class
     ])->toArray(),
 
 ];

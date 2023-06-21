@@ -13,4 +13,9 @@ trait withoutWreapArray{
         }
         return['error_validations' =>  $array];
     }
+
+    public function LengthSlashPath(int $length, string $data) : string{
+        $exp = explode('/', $data);
+        return $exp[$length];
+    }
 }

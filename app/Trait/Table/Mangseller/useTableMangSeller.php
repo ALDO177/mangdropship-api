@@ -13,6 +13,7 @@ namespace App\Trait\Table\Mangseller{
         public static function findWithEmail(string $email){
             return static::where('email', $email)->first();
         }
+        
         public static function updatePasswordAdmin($email, $password){
             $updated = static::where('email', $email)->update(['password' => $password]);
             if($updated) return true;

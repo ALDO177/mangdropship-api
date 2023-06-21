@@ -1,0 +1,11 @@
+Tips Ringankan hidup dengan 5 Tips Menyelesaikan Pekerjaan yang menumpuk ini
+
+1.Buat To List
+2.Fokus kerjaan suatu Tugas Terlebih Dahulu
+3.Hindari distraksi saat Bekerja
+4.Selalu Update pekerjaan yang sudah diseleasikan
+5.Lakukan Mikro Break saat Bekerja
+
+https://www.bezkoder.com/node-js-express-sequelize-mysql/
+https://sequelize.org/docs/v6/advanced-association-concepts/polymorphic-associations/
+https://www.youtube.com/watch?v=LenNpb5zqGE

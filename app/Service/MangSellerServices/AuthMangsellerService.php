@@ -5,15 +5,17 @@ namespace App\Service\MangSellerServices{
     use App\Http\Resources\SubscribtionResourcesResponse;
     use App\Models\MangSellerModels\MangSellers;
     use App\Models\PasswordAuthentications;
+    use App\Trait\ResponseControl\useError;
     use App\Trait\Help\ResponseMessage;
-    use App\Trait\Help\withoutWreapArray;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Hash;
     use Illuminate\Support\Facades\Validator;
 
     class AuthMangsellerService{
 
-        use ResponseMessage, withoutWreapArray;
+        use ResponseMessage, 
+            useError;
+            
         public function __construct(protected Request $request){}
 
         public function login(){
@@ -25,25 +27,25 @@ namespace App\Service\MangSellerServices{
 
             if($credentials->fails())
                 return SubscribtionResourcesResponse::make(
-                    $this->messageNotAuth(400, 
-                    __('messages.messages_errors', 
-                    ['type' => 'Login Mangseller']), $credentials->messages()->toArray())
+                    $this->errAuthWithValidation(
+                         400,
+                         __('error.MANG-ERROR-AUTH-TR1'), 
+                         $credentials->messages()->toArray()
+                    )
                 )->response()->setStatusCode(400);
-
             $users = MangSellers::findWithEmail($this->request->email);
         
             if( !$users || !Hash::check($this->request->password, $users->password)){
                 return response()->json(
-                    $this->messagesError(
-                        __('messages.messages_errors', ['type' =>
-                        __('messages.wrong_email_pass')]), 400), 400, [], JSON_PRETTY_PRINT
+                   $this->errGlobalResponse(400, __('error.MANG-ERROR-WPWD-TR1'))
                 );
             }
 
             $tokens = auth('mang-sellers')->{'setTTL'}(intval(env('MANG_SELLER_EXPIRED_TOKEN')))->login($users);
             return SubscribtionResourcesResponse::make($this->AccAuthentication($tokens, 
-                __('messages.messages_success', ['name' => 'Login Mangseller']))
-            )->response()->setStatusCode(201);
+                __('messages.messages_success', ['name' => 'Login Mangseller'])))
+                ->response()
+                ->setStatusCode(201);
         }
 
         public function register(){
@@ -58,9 +60,12 @@ namespace App\Service\MangSellerServices{
     
             if ($credentials->fails())
                 return SubscribtionResourcesResponse::make(
-                    $this->messageNotAuth(400, __('messages.messages_errors', 
-                    ['type' => 'Register Mangseller']), 
-                    $credentials->messages()->toArray()))->response()->setStatusCode(400);
+                  $this->errValidation(
+                    400, 
+                    __('error.MANG-ERROR-VLD-1'), 
+                    $credentials->messages()->toArray()))
+                    ->response()
+                    ->setStatusCode(400);
             
             $createdAdminAccount = MangSellers::create($this->request->only(['name', 'email', 'password']));
             if($createdAdminAccount){
@@ -79,10 +84,16 @@ namespace App\Service\MangSellerServices{
             $credentials = Validator::make($this->request->all(), [
                 'email' => ['required', 'exists:mang_sellers,email']
             ]);
-
             if($credentials->fails()){
                 return SubscribtionResourcesResponse::make(
-                    $this->messageNotAuth(400, 'Bad Request', $credentials->messages()->toArray()));
+                    $this->errValidation(
+                        400, 
+                        __('error.MANG-ERROR-VLD-1'), 
+                        $credentials
+                        ->messages()
+                        ->toArray()
+                    )
+                )->response()->setStatusCode(400);
             }
 
             if (PasswordAuthentications::DuplicatedResetPassword($this->request->email, 'mangseller')) {
@@ -94,7 +105,9 @@ namespace App\Service\MangSellerServices{
             $konditions = PasswordAuthentications::CreateResetPassword('reset', $this->request->email, 'mangseller');
             if ($konditions)
                 return SubscribtionResourcesResponse::make(
-                $this->messagesSuccess(__('messages.messages_success', ['name' => 'Update Reset Password'])));
+                $this->messagesSuccess(
+                    __('messages.messages_success',
+                      ['name' => 'Update Reset Password'])));
     
             return SubscribtionResourcesResponse::make(
                 $this->messageAuth(400, 'Reset password error',
@@ -105,16 +118,16 @@ namespace App\Service\MangSellerServices{
         public function serviceConfirmResetPassword(){
 
             $credentials  = Validator::make($this->request->all(), [
-                'token'         => ['required'],
-                'password'      => ['required', 'confirmed', 'min:6', 'string',
+                'token'      => ['required'],
+                'password'   => ['required', 'confirmed', 'min:6', 'string',
                     'regex:/[a-z]/', 'regex:/[A-Z]/', 'regex:/[0-9]/',
                     'regex:/[@$!%*#?&]/']]);
             
             if($credentials->fails())
                 return SubscribtionResourcesResponse::make(
-                    $this->messageNotAuth(400,
-                    __('messages.messages_errors', ['type' => 'Reset Password']), 
-                    $credentials->messages()->toArray())
+                    $this->errValidation(
+                        400, __('error.MANG-ERROR-VLD-1'), 
+                        $credentials->messages()->toArray())
                 );
 
             $checkTokens = PasswordAuthentications::where('token', $this->request->token)
@@ -125,10 +138,10 @@ namespace App\Service\MangSellerServices{
                 $tokens = PasswordAuthentications::CheckTokenAndExpiredToken($this->request->token);
                 if(!is_null($tokens)){
                     return SubscribtionResourcesResponse::make(
-                        $this->messagesError(__('messages.token_expired', ['type' => 'Pengguna ' . ucfirst($tokens->status)]))
+                        $this->errGlobalResponse(400, __('error.MANG-ERROR-TEXP-ETR-V1'))
                     );
                 }
-
+                
                 if(MangSellers::updatePasswordAdmin($checkTokens->email, Hash::make($this->request->password))){
                     PasswordAuthentications::deleteTokens($checkTokens->uuid);
                     return SubscribtionResourcesResponse::make(
@@ -136,18 +149,20 @@ namespace App\Service\MangSellerServices{
                     );
                 }
             }
-            
+
             return SubscribtionResourcesResponse::make(
-                $this->messagesError(__('messages.messages_errors', ['type' => 'Tokens']))
-            );
+                $this->errGlobalResponse(400, __('error.MANG-ERROR-RPWD-RTR-V1')))
+                ->response()
+                ->setStatusCode(400);
         }
 
         public function logout(){
             auth('mang-sellers')->logout();
             return SubscribtionResourcesResponse::make(
                 $this->messagesSuccess(
-                __('messages.messages_success', ['name' => 'Logout Mangsellers']), 201)
-            )->response()->setStatusCode(201);
+                __('messages.messages_success', ['name' => 'Logout Mangsellers']), 201))
+                ->response()
+                ->setStatusCode(201);
         }
     }
 }

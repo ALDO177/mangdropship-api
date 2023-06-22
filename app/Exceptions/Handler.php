@@ -3,17 +3,16 @@
 namespace App\Exceptions;
 
 use App\Trait\Help\ResponseMessage;
+use App\Trait\ResponseControl\useError;
 use ErrorException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Throwable;
 
 class Handler extends ExceptionHandler
 {
-    use ResponseMessage;
+    use ResponseMessage, useError;
 
     protected $levels = [
         //
@@ -29,13 +28,20 @@ class Handler extends ExceptionHandler
         'password_confirmation',
     ];
 
+    protected function errorHandleAuthNotFound(string $errorMessages) : array{
+       return !is_bool(strpos($errorMessages, '[login]')) ? __('error.MANG-ERROR-ATZ-HND-V1')  :  [];
+    }
+
     public function register()
     {
         $this->reportable(function (Throwable $e) {});
 
         $this->renderable(function(RouteNotFoundException $error, Request $request){
            if($request->is('api/v1/*')){
-            return response()->json($this->messageNotAuth(401, 'Route Not Found', ['error' => true]), 401);
+            return response()->json(
+                $this->errGlobalResponseAdditional(
+                    401, __('error.MANG-ERROR-RNFN-HND-V1'), 
+                    ['information' => $this->errorHandleAuthNotFound($error->getMessage())]), 401);
            }
         });
         
@@ -52,9 +58,9 @@ class Handler extends ExceptionHandler
                 return response()->json(['users' => $request->user(), 'message' => $error->getMessage()], 400);
             }else{
                 return response()->json(
-                    $this->messagesError(
-                        __('messages.error_exception',
-                        ['name' => env('APP_URL') . '/api/mang-seller/*'])), 401
+                    $this->errGlobalResponseAdditional(
+                        401, __('error.MANG-ERROR-RNFN-HND-V1'), 
+                        ['information' => $this->errorHandleAuthNotFound($error->getMessage())]), 401
                 );
             }
          });

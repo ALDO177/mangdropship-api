@@ -16,7 +16,7 @@ Route::prefix('mang-seller')->group(function(){
             Route::get('logout', 'logout')->middleware(['auth:mang-sellers']);
         });
     });
-
+    
     Route::controller(MangsellerAccess::class)->group(function(){
         Route::get('info', 'info');
     });

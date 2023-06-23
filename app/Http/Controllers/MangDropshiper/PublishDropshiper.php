@@ -13,10 +13,30 @@ class PublishDropshiper extends Controller
         protected PublishDropshiperService $publishCategory){}
 
     public function showSlughCategory(){
-        return $this->publishCategory->serviceShowSlughCategory();
+        return $this->publishCategory
+                    ->serviceShowSlughCategory();
     }
 
     public function showSlughPublishCategory(string $publish){
-        return $this->publishCategory->serviceShowSlughPublishCategory($publish);
+        return $this->publishCategory
+                    ->serviceShowSlughPublishCategory($publish);
+    }
+
+    public function showSearchWithSlugh(string $slugh){
+        return $this->publishCategory
+                    ->serviceShowFindCategory($slugh);
+    }
+
+    public function showSubCategory(){
+        return $this->publishCategory
+                ->serviceShowSubCategory();
+    }
+
+    public function showSubCategoryWithSlugh(string $slugh){
+        return $this->publishCategory->serviceShowSubCategoryWithSlugh($slugh);
+    }
+
+    public function searchSubCategory(){
+        return $this->publishCategory->serviceSearchSubCategory();
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Trait\ResponseControl{
 
     use App\Trait\Help\withoutWreapArray;
+    use Illuminate\Database\Eloquent\Model;
 
     trait useSuccess{
 
@@ -20,14 +21,20 @@ namespace App\Trait\ResponseControl{
             );
         }
 
-        protected function successSettingLang(array $error, int $statusCode) : array{
-            $settingError = [];
-            $settingError['status_code'] = $statusCode;
-            foreach($error as $key => $value){
-                $settingError['code_error']     = $key;
-                $settingError['message_error']  = $value;
+        public function successAuthenticationWithToken(string $token, int $code = 201 , array $success, array $additional = []){
+            $settingSuccess = $this->successSettingLang($success, $code);
+            $settingSuccess['token'] = $token;
+            return array_merge_recursive($settingSuccess, $additional);
+        }
+        
+        protected function successSettingLang(array $success, int $statusCode) : array{
+            $settingsuccess = [];
+            $settingsuccess['status_code'] = $statusCode;
+            foreach($success as $key => $value){
+                $settingsuccess['code_success']     = $key;
+                $settingsuccess['message_success']  = $value;
             }
-            return $settingError;
+            return $settingsuccess;
         }
     }
 }

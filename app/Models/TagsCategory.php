@@ -45,7 +45,7 @@ class TagsCategory extends Model
     } 
 
     public function getGroupPublishAll(){
-        return $this->with(['cateagable'])->chunkMap(function($groups){
+        return $this->with(['cateagable' => ['subCategory']])->chunkMap(function($groups){
             return $groups;
         })->groupBy('publish');
     }

@@ -6,27 +6,16 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('galleries_products', function (Blueprint $table) {
             $table->uuid('id');
-            $table->foreignUuid('id_product')->constrained('produks');
+            $table->foreignUuid('id_product')->constrained('produks')->onDelete('cascade')->onUpdate('cascade');
             $table->string('image_path');
-            $table->boolean('thumbnails');
-            $table->timestamps();
+            $table->boolean('image_active');
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('galleries_products');

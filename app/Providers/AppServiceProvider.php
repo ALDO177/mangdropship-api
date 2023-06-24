@@ -25,22 +25,6 @@ class AppServiceProvider extends ServiceProvider
             }
             return $this;
         });
-
-        Builder::macro('whereLikeWithRelations', function($attributes, string $searchItems){
-            $this->where(function(Builder $query) use($attributes, $searchItems){
-                foreach($attributes as $attribute){
-                    $query->when(str_contains($attribute, '.'), function(Builder $query) use($attribute, $searchItems){
-                        [$relationName, $relationAttr] = explode('.', $attribute);
-                        $query->orWhereHas($relationName, function(Builder $query) use($relationAttr, $searchItems){
-                            $query->orWhere($relationAttr, 'LIKE', '%' . $searchItems . '%');
-                        });
-                    }, function(Builder $query) use($attribute, $searchItems){
-                        $query->orWhere($attribute, 'LIKE', '%' . $searchItems . '%');
-                    });
-                }
-            });
-            return $this;
-        });
         JsonResource::withoutWrapping();
     }
 }

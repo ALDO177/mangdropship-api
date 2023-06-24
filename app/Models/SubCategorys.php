@@ -69,7 +69,11 @@ class SubCategorys extends Model
 
     public function searchSubcategory(string $searchItems){
         return $this->query()
-              ->whereLike(['sub_category_name', 'slugh_sub_category_name'], $searchItems)
+              ->with(['category'])
+              ->whereLike(
+                ['slugh_sub_category_name', 
+                'token_access_code', 
+                'sub_category_name'], $searchItems)
               ->cursorPaginate(10);
     }
 }

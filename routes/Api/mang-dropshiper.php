@@ -10,6 +10,6 @@ Route::prefix('dropshiper')->group(function(){
         Route::get('slugh-seacrh-catgory/{slugh}', 'showSearchWithSlugh');
         Route::get('sub-category', 'showSubCategory');
         Route::get('sub-category-slugh/{slugh}', 'showSubCategoryWithSlugh');
-        Route::get('category-search', 'searchSubCategory');
+        Route::get('sub-category-search', 'searchSubCategory');
     }); 
 });

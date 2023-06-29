@@ -7,6 +7,7 @@ namespace App\Service\MangSellerServices{
     use App\Models\PasswordAuthentications;
     use App\Trait\ResponseControl\useError;
     use App\Trait\Help\ResponseMessage;
+    use App\Trait\ResponseControl\useSuccess;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Hash;
     use Illuminate\Support\Facades\Validator;
@@ -14,7 +15,8 @@ namespace App\Service\MangSellerServices{
     class AuthMangsellerService{
 
         use ResponseMessage, 
-            useError;
+            useError, 
+            useSuccess;
             
         public function __construct(protected Request $request){}
 
@@ -42,19 +44,19 @@ namespace App\Service\MangSellerServices{
             }
 
             $tokens = auth('mang-sellers')->setTTL(4200)->login($users);
-            return SubscribtionResourcesResponse::make($this->AccAuthentication($tokens, 
-                __('messages.messages_success', ['name' => 'Login Mangseller'])))
-                ->response()
-                ->setStatusCode(201);
+            return SubscribtionResourcesResponse::make(
+                $this->successAuthenticationWithToken(
+                    $tokens, 201, __('success.MANG-SUCCESS-AUTH-TR1')),
+                    ['type' => 'mang-seller'])->response()->setStatusCode(201);
         }
 
         public function register(){
 
             $credentials = Validator::make($this->request->all(), [
-                'name'          => ['max:20', 'min:3', 'required'],
-                'email'         => ['email', 'unique:mang_sellers,email', 'required'],
-                'password'      => ['required', 'confirmed', 'min:6', 'string',
-                    'regex:/[a-z]/', 'regex:/[A-Z]/', 'regex:/[0-9]/',
+                'name'          => ['max:20',   'min:3', 'required'],
+                'email'         => ['email',    'unique:mang_sellers,email', 'required'],
+                'password'      => ['required', 'confirmed', 'min:6', 'string', 
+                'regex:/[a-z]/', 'regex:/[A-Z]/', 'regex:/[0-9]/',
                     'regex:/[@$!%*#?&]/']
             ]);
     

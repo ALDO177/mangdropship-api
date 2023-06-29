@@ -14,10 +14,10 @@ class GalleriesProduct extends Model
     protected $fillable =[
         'id_product',
         'image_path',
-        'thumbnails',
+        'image_active',
     ];
-
+    
     protected $casts =[
-        'thumbnails' => 'boolean'
+        'image_active' => 'boolean'
     ];
 }

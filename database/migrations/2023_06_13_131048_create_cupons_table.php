@@ -6,24 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::create('cupons', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->uuid('id')->primary();
+            $table->string('code_cupons');
+            $table->text('cupon_description');
+            $table->bigInteger('discount_value');
+            $table->string('discount_type');
+            $table->bigInteger('time_usage');
+            $table->bigInteger('max_usage');
+            $table->timestamp('cupons_start_at');
+            $table->timestamp('cupons_end_at');
         });
     }
-
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
+    
     public function down()
     {
         Schema::dropIfExists('cupons');

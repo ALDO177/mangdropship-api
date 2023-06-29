@@ -2,13 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\Categorys;
-use App\Models\SubCategorys;
-use Faker\Factory;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class SubCategorysSeeder extends Seeder
+class VariantProductsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,6 +14,6 @@ class SubCategorysSeeder extends Seeder
      */
     public function run()
     {
-        SubCategorys::factory()->count(100)->create();
+        //
     }
 }

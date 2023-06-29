@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Relations\MorphOne;
 use Illuminate\Support\Str;
@@ -33,10 +34,33 @@ class Categorys extends Model
     }
 
     public function tagsCategorys(): MorphMany{
-        return $this->morphMany(TagsCategory::class, 'cateagable', 'tags_category_type', 'tags_category_id');
+        return $this->morphMany(
+            TagsCategory::class, 
+            'cateagable', 
+            'tags_category_type', 
+            'tags_category_id'
+        );
     }
 
     public function tagsCategory(): MorphOne{
-        return $this->morphOne(TagsCategory::class, 'cateagable', 'tags_category_type', 'tags_category_id');
+        return $this->morphOne(
+            TagsCategory::class, 
+            'cateagable', 
+            'tags_category_type', 
+            'tags_category_id'
+        );
+    }
+
+    public function subCategory() : HasMany{
+        return $this->hasMany(
+            SubCategorys::class, 
+            'id_category', 'id'
+        );
+    }
+
+    public function searchFindWithSlugh(string $slugh){
+        return $this->with(['tagsCategory', 'subCategory'])
+                    ->where('category_slugh', $slugh)
+                    ->first();
     }
 }

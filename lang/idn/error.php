@@ -7,5 +7,6 @@ return[
     'MANG-ERROR-RPWD-RTR-V1' => ['MANG-ERROR-RPWD-RTR-V1'  => 'Reset password terjadi kesalahan'],
     'MANG-ERROR-TEXP-ETR-V1' => ['MANG-ERROR-TEXP-ETR-V1'  => 'Token Reset Password Kadaluarsa'],
     'MANG-ERROR-RNFN-HND-V1' => ['MANG-ERROR-RNFN-HND-V1'  => 'Rute yang Anda pilih tidak ditemukan'],
-    'MANG-ERROR-ATZ-HND-V1'  => ['MANG-ERROR-ATZ-HND-V1'   => 'Token Otorisasi Gagal atau Kedaluwarsa']
+    'MANG-ERROR-ATZ-HND-V1'  => ['MANG-ERROR-ATZ-HND-V1'   => 'Token Otorisasi Gagal atau Kedaluwarsa'],
+    'MANG-ERROR-NULL-TRB-1'  => ['MANG-ERROR-NULL-TRB-1'   => 'Data Yang kamu cari null']
 ];

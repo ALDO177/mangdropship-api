@@ -8,18 +8,14 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('videos_products', function (Blueprint $table) {
-            $table->uuid('id')->primary();
+        Schema::create('tags_products', function (Blueprint $table) {
+            $table->foreignUuid('id_tags_product')->constrained('tags')->onDelete('cascade')->onUpdate('cascade');
             $table->foreignUuid('id_product')->constrained('produks')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('video_name')->nullable();
-            $table->text('video_description')->nullable();
-            $table->string('video_path');
-            $table->timestamps();
         });
     }
-
+    
     public function down()
     {
-        Schema::dropIfExists('videos_products');
+        Schema::dropIfExists('tags_products');
     }
 };

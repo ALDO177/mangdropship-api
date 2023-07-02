@@ -8,13 +8,8 @@ use Illuminate\Database\Seeder;
 
 class GalleriesProductSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
-        GalleriesProduct::factory()->count(25)->create();
+        GalleriesProduct::factory()->count(50)->create();
     }
 }

@@ -10,6 +10,10 @@ return new class extends Migration
     {
         Schema::create('cupons', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->foreignUuid('id_suplier')
+                ->constrained('suplliers')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->string('code_cupons');
             $table->text('cupon_description');
             $table->bigInteger('discount_value');

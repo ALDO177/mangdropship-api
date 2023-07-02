@@ -14,7 +14,7 @@ return new class extends Migration
             $table->string('video_name')->nullable();
             $table->text('video_description')->nullable();
             $table->string('video_path');
-            $table->timestamps();
+            $table->boolean('video_status');
         });
     }
 

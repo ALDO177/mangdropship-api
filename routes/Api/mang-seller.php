@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Mangseller\AuthMangseller;
 use App\Http\Controllers\Mangseller\ControllersMangsellerAccountBank;
+use App\Http\Controllers\Mangseller\CuponsSellerController;
 use App\Http\Controllers\Mangseller\MangsellerAccess;
 use App\Http\Controllers\Mangseller\MangsellerSettingController;
 use Illuminate\Support\Facades\Route;
@@ -32,6 +33,7 @@ Route::prefix('mang-seller')->group(function(){
     });
 
     Route::apiResources([
-        'bank' => ControllersMangsellerAccountBank::class
+        'bank'        => ControllersMangsellerAccountBank::class,
+        'cupons'      => CuponsSellerController::class,
     ]);
 });

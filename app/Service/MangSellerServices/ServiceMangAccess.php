@@ -35,7 +35,9 @@ namespace App\Service\MangSellerServices{
 
         public function infoStore(){
             $infoStore = $this->suplier->infoStore($this->request->user()->id);
-            if(is_null($infoStore)) return response()->json($this->messagesError(__('messages.messages_supliers')), 400);
+            if(is_null($infoStore)) 
+            return response()
+                   ->json($this->messagesError(__('messages.messages_supliers')), 400);
             return ResourcesStoreSellers::make($infoStore);
         }
 
@@ -75,6 +77,11 @@ namespace App\Service\MangSellerServices{
             }
             $storeStatus = StoreStatus::findOrUpdate(false, $uuid, $this->request->only(['status', 'actived_at_start', 'actived_at_start']));
             return $storeStatus;
+        }
+
+        public function serviceListGetCupons(){
+            return $this->suplier->with(['cuponsList'])
+                ->where('id_sellers', $this->request->user()->id);
         }
 
         public function serviceBankInfoAccount(){

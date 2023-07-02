@@ -10,13 +10,17 @@ use Illuminate\Http\Request;
 class MangsellerAccess extends Controller
 {
 
-    public function __construct()
+    public function __construct(protected ServiceMangAccess $serviceMangAccess)
     {
         $this->middleware(['auth:mang-sellers', 'localization', 'api-mang-seller-access', 'suplier']);
     }
 
     public function info(ServiceMangAccess $acces){
         return $acces->accessInfo();
+    }
+
+    public function listCupons(){
+        return $this->serviceMangAccess->serviceListGetCupons();
     }
 
     public function infoStore(ServiceMangAccess $acces){

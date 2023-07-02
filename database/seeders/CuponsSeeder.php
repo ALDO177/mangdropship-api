@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Cupons;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -14,6 +15,6 @@ class CuponsSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Cupons::factory()->count('10')->create();
     }
 }

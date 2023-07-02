@@ -3,37 +3,32 @@
 namespace App\Http\Controllers\Mangseller;
 
 use App\Http\Controllers\Controller;
+use App\Service\MangSellerServices\ServiceMangAccess;
 use Illuminate\Http\Request;
 
 class CuponsSellerController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    public function __construct(protected ServiceMangAccess $serviceMangAccess)
+    {
+        $this->middleware(
+            [
+                'auth:mang-sellers', 
+                'localization', 
+                'api-mang-seller-access', 
+                'suplier'
+            ]);
+    }
     public function index()
     {
-        //
+        return $this->serviceMangAccess->serviceListGetCupons();
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
         //

@@ -31,7 +31,6 @@ Route::prefix('mang-seller')->group(function(){
             Route::match(['put', 'patch', 'post'], 'store',  'updateStore');
         });
     });
-
     Route::apiResources([
         'bank'        => ControllersMangsellerAccountBank::class,
         'cupons'      => CuponsSellerController::class,

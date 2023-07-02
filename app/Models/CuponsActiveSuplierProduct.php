@@ -11,7 +11,7 @@ class CuponsActiveSuplierProduct extends Model
 
     public $increments = false;
     public $timestamps = false;
-    
+
     protected $fillable = [
         'id_suplliers',
         'id_cupons',

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Trait\UUID\UuidSetGlobal;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Rfc4122\UuidV3;
@@ -12,7 +11,7 @@ class AccountBank extends Model
     use HasFactory;
     public $keyType = 'string';
 
-    protected $fillable =[
+    protected $fillable = [
         'type_bank', 'thumbnail', 'code_access', 'more'
     ];
 

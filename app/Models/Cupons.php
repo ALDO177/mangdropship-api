@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Casts\MangsellerCasts\CuponsCast;
+use App\Casts\MangsellerCasts\GroupCuppon;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -25,10 +26,10 @@ class Cupons extends Model
         'cupons_start_at',
         'cupons_end_at'
     ];
-    protected $appends = ['cupon_options'];
+    protected $appends = ['cupon_actived'];
     
     protected $casts = [
-        'cupon_options' => CuponsCast::class
+        'cupon_actived' => CuponsCast::class
     ];
 
     protected static function boot()
@@ -40,7 +41,7 @@ class Cupons extends Model
         });
     }
 
-    public function cuponOptions() : Attribute{
+    public function cuponActived() : Attribute{
         return Attribute::make(get: fn($values) => $values);
     }
 }

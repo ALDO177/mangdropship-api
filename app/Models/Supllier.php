@@ -40,8 +40,16 @@ class Supllier extends Model
         return $this->hasMany(Cupons::class, 'id_suplier', 'id');
     }
 
+    public function cuponsActiveProduct() : HasMany{
+        return $this->hasMany(CuponsActiveSuplierProduct::class, 'id_suplliers', 'id');
+    }
+
     public function infoStore(string $id){
         return static::with(['store'])->where('id_sellers', $id)->first();
+    }
+
+    public function listCuponsActivedProduct($idUser){
+        return $this->with(['cuponsActiveProduct' => ['cupons']])->where('id_sellers', $idUser)->first();
     }
 
     public function storeInformation(string $id){

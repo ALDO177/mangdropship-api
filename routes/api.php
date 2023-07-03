@@ -9,3 +9,7 @@ Route::prefix('v1')->group(function(){
     require_once __DIR__ . '/Api/mang-admin.php';
     require_once __DIR__ . '/Api/mang-dropshiper.php';
 });
+
+Route::get('apis', function(){
+    return strtotime('now +2 days');
+});

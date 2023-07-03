@@ -84,10 +84,9 @@ namespace App\Service\MangSellerServices{
         public function serviceListGetCupons(){
             $cuponsList = $this->suplier->with(['cuponsList'])
                 ->where('id_sellers', $this->request->user()->id)
-                ->first()
-                ->cuponsList;
-
-            if($cuponsList->count() < 1){
+                ->first()?->cuponsList;
+                
+            if($cuponsList?->count() < 1){
                 return response()->json(
                     $this->errGlobalResponse(
                         201, 

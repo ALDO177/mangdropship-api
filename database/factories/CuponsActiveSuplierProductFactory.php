@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Supllier;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,11 @@ class CuponsActiveSuplierProductFactory extends Factory
     public function definition()
     {
         return [
-            //
+            // 'id_suppliers' => $this->faker->randomElement(Supllier::all()),
+            // 'id_cupons',
+            // 'id_product',
+            // 'time_publish',
+            // 'max_usage_cupons'
         ];
     }
 }

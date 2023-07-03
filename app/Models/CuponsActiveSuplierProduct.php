@@ -15,6 +15,24 @@ class CuponsActiveSuplierProduct extends Model
     protected $fillable = [
         'id_suplliers',
         'id_cupons',
-        'id_product'
+        'id_product',
+        'time_publish',
+        'max_usage_cupons'
     ];
+
+    // protected $appends = [
+    //     'info_publish'
+    // ];
+
+    // protected $casts = [
+    //     'info_publish'
+    // ];
+
+    public function cupons(){
+        return $this->hasOne(Cupons::class, 'id', 'id_cupons');
+    }
+
+    public function products(){
+        return $this->hasOne(Produk::class, 'id', 'id_product');
+    }
 }

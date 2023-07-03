@@ -17,11 +17,11 @@ class SuplierProduksSeeder extends Seeder
      */
     public function run()
     {
-        suplierProduks::factory()->count(20)->create();
-        // suplierProduks::create([
-        //     'id_suplier' => Supllier::all()->toArray()[0]['id'],
-        //     'id_product' => Produk::all()[0]['id']
-        // ]);
+        // suplierProduks::factory()->count(20)->create();
+        suplierProduks::create([
+            'id_suplier' => '80cdcab0-973f-407e-8a63-aaa79213dd5a',
+            'id_product' => 'a355e6f7-6678-4696-879f-406d44defdc9'
+        ]);
 
         // suplierProduks::create([
         //     'id_suplier' => Supllier::all()->toArray()[1]['id'],

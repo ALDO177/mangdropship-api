@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Mangseller;
 
 use App\Http\Controllers\Controller;
-use App\Service\MangSellerServices\ServiceMangAccess;
+use App\Service\MangSellerServices\ServiceCuponsMangseller;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class CuponsSellerController extends Controller
 {
 
-    public function __construct(protected ServiceMangAccess $serviceMangAccess)
+    public function __construct(
+        protected ServiceCuponsMangseller $serviceMangAccess)
     {
         $this->middleware(
             [
@@ -19,9 +21,10 @@ class CuponsSellerController extends Controller
                 'suplier'
             ]);
     }
-    public function index()
+    public function index() : JsonResponse
     {
-        return $this->serviceMangAccess->serviceListGetCupons();
+        return $this->serviceMangAccess
+               ->serviceListGetCupons();
     }
 
     public function store(Request $request)
@@ -34,24 +37,11 @@ class CuponsSellerController extends Controller
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

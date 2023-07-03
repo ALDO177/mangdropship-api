@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('badges_icon')->nullable();
             $table->string('badges_path');
             $table->boolean('publish');
-            $table->timestamps();
+            $table->timestamps(); 
         });
     }
 

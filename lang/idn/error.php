@@ -8,5 +8,6 @@ return[
     'MANG-ERROR-TEXP-ETR-V1' => ['MANG-ERROR-TEXP-ETR-V1'  => 'Token Reset Password Kadaluarsa'],
     'MANG-ERROR-RNFN-HND-V1' => ['MANG-ERROR-RNFN-HND-V1'  => 'Rute yang Anda pilih tidak ditemukan'],
     'MANG-ERROR-ATZ-HND-V1'  => ['MANG-ERROR-ATZ-HND-V1'   => 'Token Otorisasi Gagal atau Kedaluwarsa'],
-    'MANG-ERROR-NULL-TRB-1'  => ['MANG-ERROR-NULL-TRB-1'   => 'Data Yang kamu cari null']
+    'MANG-ERROR-NULL-TRB-1'  => ['MANG-ERROR-NULL-TRB-1'   => 'Data Yang kamu cari null'],
+    'MANG-ERROR-PRDS-CPN-1'  => ['MANG-ERROR-NULL-CPN-1'   => "Maaf anda belum mempunyai produk, silahkan upload terlebih dahulu produk anda"]
 ];

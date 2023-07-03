@@ -21,6 +21,8 @@ return new class extends Migration
                 ->constrained('produks')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
+            $table->bigInteger('time_publish');
+            $table->bigInteger('max_usage_cupons');
         });
     }
     

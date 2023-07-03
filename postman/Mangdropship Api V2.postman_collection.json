@@ -35,7 +35,7 @@
 									"type": "text"
 								},
 								{
-									"key": "password",				
+									"key": "password",
 									"value": "aldo12345",
 									"description": "password[required]",
 									"type": "text"
@@ -573,6 +573,222 @@
 			"name": "Category",
 			"item": [
 				{
+					"name": "SubCategory",
+					"item": [
+						{
+							"name": "GetListSubCategory",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/sub-category",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_dropshiper}}",
+										"sub-category"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "SetlistGropParamsPg",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/api/v1/dropshiper/sub-category?pg=10",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"dropshiper",
+												"sub-category"
+											],
+											"query": [
+												{
+													"key": "pg",
+													"value": "10",
+													"description": "pagination per page "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 23 Jun 2023 07:47:44 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 23 Jun 2023 07:47:44 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "22"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": \"014a8068-69b4-4576-94ef-866bd2c2204e\",\n            \"id_category\": 3,\n            \"sub_category_name\": \"magni numquam quaerat unde repellat\",\n            \"slugh_sub_category_name\": \"magni-numquam-quaerat-unde-repellat\",\n            \"icons\": null,\n            \"token_access_code\": \"923799fe4f5fef847cec74230127fdd2\",\n            \"path\": \"https://via.placeholder.com/300x300.png/009955?text=nam\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 3,\n                \"category_name\": \"odit ratione reiciendis et ex nihil quia aperiam\",\n                \"category_description\": \"Tempora assumenda autem temporibus.\",\n                \"category_slugh\": \"odit-ratione-reiciendis-et-ex-nihil-quia-aperiam\",\n                \"icon\": \"m\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009999?text=aliquid\",\n                \"active\": true,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"01ec6489-5391-46f9-8eec-984e2db1349d\",\n            \"id_category\": 10,\n            \"sub_category_name\": \"blanditiis sapiente officia tenetur\",\n            \"slugh_sub_category_name\": \"blanditiis-sapiente-officia-tenetur\",\n            \"icons\": null,\n            \"token_access_code\": \"a16abe489c71317848e4c3120b4ebc7f\",\n            \"path\": \"https://via.placeholder.com/300x300.png/009988?text=molestias\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 10,\n                \"category_name\": \"modi beatae est similique assumenda reiciendis tempora eveniet\",\n                \"category_description\": \"Iure sint in libero quos. Natus dolorem earum velit qui. Dignissimos esse nostrum aspernatur fugiat nemo.\",\n                \"category_slugh\": \"modi-beatae-est-similique-assumenda-reiciendis-tempora-eveniet\",\n                \"icon\": \"z\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009988?text=inventore\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"07e96a2d-f2db-4f24-9f03-8507e5366ae9\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"ut odio sit provident ipsum\",\n            \"slugh_sub_category_name\": \"ut-odio-sit-provident-ipsum\",\n            \"icons\": null,\n            \"token_access_code\": \"f48683620b0773b613f82ed3ce215bff\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00eecc?text=est\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"nam quia recusandae rerum nesciunt optio rem sunt\",\n                \"category_description\": \"Illum illo vel in pariatur. Commodi dignissimos rerum quis et odio dolorem. Nulla quasi tempore consectetur quas.\",\n                \"category_slugh\": \"nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt\",\n                \"icon\": \"b\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/006633?text=amet\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"0b0cb017-17b8-4e46-acdc-4802aa64268e\",\n            \"id_category\": 6,\n            \"sub_category_name\": \"cupiditate quis qui\",\n            \"slugh_sub_category_name\": \"cupiditate-quis-qui\",\n            \"icons\": null,\n            \"token_access_code\": \"04759b8dfa3b4bd7bb41b709526be08d\",\n            \"path\": \"https://via.placeholder.com/300x300.png/002299?text=numquam\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 6,\n                \"category_name\": \"voluptatem aut enim vitae minus provident sunt est\",\n                \"category_description\": \"Tempora debitis molestias esse eligendi aliquam. At a dolores beatae neque velit.\",\n                \"category_slugh\": \"voluptatem-aut-enim-vitae-minus-provident-sunt-est\",\n                \"icon\": \"l\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00aacc?text=est\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"190de4ac-246f-4de2-aec2-90546a5541ec\",\n            \"id_category\": 7,\n            \"sub_category_name\": \"quaerat fugit nostrum praesentium\",\n            \"slugh_sub_category_name\": \"quaerat-fugit-nostrum-praesentium\",\n            \"icons\": null,\n            \"token_access_code\": \"43774f2f872988e7c2339c2aa3eaa9d8\",\n            \"path\": \"https://via.placeholder.com/300x300.png/001166?text=omnis\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"exercitationem recusandae blanditiis eum distinctio vitae repudiandae vel\",\n                \"category_description\": \"Earum occaecati consequatur modi sit. Sint qui alias sit sed quae quia. Sequi atque et explicabo quod natus.\",\n                \"category_slugh\": \"exercitationem-recusandae-blanditiis-eum-distinctio-vitae-repudiandae-vel\",\n                \"icon\": \"s\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/0033dd?text=et\",\n                \"active\": true,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"1c5a358e-8f75-4a92-82ed-e1f0f3b6f5ef\",\n            \"id_category\": 10,\n            \"sub_category_name\": \"id similique alias ut\",\n            \"slugh_sub_category_name\": \"id-similique-alias-ut\",\n            \"icons\": null,\n            \"token_access_code\": \"7cbbd051a736d8ab5eb391a0d913c259\",\n            \"path\": \"https://via.placeholder.com/300x300.png/000055?text=magnam\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 10,\n                \"category_name\": \"modi beatae est similique assumenda reiciendis tempora eveniet\",\n                \"category_description\": \"Iure sint in libero quos. Natus dolorem earum velit qui. Dignissimos esse nostrum aspernatur fugiat nemo.\",\n                \"category_slugh\": \"modi-beatae-est-similique-assumenda-reiciendis-tempora-eveniet\",\n                \"icon\": \"z\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009988?text=inventore\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"1ca2810a-64a5-48fd-8b70-384e0eb3543a\",\n            \"id_category\": 6,\n            \"sub_category_name\": \"debitis officiis qui nisi\",\n            \"slugh_sub_category_name\": \"debitis-officiis-qui-nisi\",\n            \"icons\": null,\n            \"token_access_code\": \"d2c1aab3a3e58b502a60119b95446915\",\n            \"path\": \"https://via.placeholder.com/300x300.png/007788?text=voluptate\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 6,\n                \"category_name\": \"voluptatem aut enim vitae minus provident sunt est\",\n                \"category_description\": \"Tempora debitis molestias esse eligendi aliquam. At a dolores beatae neque velit.\",\n                \"category_slugh\": \"voluptatem-aut-enim-vitae-minus-provident-sunt-est\",\n                \"icon\": \"l\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00aacc?text=est\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"1e607304-5a5a-4f64-b87a-cb734e0cea44\",\n            \"id_category\": 6,\n            \"sub_category_name\": \"qui ea sint iusto\",\n            \"slugh_sub_category_name\": \"qui-ea-sint-iusto\",\n            \"icons\": null,\n            \"token_access_code\": \"91f495793e51dae8745029321a0ffe6d\",\n            \"path\": \"https://via.placeholder.com/300x300.png/0000bb?text=aut\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 6,\n                \"category_name\": \"voluptatem aut enim vitae minus provident sunt est\",\n                \"category_description\": \"Tempora debitis molestias esse eligendi aliquam. At a dolores beatae neque velit.\",\n                \"category_slugh\": \"voluptatem-aut-enim-vitae-minus-provident-sunt-est\",\n                \"icon\": \"l\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00aacc?text=est\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"218790ce-0dea-4d27-bb1e-fd2feb74289a\",\n            \"id_category\": 3,\n            \"sub_category_name\": \"ut quis saepe\",\n            \"slugh_sub_category_name\": \"ut-quis-saepe\",\n            \"icons\": null,\n            \"token_access_code\": \"0ac929c80fa314165a7b7a709e912b69\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00cccc?text=corrupti\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 3,\n                \"category_name\": \"odit ratione reiciendis et ex nihil quia aperiam\",\n                \"category_description\": \"Tempora assumenda autem temporibus.\",\n                \"category_slugh\": \"odit-ratione-reiciendis-et-ex-nihil-quia-aperiam\",\n                \"icon\": \"m\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009999?text=aliquid\",\n                \"active\": true,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"234cb01b-5eec-40e2-bf96-e456c52a8624\",\n            \"id_category\": 2,\n            \"sub_category_name\": \"rem ex et voluptatem fuga\",\n            \"slugh_sub_category_name\": \"rem-ex-et-voluptatem-fuga\",\n            \"icons\": null,\n            \"token_access_code\": \"162aef5d548d71970c2dde1d612a1ebb\",\n            \"path\": \"https://via.placeholder.com/300x300.png/004411?text=voluptatem\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 2,\n                \"category_name\": \"magni aut molestias ipsam unde veritatis omnis sed\",\n                \"category_description\": \"Et tempore quidem fugiat et. Vel quas nisi ut. Ullam cupiditate vel sed sit repellat.\",\n                \"category_slugh\": \"magni-aut-molestias-ipsam-unde-veritatis-omnis-sed\",\n                \"icon\": \"q\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/004477?text=quod\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        }\n    ],\n    \"path\": \"http://localhost:8000/api/v1/dropshiper/sub-category\",\n    \"per_page\": 10,\n    \"next_cursor\": \"eyJzdWJfY2F0ZWdvcnlzLmlkIjoiMjM0Y2IwMWItNWVlYy00MGUyLWJmOTYtZTQ1NmM1MmE4NjI0IiwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ\",\n    \"next_page_url\": \"http://localhost:8000/api/v1/dropshiper/sub-category?cursor=eyJzdWJfY2F0ZWdvcnlzLmlkIjoiMjM0Y2IwMWItNWVlYy00MGUyLWJmOTYtZTQ1NmM1MmE4NjI0IiwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ\",\n    \"prev_cursor\": null,\n    \"prev_page_url\": null\n}"
+								},
+								{
+									"name": "GetListGropSubACategory",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/api/v1/dropshiper/sub-category",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"api",
+												"v1",
+												"dropshiper",
+												"sub-category"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Host",
+											"value": "localhost:8000"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 23 Jun 2023 07:48:47 GMT"
+										},
+										{
+											"key": "Date",
+											"value": "Fri, 23 Jun 2023 07:48:47 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										},
+										{
+											"key": "X-Powered-By",
+											"value": "PHP/8.0.28"
+										},
+										{
+											"key": "Cache-Control",
+											"value": "no-cache, private"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "X-RateLimit-Limit",
+											"value": "25"
+										},
+										{
+											"key": "X-RateLimit-Remaining",
+											"value": "24"
+										},
+										{
+											"key": "Access-Control-Allow-Origin",
+											"value": "http://example.com"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"data\": [\n        {\n            \"id\": \"014a8068-69b4-4576-94ef-866bd2c2204e\",\n            \"id_category\": 3,\n            \"sub_category_name\": \"magni numquam quaerat unde repellat\",\n            \"slugh_sub_category_name\": \"magni-numquam-quaerat-unde-repellat\",\n            \"icons\": null,\n            \"token_access_code\": \"923799fe4f5fef847cec74230127fdd2\",\n            \"path\": \"https://via.placeholder.com/300x300.png/009955?text=nam\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 3,\n                \"category_name\": \"odit ratione reiciendis et ex nihil quia aperiam\",\n                \"category_description\": \"Tempora assumenda autem temporibus.\",\n                \"category_slugh\": \"odit-ratione-reiciendis-et-ex-nihil-quia-aperiam\",\n                \"icon\": \"m\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009999?text=aliquid\",\n                \"active\": true,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"01ec6489-5391-46f9-8eec-984e2db1349d\",\n            \"id_category\": 10,\n            \"sub_category_name\": \"blanditiis sapiente officia tenetur\",\n            \"slugh_sub_category_name\": \"blanditiis-sapiente-officia-tenetur\",\n            \"icons\": null,\n            \"token_access_code\": \"a16abe489c71317848e4c3120b4ebc7f\",\n            \"path\": \"https://via.placeholder.com/300x300.png/009988?text=molestias\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 10,\n                \"category_name\": \"modi beatae est similique assumenda reiciendis tempora eveniet\",\n                \"category_description\": \"Iure sint in libero quos. Natus dolorem earum velit qui. Dignissimos esse nostrum aspernatur fugiat nemo.\",\n                \"category_slugh\": \"modi-beatae-est-similique-assumenda-reiciendis-tempora-eveniet\",\n                \"icon\": \"z\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009988?text=inventore\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"07e96a2d-f2db-4f24-9f03-8507e5366ae9\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"ut odio sit provident ipsum\",\n            \"slugh_sub_category_name\": \"ut-odio-sit-provident-ipsum\",\n            \"icons\": null,\n            \"token_access_code\": \"f48683620b0773b613f82ed3ce215bff\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00eecc?text=est\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"nam quia recusandae rerum nesciunt optio rem sunt\",\n                \"category_description\": \"Illum illo vel in pariatur. Commodi dignissimos rerum quis et odio dolorem. Nulla quasi tempore consectetur quas.\",\n                \"category_slugh\": \"nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt\",\n                \"icon\": \"b\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/006633?text=amet\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"0b0cb017-17b8-4e46-acdc-4802aa64268e\",\n            \"id_category\": 6,\n            \"sub_category_name\": \"cupiditate quis qui\",\n            \"slugh_sub_category_name\": \"cupiditate-quis-qui\",\n            \"icons\": null,\n            \"token_access_code\": \"04759b8dfa3b4bd7bb41b709526be08d\",\n            \"path\": \"https://via.placeholder.com/300x300.png/002299?text=numquam\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 6,\n                \"category_name\": \"voluptatem aut enim vitae minus provident sunt est\",\n                \"category_description\": \"Tempora debitis molestias esse eligendi aliquam. At a dolores beatae neque velit.\",\n                \"category_slugh\": \"voluptatem-aut-enim-vitae-minus-provident-sunt-est\",\n                \"icon\": \"l\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00aacc?text=est\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"190de4ac-246f-4de2-aec2-90546a5541ec\",\n            \"id_category\": 7,\n            \"sub_category_name\": \"quaerat fugit nostrum praesentium\",\n            \"slugh_sub_category_name\": \"quaerat-fugit-nostrum-praesentium\",\n            \"icons\": null,\n            \"token_access_code\": \"43774f2f872988e7c2339c2aa3eaa9d8\",\n            \"path\": \"https://via.placeholder.com/300x300.png/001166?text=omnis\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 7,\n                \"category_name\": \"exercitationem recusandae blanditiis eum distinctio vitae repudiandae vel\",\n                \"category_description\": \"Earum occaecati consequatur modi sit. Sint qui alias sit sed quae quia. Sequi atque et explicabo quod natus.\",\n                \"category_slugh\": \"exercitationem-recusandae-blanditiis-eum-distinctio-vitae-repudiandae-vel\",\n                \"icon\": \"s\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/0033dd?text=et\",\n                \"active\": true,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"1c5a358e-8f75-4a92-82ed-e1f0f3b6f5ef\",\n            \"id_category\": 10,\n            \"sub_category_name\": \"id similique alias ut\",\n            \"slugh_sub_category_name\": \"id-similique-alias-ut\",\n            \"icons\": null,\n            \"token_access_code\": \"7cbbd051a736d8ab5eb391a0d913c259\",\n            \"path\": \"https://via.placeholder.com/300x300.png/000055?text=magnam\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 10,\n                \"category_name\": \"modi beatae est similique assumenda reiciendis tempora eveniet\",\n                \"category_description\": \"Iure sint in libero quos. Natus dolorem earum velit qui. Dignissimos esse nostrum aspernatur fugiat nemo.\",\n                \"category_slugh\": \"modi-beatae-est-similique-assumenda-reiciendis-tempora-eveniet\",\n                \"icon\": \"z\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009988?text=inventore\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"1ca2810a-64a5-48fd-8b70-384e0eb3543a\",\n            \"id_category\": 6,\n            \"sub_category_name\": \"debitis officiis qui nisi\",\n            \"slugh_sub_category_name\": \"debitis-officiis-qui-nisi\",\n            \"icons\": null,\n            \"token_access_code\": \"d2c1aab3a3e58b502a60119b95446915\",\n            \"path\": \"https://via.placeholder.com/300x300.png/007788?text=voluptate\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 6,\n                \"category_name\": \"voluptatem aut enim vitae minus provident sunt est\",\n                \"category_description\": \"Tempora debitis molestias esse eligendi aliquam. At a dolores beatae neque velit.\",\n                \"category_slugh\": \"voluptatem-aut-enim-vitae-minus-provident-sunt-est\",\n                \"icon\": \"l\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00aacc?text=est\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"1e607304-5a5a-4f64-b87a-cb734e0cea44\",\n            \"id_category\": 6,\n            \"sub_category_name\": \"qui ea sint iusto\",\n            \"slugh_sub_category_name\": \"qui-ea-sint-iusto\",\n            \"icons\": null,\n            \"token_access_code\": \"91f495793e51dae8745029321a0ffe6d\",\n            \"path\": \"https://via.placeholder.com/300x300.png/0000bb?text=aut\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 6,\n                \"category_name\": \"voluptatem aut enim vitae minus provident sunt est\",\n                \"category_description\": \"Tempora debitis molestias esse eligendi aliquam. At a dolores beatae neque velit.\",\n                \"category_slugh\": \"voluptatem-aut-enim-vitae-minus-provident-sunt-est\",\n                \"icon\": \"l\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00aacc?text=est\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"218790ce-0dea-4d27-bb1e-fd2feb74289a\",\n            \"id_category\": 3,\n            \"sub_category_name\": \"ut quis saepe\",\n            \"slugh_sub_category_name\": \"ut-quis-saepe\",\n            \"icons\": null,\n            \"token_access_code\": \"0ac929c80fa314165a7b7a709e912b69\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00cccc?text=corrupti\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 3,\n                \"category_name\": \"odit ratione reiciendis et ex nihil quia aperiam\",\n                \"category_description\": \"Tempora assumenda autem temporibus.\",\n                \"category_slugh\": \"odit-ratione-reiciendis-et-ex-nihil-quia-aperiam\",\n                \"icon\": \"m\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009999?text=aliquid\",\n                \"active\": true,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"234cb01b-5eec-40e2-bf96-e456c52a8624\",\n            \"id_category\": 2,\n            \"sub_category_name\": \"rem ex et voluptatem fuga\",\n            \"slugh_sub_category_name\": \"rem-ex-et-voluptatem-fuga\",\n            \"icons\": null,\n            \"token_access_code\": \"162aef5d548d71970c2dde1d612a1ebb\",\n            \"path\": \"https://via.placeholder.com/300x300.png/004411?text=voluptatem\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 2,\n                \"category_name\": \"magni aut molestias ipsam unde veritatis omnis sed\",\n                \"category_description\": \"Et tempore quidem fugiat et. Vel quas nisi ut. Ullam cupiditate vel sed sit repellat.\",\n                \"category_slugh\": \"magni-aut-molestias-ipsam-unde-veritatis-omnis-sed\",\n                \"icon\": \"q\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/004477?text=quod\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"25827ba5-ab53-4e0d-baa7-e4f7773dcf7d\",\n            \"id_category\": 3,\n            \"sub_category_name\": \"rerum sint aut qui omnis\",\n            \"slugh_sub_category_name\": \"rerum-sint-aut-qui-omnis\",\n            \"icons\": null,\n            \"token_access_code\": \"20d5508e54ef1fa682c100cad5917857\",\n            \"path\": \"https://via.placeholder.com/300x300.png/0099ee?text=nostrum\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 3,\n                \"category_name\": \"odit ratione reiciendis et ex nihil quia aperiam\",\n                \"category_description\": \"Tempora assumenda autem temporibus.\",\n                \"category_slugh\": \"odit-ratione-reiciendis-et-ex-nihil-quia-aperiam\",\n                \"icon\": \"m\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009999?text=aliquid\",\n                \"active\": true,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"27703bde-1bf6-4ce9-9c10-b8e3a11608be\",\n            \"id_category\": 1,\n            \"sub_category_name\": \"quod ut aperiam\",\n            \"slugh_sub_category_name\": \"quod-ut-aperiam\",\n            \"icons\": null,\n            \"token_access_code\": \"9b4d875622d0b586e4a394295cf6fd30\",\n            \"path\": \"https://via.placeholder.com/300x300.png/008822?text=cum\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 1,\n                \"category_name\": \"id rerum occaecati commodi in autem natus explicabo\",\n                \"category_description\": \"Molestias alias dignissimos saepe quo. Accusamus aut ut voluptatem.\",\n                \"category_slugh\": \"id-rerum-occaecati-commodi-in-autem-natus-explicabo\",\n                \"icon\": \"b\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/003388?text=non\",\n                \"active\": true,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"27c636e9-cae5-42d3-a1cd-d698e7b3b49b\",\n            \"id_category\": 8,\n            \"sub_category_name\": \"quisquam enim sint\",\n            \"slugh_sub_category_name\": \"quisquam-enim-sint\",\n            \"icons\": null,\n            \"token_access_code\": \"3b4a3d8d20ecaca6feb4a707f9153827\",\n            \"path\": \"https://via.placeholder.com/300x300.png/008811?text=nihil\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 8,\n                \"category_name\": \"cupiditate aliquid et quaerat reprehenderit non hic voluptatum\",\n                \"category_description\": \"Quia et inventore quo corrupti porro illo minus. Similique molestiae exercitationem vero at eos aliquam consequatur. Ipsum enim beatae modi omnis in.\",\n                \"category_slugh\": \"cupiditate-aliquid-et-quaerat-reprehenderit-non-hic-voluptatum\",\n                \"icon\": \"h\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00ccdd?text=magnam\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"2d89434b-def9-4fb2-8825-2b0b316b3277\",\n            \"id_category\": 3,\n            \"sub_category_name\": \"velit corporis nulla\",\n            \"slugh_sub_category_name\": \"velit-corporis-nulla\",\n            \"icons\": null,\n            \"token_access_code\": \"87f5d0ff15cb6c45697070d1759966d3\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00dd11?text=est\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 3,\n                \"category_name\": \"odit ratione reiciendis et ex nihil quia aperiam\",\n                \"category_description\": \"Tempora assumenda autem temporibus.\",\n                \"category_slugh\": \"odit-ratione-reiciendis-et-ex-nihil-quia-aperiam\",\n                \"icon\": \"m\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009999?text=aliquid\",\n                \"active\": true,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"3380603b-3f10-40cc-b801-70dee1c984e9\",\n            \"id_category\": 3,\n            \"sub_category_name\": \"molestias cumque qui aut\",\n            \"slugh_sub_category_name\": \"molestias-cumque-qui-aut\",\n            \"icons\": null,\n            \"token_access_code\": \"fe3192b242122be23f503728e0e8dfd1\",\n            \"path\": \"https://via.placeholder.com/300x300.png/0088dd?text=natus\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 3,\n                \"category_name\": \"odit ratione reiciendis et ex nihil quia aperiam\",\n                \"category_description\": \"Tempora assumenda autem temporibus.\",\n                \"category_slugh\": \"odit-ratione-reiciendis-et-ex-nihil-quia-aperiam\",\n                \"icon\": \"m\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/009999?text=aliquid\",\n                \"active\": true,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"3657c6ba-aa4a-42ab-ac95-64edf4f4a960\",\n            \"id_category\": 2,\n            \"sub_category_name\": \"et quaerat qui\",\n            \"slugh_sub_category_name\": \"et-quaerat-qui\",\n            \"icons\": null,\n            \"token_access_code\": \"22ff0bfeeab03703aa1da751757a11ae\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00ff00?text=voluptates\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 2,\n                \"category_name\": \"magni aut molestias ipsam unde veritatis omnis sed\",\n                \"category_description\": \"Et tempore quidem fugiat et. Vel quas nisi ut. Ullam cupiditate vel sed sit repellat.\",\n                \"category_slugh\": \"magni-aut-molestias-ipsam-unde-veritatis-omnis-sed\",\n                \"icon\": \"q\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/004477?text=quod\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"39686195-e889-4a5b-864a-fd0b8387ca7a\",\n            \"id_category\": 2,\n            \"sub_category_name\": \"velit neque ullam quisquam et\",\n            \"slugh_sub_category_name\": \"velit-neque-ullam-quisquam-et\",\n            \"icons\": null,\n            \"token_access_code\": \"ff5eb77062e5f8e56a6f5a356be28c6a\",\n            \"path\": \"https://via.placeholder.com/300x300.png/004488?text=quae\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 2,\n                \"category_name\": \"magni aut molestias ipsam unde veritatis omnis sed\",\n                \"category_description\": \"Et tempore quidem fugiat et. Vel quas nisi ut. Ullam cupiditate vel sed sit repellat.\",\n                \"category_slugh\": \"magni-aut-molestias-ipsam-unde-veritatis-omnis-sed\",\n                \"icon\": \"q\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/004477?text=quod\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"43312035-2e02-4c14-b348-a15c7bda97e8\",\n            \"id_category\": 6,\n            \"sub_category_name\": \"modi eos et et\",\n            \"slugh_sub_category_name\": \"modi-eos-et-et\",\n            \"icons\": null,\n            \"token_access_code\": \"766527de463302ab7246bbb8c61455c6\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00ffff?text=sit\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 6,\n                \"category_name\": \"voluptatem aut enim vitae minus provident sunt est\",\n                \"category_description\": \"Tempora debitis molestias esse eligendi aliquam. At a dolores beatae neque velit.\",\n                \"category_slugh\": \"voluptatem-aut-enim-vitae-minus-provident-sunt-est\",\n                \"icon\": \"l\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/00aacc?text=est\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"454e0e72-ab67-4f4c-91f2-ad0483451e59\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"ullam vel architecto voluptatem neque\",\n            \"slugh_sub_category_name\": \"ullam-vel-architecto-voluptatem-neque\",\n            \"icons\": null,\n            \"token_access_code\": \"b283fbe569edc10f1ab50ced5cf005ce\",\n            \"path\": \"https://via.placeholder.com/300x300.png/004444?text=fugit\",\n            \"type_publish\": \"off\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"nam quia recusandae rerum nesciunt optio rem sunt\",\n                \"category_description\": \"Illum illo vel in pariatur. Commodi dignissimos rerum quis et odio dolorem. Nulla quasi tempore consectetur quas.\",\n                \"category_slugh\": \"nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt\",\n                \"icon\": \"b\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/006633?text=amet\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        },\n        {\n            \"id\": \"4559b897-a17f-4766-96e2-90f6753efa2e\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"facilis harum maxime officiis\",\n            \"slugh_sub_category_name\": \"facilis-harum-maxime-officiis\",\n            \"icons\": null,\n            \"token_access_code\": \"a09f5e14c0f284eda357265304ba997e\",\n            \"path\": \"https://via.placeholder.com/300x300.png/002233?text=exercitationem\",\n            \"type_publish\": \"on\",\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"category\": {\n                \"id\": 4,\n                \"category_name\": \"nam quia recusandae rerum nesciunt optio rem sunt\",\n                \"category_description\": \"Illum illo vel in pariatur. Commodi dignissimos rerum quis et odio dolorem. Nulla quasi tempore consectetur quas.\",\n                \"category_slugh\": \"nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt\",\n                \"icon\": \"b\",\n                \"image_path\": \"https://via.placeholder.com/400x400.png/006633?text=amet\",\n                \"active\": false,\n                \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n                \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n            }\n        }\n    ],\n    \"path\": \"http://localhost:8000/api/v1/dropshiper/sub-category\",\n    \"per_page\": 20,\n    \"next_cursor\": \"eyJzdWJfY2F0ZWdvcnlzLmlkIjoiNDU1OWI4OTctYTE3Zi00NzY2LTk2ZTItOTBmNjc1M2VmYTJlIiwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ\",\n    \"next_page_url\": \"http://localhost:8000/api/v1/dropshiper/sub-category?cursor=eyJzdWJfY2F0ZWdvcnlzLmlkIjoiNDU1OWI4OTctYTE3Zi00NzY2LTk2ZTItOTBmNjc1M2VmYTJlIiwiX3BvaW50c1RvTmV4dEl0ZW1zIjp0cnVlfQ\",\n    \"prev_cursor\": null,\n    \"prev_page_url\": null\n}"
+								}
+							]
+						},
+						{
+							"name": "GetCategoryWithSlughSearch",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8000/api/v1/dropshiper/sub-category-slugh/cupiditate-quis-qui",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"v1",
+										"dropshiper",
+										"sub-category-slugh",
+										"cupiditate-quis-qui"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CategorySerachSubCategory",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/sub-category-search?sc=magni-num",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_dropshiper}}",
+										"sub-category-search"
+									],
+									"query": [
+										{
+											"key": "sc",
+											"value": "magni-num"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
 					"name": "groupCategory",
 					"request": {
 						"method": "GET",
@@ -584,7 +800,7 @@
 							}
 						],
 						"url": {
-							"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-category",
+							"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-category?gr=true",
 							"host": [
 								"{{url}}"
 							],
@@ -592,6 +808,12 @@
 								"{{versi_1}}",
 								"{{prefix_dropshiper}}",
 								"slugh-category"
+							],
+							"query": [
+								{
+									"key": "gr",
+									"value": "true"
+								}
 							]
 						}
 					},
@@ -752,7 +974,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-category/actived",
+							"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-category/no_actived",
 							"host": [
 								"{{url}}"
 							],
@@ -760,17 +982,441 @@
 								"{{versi_1}}",
 								"{{prefix_dropshiper}}",
 								"slugh-category",
-								"actived"
+								"no_actived"
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "SuccessActivedCategory",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-category/actived",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_dropshiper}}",
+										"slugh-category",
+										"actived"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 00:55:00 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 00:55:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "22"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 7,\n        \"code_access\": \"4f4d547a303e403fa7017b24adede2bd\",\n        \"publish\": \"actived\",\n        \"cateagable\": {\n            \"id\": 7,\n            \"category_name\": \"quae provident iure ratione facilis sint sapiente minima\",\n            \"category_description\": \"Facere asperiores magni et in repellat in nam. Dignissimos rerum a qui. Cum aspernatur ut eos quaerat. Eos qui mollitia similique et.\",\n            \"category_slugh\": \"quae-provident-iure-ratione-facilis-sint-sapiente-minima\",\n            \"icon\": \"n\",\n            \"image_path\": \"https://via.placeholder.com/400x400.png/003399?text=aperiam\",\n            \"active\": false,\n            \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n            \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n        }\n    }\n]"
+						},
+						{
+							"name": "ErrorPubliishCategory",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-category/kasfkerg",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_dropshiper}}",
+										"slugh-category",
+										"kasfkerg"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 00:55:59 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 00:55:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "24"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "[]"
+						},
+						{
+							"name": "SuccessNoActivedCategory",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-category/no_actived",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_dropshiper}}",
+										"slugh-category",
+										"no_actived"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 00:56:33 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 00:56:33 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "23"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 10,\n        \"code_access\": \"83975715b3ab0698332be28efdbb4d1d\",\n        \"publish\": \"no_actived\",\n        \"cateagable\": {\n            \"id\": 10,\n            \"category_name\": \"consequatur qui voluptas amet quis dolorum nemo optio\",\n            \"category_description\": \"Inventore aliquid eum dolores sit ut quo. Eum odit accusamus culpa consequatur alias. Et qui quis earum velit ratione.\",\n            \"category_slugh\": \"consequatur-qui-voluptas-amet-quis-dolorum-nemo-optio\",\n            \"icon\": \"q\",\n            \"image_path\": \"https://via.placeholder.com/400x400.png/00ccee?text=aut\",\n            \"active\": true,\n            \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n            \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n        }\n    },\n    {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 1,\n        \"code_access\": \"a36644c1696d260eafead018788a67b1\",\n        \"publish\": \"no_actived\",\n        \"cateagable\": {\n            \"id\": 1,\n            \"category_name\": \"qui ipsa qui qui eius vitae voluptatem deleniti\",\n            \"category_description\": \"Vel nemo est sunt corporis enim eius ut. Maxime temporibus non sed explicabo iste. Deserunt nobis ipsam ducimus officia quisquam odio. Quo cumque qui perferendis laudantium.\",\n            \"category_slugh\": \"qui-ipsa-qui-qui-eius-vitae-voluptatem-deleniti\",\n            \"icon\": \"o\",\n            \"image_path\": \"https://via.placeholder.com/400x400.png/00ff99?text=sapiente\",\n            \"active\": false,\n            \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n            \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n        }\n    },\n    {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 6,\n        \"code_access\": \"5e136594f885f0f159b85654510694aa\",\n        \"publish\": \"no_actived\",\n        \"cateagable\": {\n            \"id\": 6,\n            \"category_name\": \"hic non quod dolorem nihil earum dolor ipsum\",\n            \"category_description\": \"Dolores occaecati debitis harum architecto qui mollitia.\",\n            \"category_slugh\": \"hic-non-quod-dolorem-nihil-earum-dolor-ipsum\",\n            \"icon\": \"s\",\n            \"image_path\": \"https://via.placeholder.com/400x400.png/00aaaa?text=voluptatem\",\n            \"active\": true,\n            \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n            \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n        }\n    },\n    {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 4,\n        \"code_access\": \"189bc3ae66fbf0bf1233c01afa3326b6\",\n        \"publish\": \"no_actived\",\n        \"cateagable\": {\n            \"id\": 4,\n            \"category_name\": \"enim blanditiis et eligendi nihil corrupti porro distinctio\",\n            \"category_description\": \"Aliquid corporis et quae alias. Et non rem odit nostrum. Sed qui provident ut incidunt occaecati laudantium dolorem deserunt. Occaecati id eius facere vel sit consequatur.\",\n            \"category_slugh\": \"enim-blanditiis-et-eligendi-nihil-corrupti-porro-distinctio\",\n            \"icon\": \"z\",\n            \"image_path\": \"https://via.placeholder.com/400x400.png/004433?text=in\",\n            \"active\": false,\n            \"created_at\": \"2023-06-21T06:48:45.000000Z\",\n            \"updated_at\": \"2023-06-21T06:48:45.000000Z\"\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "SlughSearchCategory",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-seacrh-catgory/nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"{{versi_1}}",
+								"{{prefix_dropshiper}}",
+								"slugh-seacrh-catgory",
+								"nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SlughSearchWithTagsTrue",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-seacrh-catgory/nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt?tags=true",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_dropshiper}}",
+										"slugh-seacrh-catgory",
+										"nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt"
+									],
+									"query": [
+										{
+											"key": "tags",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 06:26:44 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 06:26:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "23"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"category_name\": \"nam quia recusandae rerum nesciunt optio rem sunt\",\n    \"category_description\": \"Illum illo vel in pariatur. Commodi dignissimos rerum quis et odio dolorem. Nulla quasi tempore consectetur quas.\",\n    \"category_slugh\": \"nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt\",\n    \"icon\": \"b\",\n    \"image_path\": \"https://via.placeholder.com/400x400.png/006633?text=amet\",\n    \"active\": false,\n    \"tags_category\": {\n        \"tags_category_type\": \"App\\\\Models\\\\Categorys\",\n        \"tags_category_id\": 4,\n        \"code_access\": \"fe206ed60718d20bd1a92bb3b3ca2dd9\",\n        \"publish\": \"actived\"\n    },\n    \"sub_category\": [\n        {\n            \"id\": \"fad33223-b9b0-485b-8e40-3f07808d8425\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"ea qui est suscipit\",\n            \"slugh_sub_category_name\": \"ea-qui-est-suscipit\",\n            \"icons\": null,\n            \"token_access_code\": \"111f0395db04aa685cfb7fb3cf4e4c7c\",\n            \"path\": \"https://via.placeholder.com/300x300.png/000088?text=qui\",\n            \"type_publish\": true,\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n        },\n        {\n            \"id\": \"4559b897-a17f-4766-96e2-90f6753efa2e\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"facilis harum maxime officiis\",\n            \"slugh_sub_category_name\": \"facilis-harum-maxime-officiis\",\n            \"icons\": null,\n            \"token_access_code\": \"a09f5e14c0f284eda357265304ba997e\",\n            \"path\": \"https://via.placeholder.com/300x300.png/002233?text=exercitationem\",\n            \"type_publish\": true,\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n        },\n        {\n            \"id\": \"609c5760-74a9-411d-b080-0d3d930091b1\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"nam fuga blanditiis aut nobis\",\n            \"slugh_sub_category_name\": \"nam-fuga-blanditiis-aut-nobis\",\n            \"icons\": null,\n            \"token_access_code\": \"b6a780155cd1d2ddea1dbf7282e0b30d\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00ff99?text=incidunt\",\n            \"type_publish\": true,\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n        },\n        {\n            \"id\": \"454e0e72-ab67-4f4c-91f2-ad0483451e59\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"ullam vel architecto voluptatem neque\",\n            \"slugh_sub_category_name\": \"ullam-vel-architecto-voluptatem-neque\",\n            \"icons\": null,\n            \"token_access_code\": \"b283fbe569edc10f1ab50ced5cf005ce\",\n            \"path\": \"https://via.placeholder.com/300x300.png/004444?text=fugit\",\n            \"type_publish\": false,\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n        },\n        {\n            \"id\": \"07e96a2d-f2db-4f24-9f03-8507e5366ae9\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"ut odio sit provident ipsum\",\n            \"slugh_sub_category_name\": \"ut-odio-sit-provident-ipsum\",\n            \"icons\": null,\n            \"token_access_code\": \"f48683620b0773b613f82ed3ce215bff\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00eecc?text=est\",\n            \"type_publish\": false,\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "SlughSearchWithoutTagsTrue",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-seacrh-catgory/nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_dropshiper}}",
+										"slugh-seacrh-catgory",
+										"nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 06:27:36 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 06:27:36 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "22"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"category_name\": \"nam quia recusandae rerum nesciunt optio rem sunt\",\n    \"category_description\": \"Illum illo vel in pariatur. Commodi dignissimos rerum quis et odio dolorem. Nulla quasi tempore consectetur quas.\",\n    \"category_slugh\": \"nam-quia-recusandae-rerum-nesciunt-optio-rem-sunt\",\n    \"icon\": \"b\",\n    \"image_path\": \"https://via.placeholder.com/400x400.png/006633?text=amet\",\n    \"active\": false,\n    \"sub_category\": [\n        {\n            \"id\": \"fad33223-b9b0-485b-8e40-3f07808d8425\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"ea qui est suscipit\",\n            \"slugh_sub_category_name\": \"ea-qui-est-suscipit\",\n            \"icons\": null,\n            \"token_access_code\": \"111f0395db04aa685cfb7fb3cf4e4c7c\",\n            \"path\": \"https://via.placeholder.com/300x300.png/000088?text=qui\",\n            \"type_publish\": true,\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n        },\n        {\n            \"id\": \"4559b897-a17f-4766-96e2-90f6753efa2e\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"facilis harum maxime officiis\",\n            \"slugh_sub_category_name\": \"facilis-harum-maxime-officiis\",\n            \"icons\": null,\n            \"token_access_code\": \"a09f5e14c0f284eda357265304ba997e\",\n            \"path\": \"https://via.placeholder.com/300x300.png/002233?text=exercitationem\",\n            \"type_publish\": true,\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n        },\n        {\n            \"id\": \"609c5760-74a9-411d-b080-0d3d930091b1\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"nam fuga blanditiis aut nobis\",\n            \"slugh_sub_category_name\": \"nam-fuga-blanditiis-aut-nobis\",\n            \"icons\": null,\n            \"token_access_code\": \"b6a780155cd1d2ddea1dbf7282e0b30d\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00ff99?text=incidunt\",\n            \"type_publish\": true,\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n        },\n        {\n            \"id\": \"454e0e72-ab67-4f4c-91f2-ad0483451e59\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"ullam vel architecto voluptatem neque\",\n            \"slugh_sub_category_name\": \"ullam-vel-architecto-voluptatem-neque\",\n            \"icons\": null,\n            \"token_access_code\": \"b283fbe569edc10f1ab50ced5cf005ce\",\n            \"path\": \"https://via.placeholder.com/300x300.png/004444?text=fugit\",\n            \"type_publish\": false,\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n        },\n        {\n            \"id\": \"07e96a2d-f2db-4f24-9f03-8507e5366ae9\",\n            \"id_category\": 4,\n            \"sub_category_name\": \"ut odio sit provident ipsum\",\n            \"slugh_sub_category_name\": \"ut-odio-sit-provident-ipsum\",\n            \"icons\": null,\n            \"token_access_code\": \"f48683620b0773b613f82ed3ce215bff\",\n            \"path\": \"https://via.placeholder.com/300x300.png/00eecc?text=est\",\n            \"type_publish\": false,\n            \"created_at\": \"2023-06-23T03:15:44.000000Z\",\n            \"updated_at\": \"2023-06-23T03:15:44.000000Z\"\n        }\n    ]\n}"
+						},
+						{
+							"name": "SlughSearchErrorOrNull",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/{{versi_1}}/{{prefix_dropshiper}}/slugh-seacrh-catgory/nam-quia-recusandae-rerum-nesciunt",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"{{versi_1}}",
+										"{{prefix_dropshiper}}",
+										"slugh-seacrh-catgory",
+										"nam-quia-recusandae-rerum-nesciunt"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Host",
+									"value": "localhost:8000"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 06:28:21 GMT"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 23 Jun 2023 06:28:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "close"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.0.28"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, private"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "X-MANGDROPSHIP-API",
+									"value": "6OxmtTcJBh9ExZVqf9F1"
+								},
+								{
+									"key": "X-RateLimit-Limit",
+									"value": "25"
+								},
+								{
+									"key": "X-RateLimit-Remaining",
+									"value": "24"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "http://example.com"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status_code\": 400,\n    \"code_error\": \"MANG-ERROR-NULL-TRB-1\",\n    \"message_error\": \"Data Yang kamu cari null\"\n}"
+						}
+					]
 				}
 			]
-		},
-		{
-			"name": "SubCategory",
-			"item": []
 		},
 		{
 			"name": "MangTypeAccount",
@@ -855,7 +1501,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"email\"    : \"MangdropshipAccount@gmail.com\",\r\n    \"password\" : \"Mang12345\"\r\n}",
+									"raw": "{\r\n    \"email\"    : \"aldo.ratmawan9999@gmail.com\",\r\n    \"password\" : \"Aldo123#\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -890,7 +1536,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"name\" : \"Aldo Ratmawan\",\r\n    \"email\" : \"aldo.ratmawan9999@gmail.com\",\r\n    \"password\" : \"Aldo12345#\",\r\n    \"password_confirmation\" : \"Aldo12345#\"\r\n}",
+									"raw": "{\r\n    \"name\" : \"Aldo Ratmawean\",\r\n    \"email\" : \"aldo.ratmawan9999@gmail.com\",\r\n    \"password\" : \"Aldo123#\",\r\n    \"password_confirmation\" : \"Aldo123#\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -924,7 +1570,12 @@
 									},
 									{
 										"key": "Authorization",
-										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODY3MzI2NDUsImV4cCI6MTY4NjczNjI0NSwibmJmIjoxNjg2NzMyNjQ1LCJqdGkiOiJFZnhYVktUZXhxWWZMbDlPIiwic3ViIjoiMyIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.SkxnVk_S9eYAYoSidVAklwZLnrYAccF7t0L7Mne-Swg",
+										"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODc0ODE0MTIsImV4cCI6MTY4NzU2NzgxMiwibmJmIjoxNjg3NDgxNDEyLCJqdGkiOiJNdU16ZGNUOHdhYUlzSlFhIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.2iH2AZT3hfBASgDmBFvynd2wjLxJz_mMcABc68Dz9aU",
+										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
 										"type": "text"
 									}
 								],
@@ -1036,7 +1687,7 @@
 													},
 													{
 														"key": "Authorization",
-														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODczMDc1NjIsImV4cCI6MTY4NzM5Mzk2MiwibmJmIjoxNjg3MzA3NTYyLCJqdGkiOiJwZWpaZXFXMDhrUHM3aElEIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.ATT8P98bmkAS8z5qK4LEpPTf41EFb051DuT2aQyhZVI",
+														"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODc0ODE1MjksImV4cCI6MTY4NzU2NzkyOSwibmJmIjoxNjg3NDgxNTI5LCJqdGkiOiJhb0l3UnA3N21tczgyalJyIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.vj8Nmms38v54uPj4w-F6QuSsz0Mv81xbiII58WTVg_M",
 														"type": "text"
 													}
 												],
@@ -1389,12 +2040,6 @@
 													"type": "text"
 												},
 												{
-													"key": "slugh_store",
-													"value": "asfasfsa asfaf",
-													"type": "text",
-													"disabled": true
-												},
-												{
 													"key": "path_store",
 													"type": "file",
 													"src": "/C:/Users/MANGDROPSHIP/Pictures/2.PNG"
@@ -1437,7 +2082,114 @@
 						},
 						{
 							"name": "Cupons",
-							"item": []
+							"item": [
+								{
+									"name": "listCupons",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODgzNDU1MjcsImV4cCI6MTY4ODU5NzUyNywibmJmIjoxNjg4MzQ1NTI3LCJqdGkiOiJnU2FMS09LV01qODZ0cWxKIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.z0abtIurWSymDuz-WE1YGWGpC_3EDiko8VxGzdOB03k",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/cupons",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"cupons"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "CuponsProductAddActive",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODgzNDU1MjcsImV4cCI6MTY4ODU5NzUyNywibmJmIjoxNjg4MzQ1NTI3LCJqdGkiOiJnU2FMS09LV01qODZ0cWxKIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.z0abtIurWSymDuz-WE1YGWGpC_3EDiko8VxGzdOB03k",
+												"type": "text"
+											},
+											{
+												"key": "Accept-Language",
+												"value": "en",
+												"type": "text",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"max_usage_cupons\" : 20,\r\n    \"time_publish\"  : 1688525762,\r\n    \"id_product\" : \"a355e6f7-6678-4696-879f-406d44defdc9\",\r\n    \"id_suplliers\" : \"80cdcab0-973f-407e-8a63-aaa79213dd5a\",\r\n    \"id_cupons\"  : \"ee1c52eb-96b7-44c3-81ac-8eaa12446cee\"\r\n}   ",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/cupons-produk",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"cupons-produk"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "produkCupponsActived",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "X-API-MANG",
+												"value": "{{Api_key_Mangseller}}",
+												"type": "text"
+											},
+											{
+												"key": "Authorization",
+												"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL21hbmctc2VsbGVyL2F1dGgvbG9naW4iLCJpYXQiOjE2ODgzNDU1MjcsImV4cCI6MTY4ODU5NzUyNywibmJmIjoxNjg4MzQ1NTI3LCJqdGkiOiJnU2FMS09LV01qODZ0cWxKIiwic3ViIjoiMiIsInBydiI6ImY2YTNlOTk3NjBiM2I5MGE4YzMyNjUyODYyZGUzMjdlZjdlNzA0OTkifQ.z0abtIurWSymDuz-WE1YGWGpC_3EDiko8VxGzdOB03k",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{url}}/{{versi_1}}/{{prefix_mangseller}}/cupons-produk/actived",
+											"host": [
+												"{{url}}"
+											],
+											"path": [
+												"{{versi_1}}",
+												"{{prefix_mangseller}}",
+												"cupons-produk",
+												"actived"
+											]
+										}
+									},
+									"response": []
+								}
+							]
 						},
 						{
 							"name": "Orders",
@@ -2230,6 +2982,12 @@
 										"key": "Authorization",
 										"value": "{{Token_auth_admin}}",
 										"type": "text"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en",
+										"type": "text",
+										"disabled": true
 									}
 								],
 								"url": {

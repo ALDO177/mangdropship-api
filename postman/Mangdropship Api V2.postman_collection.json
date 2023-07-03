@@ -35,7 +35,7 @@
 									"type": "text"
 								},
 								{
-									"key": "password",
+									"key": "password",				
 									"value": "aldo12345",
 									"description": "password[required]",
 									"type": "text"

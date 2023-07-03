@@ -30,8 +30,8 @@ class SubscribtionMailSending extends Mailable
     public function content()
     {
         return new Content(
-            view: 'NoticeSubscribtions',
-            with: ['route' => route('verify.email', ['mang' => $this->tokens])]
+            view : 'NoticeSubscribtions',
+            with : ['route' => route('verify.email', ['mang' => $this->tokens])]
         );
     }
 

@@ -10,7 +10,10 @@ return new class extends Migration
     {
         Schema::create('galleries_products', function (Blueprint $table) {
             $table->uuid('id');
-            $table->foreignUuid('id_product')->constrained('produks')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignUuid('id_product')
+                ->constrained('produks')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->string('image_path');
             $table->boolean('image_active');
         });

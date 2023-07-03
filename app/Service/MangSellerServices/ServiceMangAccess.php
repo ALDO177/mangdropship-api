@@ -2,7 +2,7 @@
 
 namespace App\Service\MangSellerServices{
 
-    use App\Http\Resources\Mangseller\ResourceBankAccount;
+    use App\Http\Resources\Mangseller\ResourceCuponsSeller;
     use App\Http\Resources\Mangseller\ResourcesStoreSellers;
     use App\Http\Resources\Mangseller\ResourceStatusSellers;
     use App\Http\Resources\Mangseller\ResouresAccessInfo;
@@ -11,6 +11,7 @@ namespace App\Service\MangSellerServices{
     use App\Models\Supllier;
     use App\Trait\Help\ResponseMessage;
     use App\Trait\Help\withoutWreapArray;
+    use App\Trait\ResponseControl\useError;
     use App\Trait\Validator\useValidatorMangSeller;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Storage;
@@ -19,6 +20,7 @@ namespace App\Service\MangSellerServices{
 
         use ResponseMessage, 
             withoutWreapArray, 
+            useError,
             useValidatorMangSeller;
 
         public function __construct(
@@ -35,7 +37,9 @@ namespace App\Service\MangSellerServices{
 
         public function infoStore(){
             $infoStore = $this->suplier->infoStore($this->request->user()->id);
-            if(is_null($infoStore)) return response()->json($this->messagesError(__('messages.messages_supliers')), 400);
+            if(is_null($infoStore)) 
+            return response()
+                   ->json($this->messagesError(__('messages.messages_supliers')), 400);
             return ResourcesStoreSellers::make($infoStore);
         }
 
@@ -75,6 +79,25 @@ namespace App\Service\MangSellerServices{
             }
             $storeStatus = StoreStatus::findOrUpdate(false, $uuid, $this->request->only(['status', 'actived_at_start', 'actived_at_start']));
             return $storeStatus;
+        }
+
+        public function serviceListGetCupons(){
+            $cuponsList = $this->suplier->with(['cuponsList'])
+                ->where('id_sellers', $this->request->user()->id)
+                ->first()
+                ->cuponsList;
+
+            if($cuponsList->count() < 1){
+                return response()->json(
+                    $this->errGlobalResponse(
+                        201, 
+                        __('error.MANG-ERROR-NULL-TRB-1')
+                        )
+                    );
+            }
+            return ResourceCuponsSeller::make($cuponsList)
+                  ->response()
+                  ->setStatusCode(201);
         }
 
         public function serviceBankInfoAccount(){

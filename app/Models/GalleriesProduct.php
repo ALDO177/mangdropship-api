@@ -9,12 +9,13 @@ use Illuminate\Database\Eloquent\Model;
 class GalleriesProduct extends Model
 {
     use HasFactory, UuidSetGlobal;
-    public $keyType = 'string';
+    public $keyType    = 'string';
+    public $timestamps = false;
     
     protected $fillable =[
         'id_product',
         'image_path',
-        'image_active',
+        'image_activep',
     ];
     
     protected $casts =[

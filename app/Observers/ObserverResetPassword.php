@@ -12,7 +12,6 @@ class ObserverResetPassword
     {
         $passwordAuthentications->makeHidden(['uuid']);
         dispatch(new JobEmailMangAdmin($passwordAuthentications))->afterCommit();
-        
         ModelDB\Seller\SelersHistoryAuth::create([
             'type'          => $passwordAuthentications->type,
             'data'          => $passwordAuthentications->toArray(),

@@ -43,7 +43,7 @@ namespace App\Service\MangSellerServices{
                 );
             }
 
-            $tokens = auth('mang-sellers')->{'setTTL'}(intval(env('MANG_SELLER_EXPIRED_TOKEN')))->login($users);
+            $tokens = auth('mang-sellers')->setTTL(4200)->login($users);
             return SubscribtionResourcesResponse::make(
                 $this->successAuthenticationWithToken(
                     $tokens, 201, __('success.MANG-SUCCESS-AUTH-TR1')),

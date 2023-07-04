@@ -20,10 +20,9 @@ namespace App\Trait\ResponseControl{
                 $additional
             );
         }
-
         public function successAuthenticationWithToken(string $token, int $code = 201 , array $success, array $additional = []){
             $settingSuccess = $this->successSettingLang($success, $code);
-            $settingSuccess['token'] = $token;
+            $settingSuccess['accessToken'] = $token;
             return array_merge_recursive($settingSuccess, $additional);
         }
         

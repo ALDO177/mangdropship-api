@@ -46,7 +46,7 @@ namespace App\Service\MangSellerServices{
             $tokens = auth('mang-sellers')->setTTL(4200)->login($users);
             return SubscribtionResourcesResponse::make(
                 $this->successAuthenticationWithToken(
-                    $tokens, 201, __('success.MANG-SUCCESS-AUTH-TR1')),
+                    $tokens, 201, __('success.MANG-SUCCESS-AUTH-TR1'), ['user' => $users->only(['email', 'name'])]),
                     ['type' => 'mang-seller'])->response()->setStatusCode(201);
         }
 

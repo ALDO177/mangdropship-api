@@ -70,5 +70,16 @@ namespace  App\Trait\Validator{
             ]);
             return $credentials;
         }
+
+        public function creadentialsLoginProvider(array $attribute){
+
+            $credentials = Validator::make($attribute, [
+                'email'       => ['required', 'email', 'exists:mang_sellers,email'],
+                'name'        => ['required'],
+                'type'        => ['required', 'unique:extend_login_social_media,type'],
+                'id_sellers'  => ['required', 'exists:mang_sellers,id']
+            ]);
+            return $credentials;
+        }
     }
 }

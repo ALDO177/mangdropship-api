@@ -15,12 +15,15 @@ Route::prefix('mang-seller')->group(function(){
             Route::post('register', 'register');
             Route::post('reset-password', 'resetPassword');
             Route::post('confirm-password', 'confirmPassword');
+            Route::post('extend-providers/{path}', 'extendProviderAccount');
+            Route::post('login-providers/{type}', 'loginWithProviders');
             Route::get('logout', 'logout')->middleware(['auth:mang-sellers']);
         });
     });
     
     Route::controller(MangsellerAccess::class)->group(function(){
         Route::get('info', 'info');
+        Route::get('provider', 'providerLogin');
     });
 
     Route::prefix('find')->group(function(){

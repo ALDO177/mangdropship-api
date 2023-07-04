@@ -31,4 +31,12 @@ class AuthMangseller extends Controller
     public function logout(){
         return $this->services->logout();
     }
+
+    public function extendProviderAccount(string $path){
+        return $this->services->providersLogin($path);
+    }
+
+    public function loginWithProviders(string $type){
+        return $this->services->serviceLoginProvider($type);
+    }
 }

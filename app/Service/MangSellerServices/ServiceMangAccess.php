@@ -7,6 +7,7 @@ namespace App\Service\MangSellerServices{
     use App\Http\Resources\Mangseller\ResourceStatusSellers;
     use App\Http\Resources\Mangseller\ResouresAccessInfo;
     use App\Http\Resources\SubscribtionResourcesResponse;
+    use App\Models\MangSellerModels\MangSellers;
     use App\Models\MangSellerModels\StoreStatus;
     use App\Models\Supllier;
     use App\Trait\Help\ResponseMessage;
@@ -15,6 +16,7 @@ namespace App\Service\MangSellerServices{
     use App\Trait\Validator\useValidatorMangSeller;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Storage;
+    use Illuminate\Support\Facades\Validator;
 
     class ServiceMangAccess{
 
@@ -24,8 +26,9 @@ namespace App\Service\MangSellerServices{
             useValidatorMangSeller;
 
         public function __construct(
-            protected Request $request, 
-            protected Supllier $suplier
+             protected Request $request, 
+             protected Supllier $suplier,
+             protected MangSellers $mangSellers,
             ){}
         
         public function accessInfo(){
@@ -99,12 +102,17 @@ namespace App\Service\MangSellerServices{
                   ->setStatusCode(201);
         }
 
-        public function serviceBankInfoAccount(){
-             //
-        }
-
-        public function serviceUpdateExpedition(){
-
+        public function serviceProviderLoginList(){
+            $listProviderLogin = $this->mangSellers
+                ->getProviderLogin($this->request->user()->id)
+                ->only(['name', 'email', 'tokens_verified', 'providerLogin']);
+                
+            if(is_null($listProviderLogin)){
+                return SubscribtionResourcesResponse::make(
+                    $this->errGlobalResponse(402, __('error.MANG-ERROR-RNFN-HND-V1'))
+                );
+            }
+            return response()->json($listProviderLogin, 201, [], JSON_PRETTY_PRINT);
         }
     }
 }

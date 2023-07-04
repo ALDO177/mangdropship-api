@@ -30,4 +30,8 @@ class MangsellerAccess extends Controller
     public function infoStatus(ServiceMangAccess $access, Request $request){
         return $access->infoStatus();
     }
+
+    public function providerLogin(){
+        return $this->serviceMangAccess->serviceProviderLoginList();
+    }
 }

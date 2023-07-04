@@ -3,11 +3,13 @@
 namespace App\Service\MangSellerServices{
 
     use App\Http\Resources\SubscribtionResourcesResponse;
+    use App\Models\MangsellerModels\ExtendLoginSocialMedia;
     use App\Models\MangSellerModels\MangSellers;
     use App\Models\PasswordAuthentications;
     use App\Trait\ResponseControl\useError;
     use App\Trait\Help\ResponseMessage;
     use App\Trait\ResponseControl\useSuccess;
+    use App\Trait\Validator\useValidatorMangSeller;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Hash;
     use Illuminate\Support\Facades\Validator;
@@ -16,9 +18,10 @@ namespace App\Service\MangSellerServices{
 
         use ResponseMessage, 
             useError, 
+            useValidatorMangSeller,
             useSuccess;
             
-        public function __construct(protected Request $request){}
+        public function __construct(protected Request $request, protected MangSellers $mangSellers){}
 
         public function login(){
             
@@ -158,6 +161,23 @@ namespace App\Service\MangSellerServices{
                 ->setStatusCode(400);
         }
 
+        public function providersLogin(string $typeProvider){
+            $credentials = $this->creadentialsLoginProvider($this->request->all());
+            if($credentials->fails()){
+                return SubscribtionResourcesResponse::make(
+                    $this->errAuthWithValidation(402, __('error.MANG-ERROR-VLD-1'), $credentials->messages()->toArray())
+                );
+            }
+
+            $created = ExtendLoginSocialMedia::create($this->request->only(['email', 'name', 'type', 'id_sellers']));
+            return SubscribtionResourcesResponse::make(
+                $this->successGlobalResponse(201,
+                array_merge_recursive(
+                    __('success.MANG-SUCCESS-PRD-LG', 
+                    $created->toArray())))
+            );
+        }
+
         public function logout(){
             auth('mang-sellers')->logout();
             return SubscribtionResourcesResponse::make(
@@ -165,6 +185,37 @@ namespace App\Service\MangSellerServices{
                 __('messages.messages_success', ['name' => 'Logout Mangsellers']), 201))
                 ->response()
                 ->setStatusCode(201);
+        }
+        public function serviceLoginProvider(string $type){
+            $credentials = Validator::make($this->request->all(), [
+                'email' => ['required', 'exists:mang_sellers,email'],
+            ]);
+            if($credentials->fails()){
+                return SubscribtionResourcesResponse::make(
+                    $this->errAuthWithValidation(402, __('error.MANG-ERROR-ATZ-HND-V1'), $credentials->messages()->toArray())
+                )->response()->setStatusCode(402);
+            }
+            $users = $this->mangSellers->findWithEmail($this->request->email);
+
+            if(is_null($users)){
+                return SubscribtionResourcesResponse::make(
+                    $this->errAuthWithoutValidation(402, __('error.MANG-ERROR-AUTH-TR1'))
+                );
+            }
+            if($users->providerLogin->count() < 1){
+                return SubscribtionResourcesResponse::make(
+                    $this->errAuthWithoutValidation(402, __('error.MANG-ERROR-AUTH-TR1'))
+                );
+            }
+            $filterProvider = $users->providerLogin->filter(fn($values) => $values->type === $type)->values()->first();
+
+            if(is_null($filterProvider)){
+                return SubscribtionResourcesResponse::make(
+                    $this->errAuthWithoutValidation(402, __('error.MANG-ERROR-AUTH-TR1'))
+                );
+            }
+
+            return response()->json($filterProvider, 201, [], JSON_PRETTY_PRINT);
         }
     }
 }

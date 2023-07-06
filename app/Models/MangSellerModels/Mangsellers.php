@@ -6,6 +6,7 @@ use App\Models\MangsellerModels\ExtendLoginSocialMedia;
 use App\Models\Supllier;
 use App\Trait\JwtActionTable;
 use App\Trait\Table\Mangseller\useTableMangSeller;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
@@ -51,5 +52,14 @@ class MangSellers extends Authenticable implements JWTSubject
 
     public static function findUuid(string $uuid){
         return static::where('id', $uuid)->first();
+    }
+
+    public static function LoginProviderSociate(string $email, string $provider){
+        return static::query()->where(function(Builder $builder) use($email, $provider){
+             $builder->whereHas('providerLogin', function(Builder $builder) use($email, $provider){
+                $builder->where('provider_id', $provider);
+             })->where('email', $email);
+             
+        })->first();
     }
 }

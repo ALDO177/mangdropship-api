@@ -188,8 +188,10 @@ namespace App\Service\MangSellerServices{
         }
         public function serviceLoginProvider(string $type){
             $credentials = Validator::make($this->request->all(), [
-                'email' => ['required', 'exists:mang_sellers,email'],
+                'email'         => ['required', 'exists:mang_sellers,email'],
+                'provider_id'   => ['required']
             ]);
+
             if($credentials->fails()){
                 return SubscribtionResourcesResponse::make(
                     $this->errAuthWithValidation(402, __('error.MANG-ERROR-ATZ-HND-V1'), $credentials->messages()->toArray())
@@ -202,20 +204,35 @@ namespace App\Service\MangSellerServices{
                     $this->errAuthWithoutValidation(402, __('error.MANG-ERROR-AUTH-TR1'))
                 );
             }
-            if($users->providerLogin->count() < 1){
+
+            if($users->providerLogin->count() > 0){
+                $loginProvider = MangSellers::LoginProviderSociate($this->request->email, $this->request->provider_id);
+                if($loginProvider){
+                    $tokens = auth('mang-sellers')->setTTL(4200)->login($loginProvider);
+                    return SubscribtionResourcesResponse::make(
+                        $this->successAuthenticationWithToken(
+                            $tokens, 201, __('success.MANG-SUCCESS-AUTH-TR1'), 
+                            ['user' => $users->only(['email', 'name'])]),
+                            ['type' => 'mang-seller'])->response()->setStatusCode(201);
+                }
                 return SubscribtionResourcesResponse::make(
                     $this->errAuthWithoutValidation(402, __('error.MANG-ERROR-AUTH-TR1'))
                 );
             }
-            $filterProvider = $users->providerLogin->filter(fn($values) => $values->type === $type)->values()->first();
 
-            if(is_null($filterProvider)){
-                return SubscribtionResourcesResponse::make(
-                    $this->errAuthWithoutValidation(402, __('error.MANG-ERROR-AUTH-TR1'))
+            $created = ExtendLoginSocialMedia::create(
+                array_merge_recursive(
+                    ['type' => $type, 'id_sellers' => $users->id],
+                     $this->request->only(['email', 'provider_id']))
                 );
+            if($created){
+                $tokens = auth('mang-sellers')->setTTL(4200)->login($users);
+                return SubscribtionResourcesResponse::make(
+                    $this->successAuthenticationWithToken(
+                        $tokens, 201, __('success.MANG-SUCCESS-AUTH-TR1'), 
+                        ['user' => $users->only(['email', 'name'])]),
+                        ['type' => 'mang-seller'])->response()->setStatusCode(201);
             }
-
-            return response()->json($filterProvider, 201, [], JSON_PRETTY_PRINT);
         }
     }
 }

@@ -1,8 +1,6 @@
 <?php
 
 namespace App\Models\MangSellerModels;
-
-use App\Models\MangsellerModels\ExtendLoginSocialMedia;
 use App\Models\Supllier;
 use App\Trait\JwtActionTable;
 use App\Trait\Table\Mangseller\useTableMangSeller;
@@ -39,7 +37,7 @@ class MangSellers extends Authenticable implements JWTSubject
     ];
 
     public function providerLogin() : HasMany{
-        return $this->hasMany(ExtendLoginSocialMedia::class, 'id_sellers', 'id');
+        return $this->hasMany(LoginSociateMangdropship::class, 'id_sellers', 'id');
     }
 
     public function supliers() : HasOne{

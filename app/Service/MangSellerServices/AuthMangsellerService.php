@@ -3,7 +3,7 @@
 namespace App\Service\MangSellerServices{
 
     use App\Http\Resources\SubscribtionResourcesResponse;
-    use App\Models\MangsellerModels\ExtendLoginSocialMedia;
+    use App\Models\MangSellerModels\LoginSociateMangdropship;
     use App\Models\MangSellerModels\MangSellers;
     use App\Models\PasswordAuthentications;
     use App\Trait\ResponseControl\useError;
@@ -169,7 +169,7 @@ namespace App\Service\MangSellerServices{
                 );
             }
 
-            $created = ExtendLoginSocialMedia::create($this->request->only(['email', 'name', 'type', 'id_sellers']));
+            $created = LoginSociateMangdropship::create($this->request->only(['email', 'name', 'type', 'id_sellers']));
             return SubscribtionResourcesResponse::make(
                 $this->successGlobalResponse(201,
                 array_merge_recursive(
@@ -219,7 +219,7 @@ namespace App\Service\MangSellerServices{
                 );
             }
 
-            $created = ExtendLoginSocialMedia::create(
+            $created = LoginSociateMangdropship::create(
                 array_merge_recursive(
                     ['type' => $type, 'id_sellers' => $users->id],
                      $this->request->only(['email', 'provider_id']))

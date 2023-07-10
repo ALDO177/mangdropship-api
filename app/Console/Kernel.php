@@ -16,9 +16,9 @@ class Kernel extends ConsoleKernel
                 DiscountPaid::class,
                 PasswordAuthentications::class
             ]
-        ])->everyMinute();
+        ])->daily();
     }
-
+    
     protected function commands()
     {
         $this->load(__DIR__.'/Commands');

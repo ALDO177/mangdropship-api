@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models\MangsellerModels;
+namespace App\Models\MangSellerModels;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Ramsey\Uuid\Rfc4122\UuidV4;
 
-class ExtendLoginSocialMedia extends Model
+class LoginSociateMangdropship extends Model
 {
     use HasFactory;
 

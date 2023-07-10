@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('extend_login_social_media', function (Blueprint $table) {
+        Schema::create('login_sociate_mangdropships', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->foreignId('id_sellers')->constrained('mang_sellers')->onDelete('cascade')->onUpdate('cascade');
             $table->string('type')->unique();
@@ -19,6 +19,6 @@ return new class extends Migration
     
     public function down()
     {
-        Schema::dropIfExists('extend_login_social_media');
+        Schema::dropIfExists('login_sociate_mangdropships');
     }
 };

@@ -191,6 +191,7 @@ namespace App\Service\MangSellerServices{
                 'email'         => ['required', 'exists:mang_sellers,email'],
                 'provider_id'   => ['required']
             ]);
+            
             if($credentials->fails()){
                 return SubscribtionResourcesResponse::make(
                     $this->errAuthWithValidation(402, __('error.MANG-ERROR-ATZ-HND-V1'), $credentials->messages()->toArray())

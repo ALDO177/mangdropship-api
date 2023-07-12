@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MangDropshiper\PublishDropshiper;
+use App\Http\Controllers\Produk\ProdukControllers;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('dropshiper')->group(function(){
@@ -12,4 +13,9 @@ Route::prefix('dropshiper')->group(function(){
         Route::get('sub-category-slugh/{slugh}', 'showSubCategoryWithSlugh');
         Route::get('sub-category-search', 'searchSubCategory');
     }); 
+    
+    Route::controller(ProdukControllers::class)->group(function(){
+        Route::get('getproduk', 'getProduk');
+        Route::get('produk/{slugh}', 'showProdukWithSlugh');
+    });
 });

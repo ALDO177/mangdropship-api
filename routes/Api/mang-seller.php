@@ -6,6 +6,7 @@ use App\Http\Controllers\Mangseller\CuponsActiveProductControllers;
 use App\Http\Controllers\Mangseller\CuponsSellerController;
 use App\Http\Controllers\Mangseller\MangsellerAccess;
 use App\Http\Controllers\Mangseller\MangsellerSettingController;
+use App\Http\Controllers\Mangseller\SuplierControllerProduk;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('mang-seller')->group(function(){
@@ -22,6 +23,7 @@ Route::prefix('mang-seller')->group(function(){
     });
     
     Route::controller(MangsellerAccess::class)->group(function(){
+        Route::get('info-member', 'infoMember');
         Route::get('info', 'info');
         Route::get('provider', 'providerLogin');
     });
@@ -35,9 +37,11 @@ Route::prefix('mang-seller')->group(function(){
             Route::match(['put', 'patch', 'post'], 'store',  'updateStore');
         });
     });
+    
     Route::apiResources([
         'bank'          => ControllersMangsellerAccountBank::class,
         'cupons'        => CuponsSellerController::class,
         'cupons-produk' => CuponsActiveProductControllers::class,
+        'produk'        => SuplierControllerProduk::class,
     ]);
 });

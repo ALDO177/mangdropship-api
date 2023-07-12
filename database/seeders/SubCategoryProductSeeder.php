@@ -4,8 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Produk;
 use App\Models\SubCategoryProduct;
+use App\Models\SubCategorys;
 use Faker\Factory;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class SubCategoryProductSeeder extends Seeder
@@ -18,9 +18,11 @@ class SubCategoryProductSeeder extends Seeder
     public function run()
     {
         $faker = Factory::create();
-        SubCategoryProduct::create([
-            'id_sub_category' => '0b0cb017-17b8-4e46-acdc-4802aa64268e',
-            'id_product'      => $faker->randomElement(Produk::all())['id']
-        ]);
+        SubCategorys::all()->map(function($collect) use($faker){
+            SubCategoryProduct::create([
+                'id_sub_category' => $collect->id,
+                'id_product'      => $faker->randomElement(Produk::all())['id']
+            ]);
+        });
     }
 }

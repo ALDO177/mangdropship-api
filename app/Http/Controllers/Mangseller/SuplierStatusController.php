@@ -19,6 +19,7 @@ class SuplierStatusController extends Controller
     {
         $this->middleware(['auth:mang-sellers', 'localization', 'api-mang-seller-access', 'suplier']);
     }
+    
     public function index()
     {
         return $this->service->infoStatus();

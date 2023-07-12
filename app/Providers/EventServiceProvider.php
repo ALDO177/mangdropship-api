@@ -4,8 +4,10 @@ namespace App\Providers;
 
 use App\Events\EventAuthentication;
 use App\Events\EventResetPassword;
+use App\Events\StoreProductSupplier;
 use App\Listeners\ListenerAuthentication;
 use App\Listeners\ListenerResetPassword;
+use App\Listeners\ListernerProductSuplier;
 use App\Models\Admin\AdminMangdropship;
 use App\Models\PasswordAuthentications;
 use App\Models\User;
@@ -29,13 +31,18 @@ class EventServiceProvider extends ServiceProvider
         
         EventResetPassword::class => [
             ListenerResetPassword::class,
+        ],
+        [
+            StoreProductSupplier::class =>[
+                ListernerProductSuplier::class
+            ]
         ]
     ];
 
     protected $observers = [
         User::class                    => [ObserverSubcription::class],
         AdminMangdropship::class       => [MangAdmin::class],
-        PasswordAuthentications::class => [ObserverResetPassword::class]
+        PasswordAuthentications::class => [ObserverResetPassword::class],
     ];
 
     public function boot()

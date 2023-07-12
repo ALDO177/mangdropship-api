@@ -4,16 +4,14 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Produk>
- */
+
 class ProdukFactory extends Factory
 {
 
     public function definition()
     {
         return [
-            'product_name'   => Str::ucfirst($this->faker->words(1, true)),
+            'product_name'   => Str::ucfirst($this->faker->words(random_int(5, 10), true)),
             'SKU'            => Str::upper($this->faker->bothify('?????-#######')),
             'regular_price'  => $this->faker->numberBetween(10000, 500000),
             'discount_price' => ($this->faker->numberBetween(10000, 500000) / 0.10),

@@ -9,8 +9,16 @@ return new class extends Migration
     public function up()
     {
         Schema::create('variant_products', function (Blueprint $table) {
-             $table->foreignUuid('id_variant')->constrained('variant_values');
-             $table->foreignUuid('id_product')->constrained('produks');
+            $table->uuid('id')->primary();
+            $table->foreignUuid('id_product')->constrained('produks')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('variant_type_name');
+            $table->string('variant_type_names')->nullable();
+            $table->json('variant_options');
+            // $table->string('variant_select_name');
+            // $table->string('variant_select_names')->nullable();
+            // $table->bigInteger('variant_price');
+            // $table->bigInteger('variant_quantity');
+            // $table->string('sku');
         });
     }
     

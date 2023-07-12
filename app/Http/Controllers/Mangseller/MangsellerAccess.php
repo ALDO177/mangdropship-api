@@ -3,7 +3,6 @@
 namespace App\Http\Controllers\Mangseller;
 
 use App\Http\Controllers\Controller;
-use App\Models\Supllier;
 use App\Service\MangSellerServices\ServiceMangAccess;
 use Illuminate\Http\Request;
 
@@ -17,6 +16,10 @@ class MangsellerAccess extends Controller
 
     public function info(ServiceMangAccess $acces){
         return $acces->accessInfo();
+    }
+
+    public function infoMember(){
+        return $this->serviceMangAccess->infoMember();
     }
 
     public function listCupons(){

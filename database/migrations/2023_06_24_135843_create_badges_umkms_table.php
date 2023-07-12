@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('badges_umkms', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->foreignUuid('id_produks')->constrained('produks')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreignUuid('id_product')->constrained('produks')->onDelete('cascade')->onUpdate('cascade');
             $table->string('badges_name');
             $table->string('badges_icon')->nullable();
             $table->string('badges_path');

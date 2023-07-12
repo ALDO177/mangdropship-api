@@ -71,7 +71,7 @@ class Kernel extends HttpKernel
         'api-seller-access' => \App\Http\Middleware\TokensAccessApi::class,
         'api-mang-seller-access' => \App\Http\Middleware\Mangseller\AccessXapi::class,
         'api-mang-admin-access' => \App\Http\Middleware\MangAdmin\MangAdminAcceesApi::class,
-        'api-handle-end-point' => \App\Http\Middleware\ApiHandleEndPoint::class,
+        'api-mang-user-access'  => \App\Http\Middleware\UserAccessTokenApi::class,
         'localization'         => \App\Http\Middleware\LocalizationSetMiddleware::class,
         'asign.guard'          => \App\Http\Middleware\AsignGuard::class,
         'suplier'             => \App\Http\Middleware\Mangseller\HandleSuplier::class

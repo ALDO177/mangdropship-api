@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('produks', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('product_name', 255);
+            $table->string('slugh_produk');
             $table->string('SKU');
             $table->bigInteger('regular_price');
             $table->bigInteger('discount_price');

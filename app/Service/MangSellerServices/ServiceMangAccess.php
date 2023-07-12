@@ -13,16 +13,17 @@ namespace App\Service\MangSellerServices{
     use App\Trait\Help\ResponseMessage;
     use App\Trait\Help\withoutWreapArray;
     use App\Trait\ResponseControl\useError;
+    use App\Trait\ResponseControl\useSuccess;
     use App\Trait\Validator\useValidatorMangSeller;
     use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Storage;
-    use Illuminate\Support\Facades\Validator;
 
     class ServiceMangAccess{
 
         use ResponseMessage, 
             withoutWreapArray, 
             useError,
+            useSuccess,
             useValidatorMangSeller;
 
         public function __construct(
@@ -106,13 +107,18 @@ namespace App\Service\MangSellerServices{
             $listProviderLogin = $this->mangSellers
                 ->getProviderLogin($this->request->user()->id)
                 ->only(['name', 'email', 'tokens_verified', 'providerLogin']);
-                
             if(is_null($listProviderLogin)){
                 return SubscribtionResourcesResponse::make(
                     $this->errGlobalResponse(402, __('error.MANG-ERROR-RNFN-HND-V1'))
                 );
             }
             return response()->json($listProviderLogin, 201, [], JSON_PRETTY_PRINT);
+        }
+
+        public function infoMember(){
+             $memberInfo = $this->mangSellers->with(['supliers'])->where('id', $this->request->user()->id)->first();
+             return response()->json([
+                'infoMember' => $memberInfo->only(['name', 'email', 'email_verified_at', 'tokens_verified', 'supliers'])], 201);
         }
     }
 }

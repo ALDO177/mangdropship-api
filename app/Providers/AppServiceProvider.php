@@ -18,6 +18,10 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot()
     {
+        $this->app->bindMethod([JobOberverProduk::class, 'handle'], function(JobOberverProduk $job, Application $app){
+            return $job->handle($app->make(Request::class));
+        });
+
         Builder::macro('whereLike', function($attributes, string $searchItems){
             if(is_array($attributes)){
                 foreach($attributes as $attribute){

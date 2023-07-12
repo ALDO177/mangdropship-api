@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Mangseller;
 
 use App\Http\Controllers\Controller;
-use App\Jobs\JobOberverProduk;
-use App\Models\Produk;
 use App\Service\MangSellerServices\ServiceSuplierProduk;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Bus;
@@ -24,18 +22,9 @@ class SuplierControllerProduk extends Controller
 
     public function store(Request $request)
     {
-        $produk = Produk::where('id', '04ff7e60-bf16-4fbe-8908-8331f517eed2')->first();
-        Storage::disk('oss')->put('storage', $request->videos);
-
-        return response()->json(['message' => 'success']);
-        // Bus::chain([
-        // //    new JobOberverProduk($produk, $request->collect()),
-        //     function() use($request) : void{
-        //     //    Storage::disk('oss')->put('storage', $request->file('videos'));
-        //     }
-        // ])->dispatch();
-
-        //  return ['config' => 'success-queus'];
+        $url = Storage::disk('oss')->url('storage/kCb4ZVtIEk2MMi2yYS7eN2RbDxLpYBIiaTvyw2LR.png');
+        echo $url;
+        return ['messages' => 'success'];
     }
 
     public function show($id)

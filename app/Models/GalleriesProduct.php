@@ -17,7 +17,7 @@ class GalleriesProduct extends Model
         'image_path',
         'image_activep',
     ];
-    
+
     protected $casts =[
         'image_active' => 'boolean'
     ];

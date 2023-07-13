@@ -1,10 +1,8 @@
 <?php
 
-use App\Jobs\JobOberverProduk;
+use App\Images\WebpImages;
 use Illuminate\Http\File;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Bus;
-use Illuminate\Support\Facades\File as FacadesFile;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
@@ -22,16 +20,10 @@ function FileUploadContent(Request $request){
 
 Route::post('apis', function(Request $request){
 
-    // return FacadesFile::get($request->images->path());
-
     foreach($request->file('images') as $images){
-        Storage::disk('oss')->put('storage', $images);
+        $convertWebP = new WebpImages($images, 300, 300);
+        $convertWebP->putWithDisk('oss', env('STG_MANG_SELLER') . '/images');
+        // Storage::disk('oss')->put('storage/mangseller/images', $images);
     }
-    // dispatch(new JobOberverProduk($_FILES));
-    // Bus::chain([
-    //      function() use($request){
-    //         echo 'asfijaisjof';
-    //      }
-    // ])->dispatch()->afterResponse();
     return ['uploaded' => 'upload-in-store'];
 });

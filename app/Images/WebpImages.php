@@ -4,7 +4,6 @@ namespace App\Images{
 
     use Illuminate\Http\UploadedFile;
     use Illuminate\Support\Facades\Storage;
-    use Symfony\Component\HttpFoundation\File\Exception\FileException;
     use Intervention\Image\Facades\Image as Image;
 
     class WebpImages{
@@ -12,15 +11,15 @@ namespace App\Images{
         public string $filename;
         protected $clasifiedImg;
         protected string $disk;
+        protected int $width;
+        protected int $heigth;
 
-        public function __construct(protected $file, protected int $width, protected int $heigth)
+        public function __construct(UploadedFile $file, int $width, int $heigth)
         {
-            if($file instanceof UploadedFile){
-                $this->clasifiedImg = $file;
-                $this->filename = $this->clasifiedImg->getClientOriginalExtension();
-            }else{
-                throw new FileException('data not file support');
-            }
+            $this->clasifiedImg = $file;
+            $this->filename = $this->clasifiedImg->getClientOriginalExtension();
+            $this->width = $width;
+            $this->heigth = $heigth;
         }
 
         public function image(){

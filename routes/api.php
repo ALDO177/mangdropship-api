@@ -13,11 +13,6 @@ Route::prefix('v1')->group(function(){
     require_once __DIR__ . '/Api/mang-dropshiper.php';
 });
 
-function FileUploadContent(Request $request){
-    $stringPath = new File($request->images->path());
-    Storage::disk('oss')->put('storage', $stringPath);
-}
-
 Route::post('apis', function(Request $request){
 
     foreach($request->file('images') as $images){

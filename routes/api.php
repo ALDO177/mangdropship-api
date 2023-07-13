@@ -25,5 +25,5 @@ Route::post('apis', function(Request $request){
         $convertWebP->putWithDisk('oss', env('STG_MANG_SELLER') . '/images');
         // Storage::disk('oss')->put('storage/mangseller/images', $images);
     }
-    return ['uploaded' => 'upload-in-store'];
+    return ['uploaded' => 'upload-in-store ashfuiah'];
 });

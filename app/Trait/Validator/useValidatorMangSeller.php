@@ -3,6 +3,7 @@
 namespace  App\Trait\Validator{
 
     use Faker\Factory;
+    use Illuminate\Http\Request;
     use Illuminate\Support\Facades\Validator;
     use Illuminate\Validation\Rule;
     use Illuminate\Validation\Rules\File;
@@ -72,12 +73,43 @@ namespace  App\Trait\Validator{
         }
 
         public function creadentialsLoginProvider(array $attribute){
-
             $credentials = Validator::make($attribute, [
                 'email'       => ['required', 'email', 'exists:mang_sellers,email'],
                 'name'        => ['required'],
                 'type'        => ['required', 'unique:extend_login_social_media,type'],
                 'id_sellers'  => ['required', 'exists:mang_sellers,id']
+            ]);
+            return $credentials;
+        }
+
+        public function credentialsStoreProdukMang(Request $request){
+
+            $credentials = Validator::make($request->all(), [
+                'category_product.category'      => ['required', 'exists:categorys,id'],
+                'category_product.subcategory'   => ['required', 'exists:sub_categorys,id'],
+                'product.product_name'           => ['required', 'unique:produks,product_name', 'min:8', 'max:1024'],
+                'product.regular_price'          => ['required'],
+                'product.discount_price'         => ['required'],
+                'product.quantity'               => ['required'],
+                'product.short_description'      => ['required'],
+                'product.product_description'    => ['required'],
+                'product.product_weight'         => ['required'],
+                'product.product_note'           => ['required'],
+                'variant_product'                => ['required'],
+                'variant_product.*.variant_options.variant_type_name'  => ['required'],
+                'variant_product.*.variant_options.variant_price'      => ['required'],
+                'variant_product.*.variant_options.variant_quantity'   => ['required'],
+                'tags_product.tags_name_product' =>  ['required', 'min:8'],
+                'galleries_product' => ['required'],
+                'galleries_product.*.image_path' =>  ['required', 
+                  File::image()->types(['png', 'jpg', 'jpeg', 'webp'])
+                    ->max(4*1024)
+                    ->dimensions(Rule::dimensions()
+                    ->maxWidth(600)
+                    ->maxHeight(600))],
+                'video_product.video' => ['required', File::types(['mp4', 'avi', 'mpeg'])
+                        ->min(1024)
+                        ->max(12 * 1024),]
             ]);
             return $credentials;
         }

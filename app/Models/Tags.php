@@ -14,7 +14,6 @@ class Tags extends Model
     protected $fillable =[
         'tags_name_product',
         'slugh_name_product',
-        'icon'
     ];
 
     protected static function boot()

@@ -12,8 +12,6 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('tags_name_product');
             $table->string('slugh_name_product');
-            $table->text('icon');
-            $table->timestamps();
         });
     }
 

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\MangSellerModels\infoShipingProduct;
 use App\Models\MangSellerModels\suplierProduks;
 use App\Trait\Table\useTableProduct;
 use Illuminate\Database\Eloquent\Casts\Attribute;
@@ -15,14 +16,26 @@ use Ramsey\Uuid\Rfc4122\UuidV4;
 
 class Produk extends Model
 {
-    use 
-      HasFactory,
-      useTableProduct;
+    use HasFactory, useTableProduct;
 
-    public $keyType = 'string';
-    protected $hidden = ['created_at', 'updated_at'];
-
+    public $keyType    = 'string';
+    protected $hidden  = ['created_at', 'updated_at'];
     protected $appends = ['path_img'];
+
+    protected $fillable = [
+        'product_name',
+        'slugh_produk',
+        'SKU',
+        'regular_price',
+        'discount_price',
+        'quantity',
+        'short_description',
+        'product_description',
+        'product_weight',
+        'product_note',
+        'order_min',
+        'published'
+    ];
 
 
     protected static function boot()
@@ -31,6 +44,8 @@ class Produk extends Model
         static::creating(function(Model $model){
             $model->id = UuidV4::uuid4()->toString();
             $model->slugh_produk = Str::slug($model->product_name);
+            $model->published = true;
+            $model->order_min = is_null($model->order_min) ? 1 : $model->order_min;
         });
     }
 
@@ -85,4 +100,9 @@ class Produk extends Model
     public function historyProduct() : HasMany{
         return $this->hasMany(HistoryProduct::class, 'id_product', 'id');
     }
+
+    public function infoShipingProduct() : HasOne{
+        return $this->hasOne(infoShipingProduct::class, 'id_product', 'id');
+    }
+
 }

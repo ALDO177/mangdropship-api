@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('SKU');
             $table->bigInteger('regular_price');
             $table->bigInteger('discount_price');
+            $table->integer('order_min');
             $table->integer('quantity');
             $table->string('short_description');
             $table->text('product_description');

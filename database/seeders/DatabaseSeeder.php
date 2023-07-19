@@ -38,6 +38,7 @@ class DatabaseSeeder extends Seeder
             StoreShipingExpeditionSeeder::class,
             StoreInformationSeeder::class,
             SuplierAccountBankSeeder::class,
+            OptionsProductWarrantySeeder::class,
         ]);
     }
 }

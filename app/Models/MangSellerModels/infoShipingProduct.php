@@ -13,7 +13,6 @@ class infoShipingProduct extends Model
     public $timestamps = false;
     public $keyType = 'string';
 
-
     protected $fillable = [
         'id_product',
         'heavy_product',

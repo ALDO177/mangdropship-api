@@ -8,7 +8,10 @@ namespace App\Service\MangdropshiperService{
     use App\Models\SubCategorys;
     use App\Models\TagsCategory;
     use App\Trait\ResponseControl\useError;
+    use Exception;
+    use Illuminate\Database\Eloquent\Builder;
     use Illuminate\Http\Request;
+    use Intervention\Image\Exception\NotFoundException;
 
     class PublishDropshiperService{
 
@@ -69,6 +72,33 @@ namespace App\Service\MangdropshiperService{
             return $this->subCategorys->searchSubCategory(
                 is_null($this->request->get('sc')) ? '' : $this->request->get('sc')
             );
+        }
+
+        public function serviceCategory(string $slugh){
+            switch($slugh){
+                case 'active':
+                    return $this->categorys->with(['tagsCategory'])->where('active', true);
+                    break;
+                case 'no-active':
+                    return $this->categorys->with(['tagsCategory'])->where('active', false);
+                    break;
+                case 'all':
+                    return $this->categorys->with(['tagsCategory'])->chunkMap(function($values){
+                        return $values;
+                    });
+                    break;
+                default:
+                   throw new NotFoundException('Not Found');
+                   break;
+            }
+        }
+
+        public function serviceSubCategoryList(string $slugh) : Builder{
+            return $this->categorys->query()->with(['subCategory'])->where(function(Builder $query) use($slugh){
+                 $query->where('id', $slugh)->whereHas('subCategory', function(Builder $query){
+                     $query->where('type_publish', 'enabled');
+                 });
+            }); 
         }
     }
 }

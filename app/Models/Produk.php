@@ -26,12 +26,13 @@ class Produk extends Model
         'product_name',
         'slugh_produk',
         'SKU',
+        'amount_received',
         'regular_price',
-        'discount_price',
+        // 'discount_price',
         'quantity',
         'short_description',
         'product_description',
-        'product_weight',
+        // 'product_weight',
         'product_note',
         'order_min',
         'published'
@@ -46,6 +47,8 @@ class Produk extends Model
             $model->slugh_produk = Str::slug($model->product_name);
             $model->published = true;
             $model->order_min = is_null($model->order_min) ? 1 : $model->order_min;
+            $model->amount_received = $model->regular_price * 0.99;
+            $model->pre_order = is_null($model->pre_order) ? 0 : 1;
         });
     }
 
@@ -96,13 +99,12 @@ class Produk extends Model
     public function badgesUmkn() : HasMany{
         return $this->hasMany(BadgesUmkm::class, 'id_product', 'id');
     }
+    public function infoShipingProduct() : HasOne{
+        return $this->hasOne(infoShipingProduct::class, 'id_product', 'id');
+    }
 
     public function historyProduct() : HasMany{
         return $this->hasMany(HistoryProduct::class, 'id_product', 'id');
-    }
-
-    public function infoShipingProduct() : HasOne{
-        return $this->hasOne(infoShipingProduct::class, 'id_product', 'id');
     }
 
 }

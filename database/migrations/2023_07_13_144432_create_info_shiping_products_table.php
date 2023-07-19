@@ -13,10 +13,10 @@ return new class extends Migration
             $table->foreignUuid('id_product')->constrained('produks')->onDelete('cascade')->onUpdate('cascade');
             $table->integer('heavy_product');
             $table->string('remember_token');
-            $table->json('package_size');
+            $table->json('package_size'); // width, long, height
         });
     }
-
+    
     public function down()
     {
         Schema::dropIfExists('info_shiping_products');

@@ -116,7 +116,7 @@ namespace App\Service\MangSellerServices{
         }
 
         public function infoMember(){
-             $memberInfo = $this->mangSellers->with(['supliers'])->where('id', $this->request->user()->id)->first();
+             $memberInfo = $this->mangSellers->with(['supliers' => ['store']])->where('id', $this->request->user()->id)->first();
              return response()->json([
                 'infoMember' => $memberInfo->only(['name', 'email', 'email_verified_at', 'tokens_verified', 'supliers'])], 201);
         }

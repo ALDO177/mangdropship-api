@@ -29,7 +29,7 @@ namespace App\Service\MangSellerServices{
                  $query->orWhere('slugh_produk', $idProduk)
                 ->whereHas('suplierProduk', function(Builder $builder){
                     return $builder->where('id_suplier', $this->suppliers()->id);
-                });
+            });
             })->first();
         }
 

@@ -27,14 +27,14 @@ class SuplierControllerProduk extends Controller
 
     public function store(Request $request) : JsonResponse
     {
-       $creadentials = $this->credentialsStoreProdukMang($request);
-       if($creadentials->fails()){
-        return SubscribtionResourcesResponse::make(
-            $this->errValidation(400, __('error.MANG-ERROR-VLD-1'), $creadentials->messages()->toArray())
-        )->response()->setStatusCode(400);
-       }
-
-       return response()->json($request->all());
+        // return response()->json($request->all());
+        $creadentials = $this->credentialsStoreProdukMang($request);
+        if($creadentials->fails()){
+            return SubscribtionResourcesResponse::make(
+                $this->errValidation(400, __('error.MANG-ERROR-VLD-1'), $creadentials->messages()->toArray())
+            )->response()->setStatusCode(400);
+        }
+        return response()->json($request->all());
     }
 
     public function show(string $id) : JsonResponse
@@ -50,9 +50,8 @@ class SuplierControllerProduk extends Controller
 
     public function update(Request $request, $id)
     {
-        //
+        
     }
-
     
     public function destroy($id)
     {

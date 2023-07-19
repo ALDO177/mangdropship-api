@@ -6,6 +6,7 @@ use App\Trait\Help\ResponseMessage;
 use App\Trait\ResponseControl\useError;
 use ErrorException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Exceptions\PostTooLargeException;
 use Illuminate\Http\Request;
 use Symfony\Component\Routing\Exception\RouteNotFoundException;
 use Throwable;
@@ -68,6 +69,12 @@ class Handler extends ExceptionHandler
         $this->renderable(function(ErrorException $errors, Request $request){
             if($request->is('emails/*')){
                 abort(500, $errors->getMessage());
+            }
+        });
+
+        $this->renderable(function(PostTooLargeException $error, Request $request){
+            if($request->is('api/*')){
+                return response()->json($this->errGlobalResponse(413, __('error.MANG-ERROR-LARGE-LONG')), 413);
             }
         });
     }

@@ -34,7 +34,6 @@ class ProdukFactory extends Factory
                 And of course Dillinger itself is open source with a [public repository][dill]
                 on GitHub.
             ',
-            'product_weight' => $this->faker->numberBetween(5, 100),
             'published' => $this->faker->boolean()
         ];
     }

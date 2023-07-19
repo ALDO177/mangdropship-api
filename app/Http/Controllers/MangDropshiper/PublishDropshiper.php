@@ -39,4 +39,11 @@ class PublishDropshiper extends Controller
     public function searchSubCategory(){
         return $this->publishCategory->serviceSearchSubCategory();
     }
+
+    public function category(string $slugh){
+        $category = $this->publishCategory->serviceCategory($slugh)->chunkMap(function($values){
+            return $values;
+        });
+        return $category;
+    }
 }

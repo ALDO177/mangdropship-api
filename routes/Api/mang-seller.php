@@ -7,6 +7,7 @@ use App\Http\Controllers\Mangseller\CuponsSellerController;
 use App\Http\Controllers\Mangseller\MangsellerAccess;
 use App\Http\Controllers\Mangseller\MangsellerSettingController;
 use App\Http\Controllers\Mangseller\SuplierControllerProduk;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('mang-seller')->group(function(){
@@ -21,7 +22,7 @@ Route::prefix('mang-seller')->group(function(){
             Route::get('logout', 'logout')->middleware(['auth:mang-sellers']);
         });
     });
-    
+
     Route::controller(MangsellerAccess::class)->group(function(){
         Route::get('info-member', 'infoMember');
         Route::get('info', 'info');

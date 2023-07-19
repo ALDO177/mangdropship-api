@@ -24,3 +24,397 @@
 
   2023-07-13 13:11:41 App\Jobs\JobEmailMangAdmin ..................... RUNNING
   2023-07-13 13:11:46 App\Jobs\JobEmailMangAdmin ............. 5,158.01ms DONE
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+
+   Symfony\Component\Process\Exception\ProcessTimedOutException 
+
+  The process "'/usr/bin/php8.1' 'artisan' 'queue:work' '--once' '--name=default' '--queue=default' '--backoff=0' '--memory=128' '--sleep=3' '--tries=1'" exceeded the timeout of 60 seconds.
+
+   Symfony\Component\Process\Exception\ProcessTimedOutException 
+
+  The process "'/usr/bin/php8.1' 'artisan' 'queue:work' '--once' '--name=default' '--queue=default' '--backoff=0' '--memory=128' '--sleep=3' '--tries=1'" exceeded the timeout of 60 seconds.
+
+   Symfony\Component\Process\Exception\ProcessTimedOutException 
+
+  The process "'/usr/bin/php8.1' 'artisan' 'queue:work' '--once' '--name=default' '--queue=default' '--backoff=0' '--memory=128' '--sleep=3' '--tries=1'" exceeded the timeout of 60 seconds.
+
+  at /var/www/mangdroship-seller/mangdropship-apis-dev/vendor/symfony/process/Process.php:1158
+   Symfony\Component\Process\Exception\ProcessTimedOutException 
+
+  The process "'/usr/bin/php8.1' 'artisan' 'queue:work' '--once' '--name=default' '--queue=default' '--backoff=0' '--memory=128' '--sleep=3' '--tries=1'" exceeded the timeout of 60 seconds.
+
+  at /var/www/mangdroship-seller/mangdropship-apis-dev/vendor/symfony/process/Process.php:1158
+
+  at /var/www/mangdroship-seller/mangdropship-apis-dev/vendor/symfony/process/Process.php:1158
+
+  at /var/www/mangdroship-seller/mangdropship-apis-dev/vendor/symfony/process/Process.php:1158
+
+   Symfony\Component\Process\Exception\ProcessTimedOutException 
+
+  The process "'/usr/bin/php8.1' 'artisan' 'queue:work' '--once' '--name=default' '--queue=default' '--backoff=0' '--memory=128' '--sleep=3' '--tries=1'" exceeded the timeout of 60 seconds.
+
+  at /var/www/mangdroship-seller/mangdropship-apis-dev/vendor/symfony/process/Process.php:1158
+
+   Symfony\Component\Process\Exception\ProcessTimedOutException 
+
+  The process "'/usr/bin/php8.1' 'artisan' 'queue:work' '--once' '--name=default' '--queue=default' '--backoff=0' '--memory=128' '--sleep=3' '--tries=1'" exceeded the timeout of 60 seconds.
+
+  at /var/www/mangdroship-seller/mangdropship-apis-dev/vendor/symfony/process/Process.php:1158
+    1154▕ 
+    1155▕         if (null !== $this->timeout && $this->timeout < microtime(true) - $this->starttime) {
+    1156▕             $this->stop(0);
+    1157▕ 
+  ➜ 1158▕             throw new ProcessTimedOutException($this, ProcessTimedOutException::TYPE_GENERAL);
+    1159▕         }
+    1160▕ 
+    1161▕         if (null !== $this->idleTimeout && $this->idleTimeout < microtime(true) - $this->lastOutputTime) {
+    1162▕             $this->stop(0);
+
+      [2m+18 vendor frames [22m
+  19  /var/www/mangdroship-seller/mangdropship-apis-dev/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   Symfony\Component\Process\Exception\ProcessTimedOutException 
+
+  The process "'/usr/bin/php8.1' 'artisan' 'queue:work' '--once' '--name=default' '--queue=default' '--backoff=0' '--memory=128' '--sleep=3' '--tries=1'" exceeded the timeout of 60 seconds.
+
+  at /var/www/mangdroship-seller/mangdropship-apis-dev/vendor/symfony/process/Process.php:1158
+
+   Symfony\Component\Process\Exception\ProcessTimedOutException 
+
+  The process "'/usr/bin/php8.1' 'artisan' 'queue:work' '--once' '--name=default' '--queue=default' '--backoff=0' '--memory=128' '--sleep=3' '--tries=1'" exceeded the timeout of 60 seconds.
+
+  at /var/www/mangdroship-seller/mangdropship-apis-dev/vendor/symfony/process/Process.php:1158
+    1154▕ 
+    1155▕         if (null !== $this->timeout && $this->timeout < microtime(true) - $this->starttime) {
+    1156▕             $this->stop(0);
+    1157▕ 
+  ➜ 1158▕             throw new ProcessTimedOutException($this, ProcessTimedOutException::TYPE_GENERAL);
+    1159▕         }
+    1160▕ 
+    1161▕         if (null !== $this->idleTimeout && $this->idleTimeout < microtime(true) - $this->lastOutputTime) {
+    1162▕             $this->stop(0);
+    1154▕ 
+    1155▕         if (null !== $this->timeout && $this->timeout < microtime(true) - $this->starttime) {
+    1156▕             $this->stop(0);
+    1157▕ 
+  ➜ 1158▕             throw new ProcessTimedOutException($this, ProcessTimedOutException::TYPE_GENERAL);
+    1159▕         }
+    1160▕ 
+    1161▕         if (null !== $this->idleTimeout && $this->idleTimeout < microtime(true) - $this->lastOutputTime) {
+    1162▕             $this->stop(0);
+    1154▕ 
+    1155▕         if (null !== $this->timeout && $this->timeout < microtime(true) - $this->starttime) {
+    1156▕             $this->stop(0);
+    1157▕ 
+  ➜ 1158▕             throw new ProcessTimedOutException($this, ProcessTimedOutException::TYPE_GENERAL);
+    1159▕         }
+    1160▕ 
+    1161▕         if (null !== $this->idleTimeout && $this->idleTimeout < microtime(true) - $this->lastOutputTime) {
+    1162▕             $this->stop(0);
+
+      [2m+18 vendor frames [22m
+  19  /var/www/mangdroship-seller/mangdropship-apis-dev/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+    1154▕ 
+    1155▕         if (null !== $this->timeout && $this->timeout < microtime(true) - $this->starttime) {
+    1156▕             $this->stop(0);
+    1157▕ 
+  ➜ 1158▕             throw new ProcessTimedOutException($this, ProcessTimedOutException::TYPE_GENERAL);
+    1159▕         }
+    1160▕ 
+    1161▕         if (null !== $this->idleTimeout && $this->idleTimeout < microtime(true) - $this->lastOutputTime) {
+    1162▕             $this->stop(0);
+
+      [2m+18 vendor frames [22m
+  19  /var/www/mangdroship-seller/mangdropship-apis-dev/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+      [2m+18 vendor frames [22m
+  19  /var/www/mangdroship-seller/mangdropship-apis-dev/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+    1154▕ 
+    1155▕         if (null !== $this->timeout && $this->timeout < microtime(true) - $this->starttime) {
+    1156▕             $this->stop(0);
+    1157▕ 
+  ➜ 1158▕             throw new ProcessTimedOutException($this, ProcessTimedOutException::TYPE_GENERAL);
+    1159▕         }
+    1160▕ 
+    1161▕         if (null !== $this->idleTimeout && $this->idleTimeout < microtime(true) - $this->lastOutputTime) {
+    1162▕             $this->stop(0);
+
+      [2m+18 vendor frames [22m
+  19  /var/www/mangdroship-seller/mangdropship-apis-dev/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+    1154▕ 
+    1155▕         if (null !== $this->timeout && $this->timeout < microtime(true) - $this->starttime) {
+    1156▕             $this->stop(0);
+    1157▕ 
+  ➜ 1158▕             throw new ProcessTimedOutException($this, ProcessTimedOutException::TYPE_GENERAL);
+    1159▕         }
+    1160▕ 
+    1161▕         if (null !== $this->idleTimeout && $this->idleTimeout < microtime(true) - $this->lastOutputTime) {
+    1162▕             $this->stop(0);
+
+      [2m+18 vendor frames [22m    1154▕ 
+    1155▕         if (null !== $this->timeout && $this->timeout < microtime(true) - $this->starttime) {
+    1156▕             $this->stop(0);
+    1157▕ 
+  ➜ 1158▕             throw new ProcessTimedOutException($this, ProcessTimedOutException::TYPE_GENERAL);
+    1159▕         }
+    1160▕ 
+    1161▕         if (null !== $this->idleTimeout && $this->idleTimeout < microtime(true) - $this->lastOutputTime) {
+    1162▕             $this->stop(0);
+
+  19  /var/www/mangdroship-seller/mangdropship-apis-dev/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+      [2m+18 vendor frames [22m
+  19  /var/www/mangdroship-seller/mangdropship-apis-dev/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+      [2m+18 vendor frames [22m
+  19  /var/www/mangdroship-seller/mangdropship-apis-dev/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+  2023-07-17 07:20:31 App\Jobs\JobEmailMangAdmin ..................... RUNNING
+  2023-07-17 07:20:36 App\Jobs\JobEmailMangAdmin ............. 5,124.37ms DONE
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+

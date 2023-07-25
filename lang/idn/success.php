@@ -8,5 +8,6 @@ return [
     'MANG-SUCCESS-TEXP-ETR-V1' => ['MANG-SUCCESS-TEXP-ETR-V1' => ''],
     'MANG-SUCCESS-RNFN-HND-V1' => ['MANG-SUCCESS-RNFN-HND-V1' => ''],
     'MANG-SUCCESS-ATZ-HND-V1'  => ['MANG-SUCCESS-ATZ-HND-V1'  => 'Otorisasi Akun Berhasil'],
-    'MANG-SUCCESS-PRD-LG'      => ['MANG-SUCCESS-PRD-LG'      => 'Create Provider Login Sukses']
+    'MANG-SUCCESS-PRD-LG'      => ['MANG-SUCCESS-PRD-LG'      => 'Create Provider Login Sukses'],
+    'MANG-SUCCESS-MDA-DT'      => ['MANG-SUCCESS-MDA-DT'      => 'Upload Media File Berhasil']
 ];

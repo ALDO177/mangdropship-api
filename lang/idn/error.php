@@ -10,5 +10,6 @@ return[
     'MANG-ERROR-ATZ-HND-V1'  => ['MANG-ERROR-ATZ-HND-V1'   => 'Token Otorisasi Gagal atau Kedaluwarsa'],
     'MANG-ERROR-NULL-TRB-1'  => ['MANG-ERROR-NULL-TRB-1'   => 'Data Yang kamu cari null'],
     'MANG-ERROR-PRDS-CPN-1'  => ['MANG-ERROR-NULL-CPN-1'   => "Maaf anda belum mempunyai produk, silahkan upload terlebih dahulu produk anda"],
-    'MANG-ERROR-LARGE-LONG'  => ['MANG-ERROR-LARGE-LONG'   => "Post request upload anda telah melampaui batas"]
+    'MANG-ERROR-LARGE-LONG'  => ['MANG-ERROR-LARGE-LONG'   => "Post request upload anda telah melampaui batas"],
+    'MANG-ERROR-ARRAY-ZERO'  => ['MANG-ERROR-ARRAY-ZERO'   => "Data yang anda requestkan kosong"]
 ];

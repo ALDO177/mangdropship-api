@@ -15,7 +15,6 @@ return new class extends Migration
             $table->string('SKU')->nullable();
             $table->bigInteger('regular_price');
             $table->bigInteger('amount_received');
-            $table->bigInteger('discount_price');
             $table->integer('order_min');
             $table->integer('quantity');
             $table->string('short_description');
@@ -23,6 +22,7 @@ return new class extends Migration
             $table->string('product_note')->nullable();
             $table->boolean('published');
             $table->boolean('pre_order');
+            $table->string('tags');
             $table->timestamps();
         });
     }

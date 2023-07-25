@@ -11,6 +11,9 @@ class OptionGaransiProduk extends Model
     public $timestamps = false;
 
     protected $fillable = [
-        'id', 'name', 'count_days','id_product'
+        'id', 
+        'name', 
+        'count_days',
+        'id_product'
     ];
 }

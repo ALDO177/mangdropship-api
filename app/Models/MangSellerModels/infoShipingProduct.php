@@ -11,7 +11,7 @@ class infoShipingProduct extends Model
     use HasFactory;
 
     public $timestamps = false;
-    public $keyType = 'string';
+    public $keyType    = 'string';
 
     protected $fillable = [
         'id_product',

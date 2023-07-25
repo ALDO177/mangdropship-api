@@ -8,5 +8,6 @@ return [
     'MANG-SUCCESS-RPWD-RTR-V1' => ['MANG-SUCCESS-RPWD-RTR-V1' => ''],
     'MANG-SUCCESS-TEXP-ETR-V1' => ['MANG-SUCCESS-TEXP-ETR-V1' => ''],
     'MANG-SUCCESS-RNFN-HND-V1' => ['MANG-SUCCESS-RNFN-HND-V1' => ''],
-    'MANG-SUCCESS-ATZ-HND-V1'  => ['MANG-SUCCESS-ATZ-HND-V1'  => '']
+    'MANG-SUCCESS-ATZ-HND-V1'  => ['MANG-SUCCESS-ATZ-HND-V1'  => ''],
+    'MANG-SUCCESS-MDA-DT'      => ['MANG-SUCCESS-MDA-DT'      => 'Media File Upload Successful']
 ];

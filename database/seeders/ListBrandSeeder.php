@@ -15,7 +15,7 @@ class ListBrandSeeder extends Seeder
 
         foreach($brand as $values){
             ListBrandProduk::create([
-                'id_suplier'  => '1249a42c-4b06-482e-aa54-3ffd4d9f8b43',
+                'id_suplier'  => '96c261a4-70dc-4c9c-add7-7df43b6ab4c6',
                 'name_brand'  => $values,
                 'path_img'    => $faker->imageUrl()
             ]);

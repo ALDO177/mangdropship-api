@@ -14,7 +14,6 @@ class ProdukFactory extends Factory
             'product_name'   => Str::ucfirst($this->faker->words(random_int(5, 10), true)),
             'SKU'            => Str::upper($this->faker->bothify('?????-#######')),
             'regular_price'  => $this->faker->numberBetween(10000, 500000),
-            'discount_price' => ($this->faker->numberBetween(10000, 500000) / 0.10),
             'quantity'       => $this->faker->numberBetween(0, 100),
             'short_description' => $this->faker->text(40),
             'product_description' => '
@@ -33,8 +32,7 @@ class ProdukFactory extends Factory
                 
                 And of course Dillinger itself is open source with a [public repository][dill]
                 on GitHub.
-            ',
-            'published' => $this->faker->boolean()
+            '
         ];
     }
 }

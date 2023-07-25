@@ -10,6 +10,15 @@ Route::prefix('v1')->group(function(){
     require_once __DIR__ . '/Api/mang-admin.php';
     require_once __DIR__ . '/Api/mang-dropshiper.php';
     require_once __DIR__ . '/Api/public.php';
+    
+    Route::post('test-api', function(Request $request){
+        return $request->all();
+        foreach($request->allFiles()['galleries'] as $images){
+            $webp = new WebpImages($images, 300, 300);
+            $webp->putWithDisk('oss', env('STG_MANG_SELLER') . '/images');
+        }
+        return ['uploaded' => 'upload-in-store ashfuiah'];
+    });
 });
 
 Route::post('apis', function(Request $request){

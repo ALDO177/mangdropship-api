@@ -418,3 +418,313 @@
 
    INFO  Processing jobs from the [default] queue.  
 
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   Symfony\Component\Process\Exception\ProcessSignaledException 
+
+  The process has been signaled with signal "11".
+
+  at /var/www/mangdroship-seller/mangdropship-apis-dev/vendor/symfony/process/Process.php:436
+    432▕             usleep(1000);
+    433▕         }
+    434▕ 
+    435▕         if ($this->processInformation['signaled'] && $this->processInformation['termsig'] !== $this->latestSignal) {
+  ➜ 436▕             throw new ProcessSignaledException($this);
+    437▕         }
+    438▕ 
+    439▕         return $this->exitcode;
+    440▕     }
+
+      [2m+17 vendor frames [22m
+  18  /var/www/mangdroship-seller/mangdropship-apis-dev/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+
+
+   INFO  Processing jobs from the [default] queue.  
+

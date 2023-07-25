@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('category_name');
             $table->text('category_description');
             $table->string('category_slugh');
-            $table->text('icon');
+            $table->text('icon')->nullable();
             $table->text('image_path');
             $table->boolean('active');
             $table->timestamps();

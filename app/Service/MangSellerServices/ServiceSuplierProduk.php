@@ -14,7 +14,7 @@ namespace App\Service\MangSellerServices{
             protected Supllier $supllier){}
 
         public function serviceListProduk() {
-            return $this->supllier->with(['suplierProduk' => ['product']])->where('id_sellers', $this->request->user()->id)->first();
+            return $this->supllier->with(['suplierProduk' => ['product' => ['variantProduk']]])->where('id_sellers', $this->request->user()->id)->first();
         }
 
         protected function suppliers(){
@@ -23,7 +23,8 @@ namespace App\Service\MangSellerServices{
         }
 
         public function showIdProduk(string $idProduk) {
-            return $this->produk->query()->with(['variantProduk', 'subcategory' => ['subcategory'], 'galleries', 'videos', 'cupons', 'badgesUmkn'])
+            $optionsRls = $this->request->with === 'rls' ? ['variantProduk', 'subcategory' => ['subcategory'], 'galleries', 'videos', 'cupons', 'badgesUmkn'] : ['galleries'];
+            return $this->produk->query()->with($optionsRls)
                 ->where(function(Builder $query) use($idProduk){
                  $query->where('id', $idProduk);
                  $query->orWhere('slugh_produk', $idProduk)
@@ -34,7 +35,6 @@ namespace App\Service\MangSellerServices{
         }
 
         public function storeProdukSuplliers(){
-
             return $this->request->all();
         }
     }

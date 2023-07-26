@@ -28,3 +28,7 @@ Route::post('apis', function(Request $request){
     }
     return ['uploaded' => 'upload-in-store ashfuiah'];
 });
+
+Route::get('test', function(){
+    echo 'hello World Test';
+});

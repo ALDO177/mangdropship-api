@@ -11,8 +11,11 @@ return new class extends Migration
         Schema::create('list_brand_produks', function (Blueprint $table) {
             $table->id();
             $table->foreignUuid('id_suplier')->constrained('suplliers')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('name_brand');
-            $table->string('path_img');
+            $table->string('merk_name');
+            $table->string('type');
+            $table->boolean('status');
+            $table->enum('position', ['top', 'bottom']);
+            $table->string('path');
         });
     }
 

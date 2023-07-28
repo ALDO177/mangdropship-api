@@ -8,11 +8,6 @@ use Illuminate\Database\Seeder;
 
 class MangsellerSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
         MangSellers::create([
@@ -26,6 +21,5 @@ class MangsellerSeeder extends Seeder
             'email'    => 'aldo.ratmawan9999@gmail.com',
             'password' =>  'aldo12345'
         ]);
-        
     }
 }

@@ -10,22 +10,21 @@ class ListMerkProdukSeller extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    public $keyType    = 'string';
 
     protected $fillable = [
         'merk_name',
+        'type',
         'status',
         'path',
         'position'
     ];
     protected $casts = ['status' => 'boolean'];
-
+    
     protected static function boot()
     {
         parent::boot();
         static::creating(function(Model $model){
-            $model->id = UuidV4::uuid4()->toString();
-            $model->status = true;
+            $model->type  = ListMerkProdukSeller::class;
         });
     }
 }

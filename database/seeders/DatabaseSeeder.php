@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
             CategorysSeeder::class,
             TagsCategorySeeder::class,
             SubCategorysSeeder::class,
+            ListMerkProdukSellerSeeder::class,
             // ProdukSeeder::class,
             // VariantProductsSeeder::class,
             // SubCategoryProductSeeder::class,
@@ -39,6 +40,7 @@ class DatabaseSeeder extends Seeder
             StoreInformationSeeder::class,
             SuplierAccountBankSeeder::class,
             OptionsProductWarrantySeeder::class,
+            // ListBrandSeeder::class
         ]);
     }
 }

@@ -92,6 +92,11 @@ class Supllier extends Model
         return static::with(['listBrandProduk'])->where('id_sellers', $id_seller)->first()->listBrandProduk;
     }
 
+    public function badgesUmkm(){
+        return $this->hasMany(BadgesUmkm::class, 'id_suplier', 'id');
+    }
+
+
     public function infoNewMember() : Attribute{
         return Attribute::make(function($values, $attr){
             $supliers = $this->with(['user'])->where('id_sellers', $attr['id_sellers'])->first()->user;

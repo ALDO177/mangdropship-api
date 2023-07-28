@@ -108,10 +108,11 @@ class Produk extends Model
         return $this->hasOne(TagsProduct::class, 'id_product', 'id');
     }
 
-    public function badgesUmkn(): HasMany
+    public function badgesUmkn(): HasOne
     {
-        return $this->hasMany(BadgesUmkm::class, 'id_product', 'id');
+        return $this->hasOne(BrandProdukSuplier::class, 'id_produk', 'id');
     }
+    
     public function infoShipingProduct(): HasOne
     {
         return $this->hasOne(infoShipingProduct::class, 'id_product', 'id');

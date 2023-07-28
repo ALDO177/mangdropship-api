@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Mangseller\AuthMangseller;
+use App\Http\Controllers\Mangseller\BrandProdukController;
 use App\Http\Controllers\Mangseller\ControllersMangsellerAccountBank;
 use App\Http\Controllers\Mangseller\CuponsActiveProductControllers;
 use App\Http\Controllers\Mangseller\CuponsSellerController;
@@ -48,5 +49,6 @@ Route::prefix('mang-seller')->group(function(){
         'cupons'        => CuponsSellerController::class,
         'cupons-produk' => CuponsActiveProductControllers::class,
         'produk'        => SuplierControllerProduk::class,
+        'brand'         => BrandProdukController::class,
     ]);
 });

@@ -33776,3 +33776,5 @@ In ProviderRepository.php line 206:
 
    INFO  Processing jobs from the [default] queue.  
 
+  2023-07-26 11:45:26 App\Jobs\JobEmailMangAdmin ..................... RUNNING
+  2023-07-26 11:45:30 App\Jobs\JobEmailMangAdmin ............. 4,192.39ms DONE

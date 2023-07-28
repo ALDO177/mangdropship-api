@@ -11,13 +11,18 @@ class ListBrandSeeder extends Seeder
     public function run()
     {
         $faker = Factory::create();
-        $brand = ['Super Produk', 'Brand Produk', 'Umkm'];
+        $brand =[
+            ['Aldo Brand', 'top'],
+            ['Executiv Brnd', 'bottom']
+        ];
 
         foreach($brand as $values){
             ListBrandProduk::create([
-                'id_suplier'  => '96c261a4-70dc-4c9c-add7-7df43b6ab4c6',
-                'name_brand'  => $values,
-                'path_img'    => $faker->imageUrl()
+                'id_suplier' => '01d8b2bd-2e84-4eda-b6be-e75d43181254',
+                'merk_name'  => $values[0],
+                'status'     => true,
+                'position'   => $values[1],
+                'path'       => $faker->imageUrl(300, 300)
             ]);
         }
     }

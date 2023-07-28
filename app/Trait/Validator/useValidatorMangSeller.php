@@ -186,5 +186,18 @@ namespace  App\Trait\Validator {
                 'variant_produk.9.variant_options.stock_variant_produk.min'      => 'Stok Variant Ke-10 harus minimal 50',
             ];
         }
+
+        public function validationBrandStoreProduk(array $data){
+
+            $validator = Validator::make($data, [
+                'merk_name'  => ['required', 'unique:list_brand_produks,merk_name'],
+                'path'       => ['required', File::image()
+                    ->types(['png', 'jpg', 'jpeg', 'webp'])
+                    ->max(4 * 1024)->dimensions(Rule::dimensions())],
+                'status'     => ['required', 'boolean'],
+                'position'   => ['required', Rule::in(['top', 'bottom'])],
+            ]);
+            return $validator;
+        }
     }
 }

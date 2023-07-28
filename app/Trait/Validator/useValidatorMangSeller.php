@@ -187,16 +187,27 @@ namespace  App\Trait\Validator {
             ];
         }
 
-        public function validationBrandStoreProduk(array $data){
+        public function validationBrandStoreProduk(array $data, bool $id = false)
+        {
+            if (!$id) {
+                $validator = Validator::make($data, [
+                    'merk_name'  => ['required', 'unique:list_brand_produks,merk_name'],
+                    'path'       => ['required', File::image()
+                        ->types(['png', 'jpg', 'jpeg', 'webp'])
+                        ->max(4 * 1024)->dimensions(Rule::dimensions())],
+                    'status'     => ['required', 'boolean'],
+                    'position'   => ['required', Rule::in(['top', 'bottom'])],
+                ]);
+                return $validator;
+            }
 
             $validator = Validator::make($data, [
                 'merk_name'  => ['required', 'unique:list_brand_produks,merk_name'],
-                'path'       => ['required', File::image()
-                    ->types(['png', 'jpg', 'jpeg', 'webp'])
-                    ->max(4 * 1024)->dimensions(Rule::dimensions())],
                 'status'     => ['required', 'boolean'],
                 'position'   => ['required', Rule::in(['top', 'bottom'])],
+                'id'         => ['required','exists:list_brand_produks,id','numeric']
             ]);
+
             return $validator;
         }
     }

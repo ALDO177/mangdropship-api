@@ -39,7 +39,7 @@ Route::prefix('mang-seller')->group(function(){
             Route::match(['put', 'patch', 'post'], 'store',  'updateStore');
         });
     });
-
+    
     Route::controller(MediaProdukSellerController::class)->group(function(){
         Route::post('upload-media', 'uploadProdukFile');
     });
@@ -49,6 +49,6 @@ Route::prefix('mang-seller')->group(function(){
         'cupons'        => CuponsSellerController::class,
         'cupons-produk' => CuponsActiveProductControllers::class,
         'produk'        => SuplierControllerProduk::class,
-        'brand'         => BrandProdukController::class,
+        'brand/{path}'         => BrandProdukController::class,
     ]);
 });
